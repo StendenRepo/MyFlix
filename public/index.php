@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php include "../templates/header.php" ?>
+<?php
+require_once "../private/config.php";
+show_header($extra_css = ['assets/css/home.css']);
+?>
 <body>
-
+    <h1>Myflix</h1>
 </body>
-</html>
+<?php show_footer(); ?>

@@ -1,5 +1,5 @@
 <?php
-require_once "../private/config.php";
+require_once "../src/config.php";
 show_header($extra_css = ['assets/css/home.css']);
 ?>
 <body>

@@ -1,10 +1,9 @@
 <?php
 require_once "../src/config.php";
 require_once "../src/login.php";
-show_header($extra_css = ['assets/css/home.css']);
+show_header(['assets/css/login.css']);
 ?>
     <body>
-    <br>
     <form action="<?= htmlentities($_SERVER["PHP_SELF"]) ?>" method="POST">
         <div>
             <label for="fn">Firstname</label>
@@ -23,12 +22,12 @@ show_header($extra_css = ['assets/css/home.css']);
         </div>
         <div>
             <label for="pw">Password</label>
-            <input id="pw" name="pw" type="text" value="test123">
+            <input id="pw" name="pw" type="text" value="Hallo123password">
             <small><?= $errors["pw"] ?? "" ?></small>
         </div>
         <div>
             <label for="confirm-pw">Confirm Password</label>
-            <input id="confirm-pw" name="confirm-pw" type="text" value="test123">
+            <input id="confirm-pw" name="confirm-pw" type="text" value="Hallo123password">
             <small><?= $errors["confirm-pw"] ?? "" ?></small>
         </div>
         <input type="submit" name="submit" value="submit">

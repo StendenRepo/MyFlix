@@ -1,54 +1,46 @@
 version: '3'
 
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: php:latest
-    container_name: app
-    environment:
-      DB_SERVER: ${DB_SERVER}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_TABLE: ${DB_TABLE}
-    restart: unless-stopped
+  php:
+    build: .
+    container_name: php
+    env_file:
+      - &env config/docker.env
     volumes:
       - ./:/var/www
+    restart: unless-stopped
 
   nginx:
-    build:
-      context: .
-      dockerfile: Dockerfile_nginx
-    image: nginx:latest
+    image: nginx:alpine
     container_name: webserver
-    restart: unless-stopped
     ports:
-      - '80:80'
+      - "80:80"
     volumes:
       - ./:/var/www
       - ./config/nginx/app.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
     depends_on:
-      - app
+      - php
+      - mysql
 
   mysql:
     image: mariadb
     container_name: db
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    env_file:
+      - *env
+    ports:
+      - "3306:3306"
     volumes:
       - mysqldata:/var/lib/mysql
-    ports:
-      - 3306:3306
 
   phpmyadmin:
     image: phpmyadmin
-    restart: always
-    ports:
-      - 8080:80
+    container_name: pma
     environment:
       PMA_HOST: mysql
-    container_name: pma
+    ports:
+      - "8080:80"
+    restart: unless-stopped
 
 volumes:
-  mysqldata: {}
+  mysqldata: { }

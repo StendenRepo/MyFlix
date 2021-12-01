@@ -1,0 +1,11 @@
+/* Define the colors that later can be used in the site */
+:root {
+    --block_color: gray;
+    --text_color: white;
+}
+
+/* Reset the CSS */
+* {
+    margin: 0;
+    padding: 0;
+}

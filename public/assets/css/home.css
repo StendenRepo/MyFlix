@@ -1,0 +1,8 @@
+/* Demo CSS */
+body {
+    background-color: black;
+}
+
+h1 {
+    color: var(--text_color);
+}

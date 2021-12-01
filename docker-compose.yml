@@ -5,7 +5,7 @@ services:
     build: .
     container_name: php
     env_file:
-      - &env config/docker.env
+      - &env .env
     volumes:
       - ./:/var/www
     restart: unless-stopped

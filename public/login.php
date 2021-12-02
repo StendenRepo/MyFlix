@@ -22,15 +22,15 @@ show_header(['assets/css/login.css']);
         </div>
         <div>
             <label for="pw">Password</label>
-            <input id="pw" name="pw" type="text" value="Hallo123password">
+            <input id="pw" name="pw" type="password" value="Hallo123password">
             <small><?= $errors["pw"] ?? "" ?></small>
         </div>
         <div>
             <label for="confirm-pw">Confirm Password</label>
-            <input id="confirm-pw" name="confirm-pw" type="text" value="Hallo123password">
+            <input id="confirm-pw" name="confirm-pw" type="password" value="Hallo123password">
             <small><?= $errors["confirm-pw"] ?? "" ?></small>
         </div>
-        <input type="submit" name="submit" value="submit">
+        <input type="submit" name="submit" value="Submit">
     </form>
     </body>
 <?php show_footer(); ?>

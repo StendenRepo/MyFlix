@@ -1,4 +1,5 @@
 <?php
+include_once "userFunctions.php";
 
 $inputArray = filter_input_array(INPUT_POST, [
     "fn" => FILTER_SANITIZE_STRING,
@@ -8,8 +9,8 @@ $inputArray = filter_input_array(INPUT_POST, [
     "confirm-pw" => FILTER_SANITIZE_STRING,
 ], true);
 $errorMsg = [
-    "default" => "This is required",
-    "password" => "Password must be at least 8 characters long and contain 1 Capital letter and 1 number",
+    "required" => "This is required",
+    "password" => "Password must be at least 8 characters long and contain atleast 1 lower case, 1 upper case and 1 numbers",
     "matchPassword" => "Passwords do NOT match"
 ];
 $errors = [];
@@ -20,18 +21,19 @@ if (!isset($_POST["submit"])) return;
 
 //Check if all values are entered
 if (in_array(null, $inputArray)) {
-    foreach ($inputArray as $key => $value) {
+    foreach ($inputArray as $key) {
         if (empty($value)) {
-            $errors[$key] = ($key != "pw") ? $errorMsg["default"] : $errorMsg["password"];
+            $errors[$key] = $errorMsg["required"];
             return;
         }
     }
 }
 
-if ($inputArray["pw"] !== $inputArray["confirm-pw"]) {
-    $errors["confirm-pw"] = $errorMsg["matchPassword"];
-    return;
-}
+if (!didPasswordMatch($inputArray["pw"], $inputArray["confirm-pw"]))
+    return $errors["confirm-pw"] = $errorMsg["matchPassword"];
+
+if (!isValidPassword($inputArray["pw"]))
+    return $errors["pw"] = $errorMsg["password"];
 
 $gatheredInfo["fn"] = $inputArray["fn"];
 $gatheredInfo["ln"] = $inputArray["ln"];

@@ -3,7 +3,7 @@ include_once "userFunctions.php";
 
 $inputArray = filter_input_array(INPUT_POST, [
     "fn" => FILTER_SANITIZE_STRING,
-    "ln" => FILTER_SANITIZE_STRING,
+    "ln" => FILTER_SANITIZE_STRIPPED,
     "email" => FILTER_VALIDATE_EMAIL,
     "pw" => FILTER_SANITIZE_STRING,
     "confirm-pw" => FILTER_SANITIZE_STRING,

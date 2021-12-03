@@ -15,6 +15,7 @@ function isValidPassword($password): bool|int
 
 /**
  * Binary comparison
+ * matches the password with a confirmed password
  *
  * @param $password
  * @param $confirmPassword

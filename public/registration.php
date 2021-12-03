@@ -1,6 +1,6 @@
 <?php
 require_once "../src/config.php";
-require_once "../src/login.php";
+require_once "../src/registration.php";
 show_header(['assets/css/login.css']);
 ?>
     <body>

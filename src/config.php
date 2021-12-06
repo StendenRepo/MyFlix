@@ -5,16 +5,16 @@ session_start();
 # Database config for PHP
 if (isset($_ENV['MARIADB_HOST'])) {
     // if ENV is set load it from there
-    define('DB_HOST', $_ENV['MARIADB_HOST']);
-    define('DB_USER', $_ENV['MARIADB_USER']);
-    define('DB_PASS', $_ENV['MARIADB_ROOT_PASSWORD']);
-    define('DB_DATABASE', $_ENV['MARIADB_DATABASE']);
+    define("dbHost", $_ENV['MARIADB_HOST']);
+    define('dbUser', $_ENV['MARIADB_USER']);
+    define('dbPass', $_ENV['MARIADB_ROOT_PASSWORD']);
+    define('dbDatabase', $_ENV['MARIADB_DATABASE']);
 } else {
     // Else load the config from here
-    define('DB_HOST', 'localhost');
-    define('DB_USER', 'root');
-    define('DB_PASS', '');
-    define('DB_DATABASE', 'myflix');
+    define('dbHost', 'localhost');
+    define('dbUser', 'root');
+    define('dbPass', '');
+    define('dbDatabase', 'myflix');
 }
 
 // Load the database

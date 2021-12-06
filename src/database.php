@@ -1,4 +1,10 @@
 <?php
-// Placeholder file for the db connection
+function dbConnect()
+{
+	return mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
+}
 
-// TODO add connection to database
+function dbClose($connection)
+{
+	mysqli_close($connection);
+}

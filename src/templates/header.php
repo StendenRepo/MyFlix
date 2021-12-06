@@ -1,16 +1,16 @@
 <?php
 /**
  * This function shows the header and if needed extra css can be loaded
- * @param array $extra_css
- * @param bool $use_template
+ * @param array $extraCss
+ * @param bool $useTemplate
  */
-function show_header($extra_css = [], $use_template = true) {
+function showHeader(array $extraCss = [], bool $useTemplate = true) {
     // When use_template=true load the template.css else create an empty variable
-    $css = ($use_template) ? '<link rel="stylesheet" href="assets/css/template.css">' . "\n" : '';
+    $css = ($useTemplate) ? '<link rel="stylesheet" href="assets/css/template.css">' . "\n" : '';
     // When there are extra_css files provided add them to the css variable
-    if (sizeof($extra_css) > 0) {
-        foreach ($extra_css as $css_line) {
-            $css .= '<link rel="stylesheet" href="' . htmlspecialchars($css_line) . '">' . "\n";
+    if (sizeof($extraCss) > 0) {
+        foreach ($extraCss as $cssLink) {
+            $css .= '<link rel="stylesheet" href="' . htmlspecialchars($cssLink) . '">' . "\n";
         }
     }
     echo '<!DOCTYPE html>

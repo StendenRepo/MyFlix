@@ -1,8 +1,8 @@
 <?php
+//redirect to homepage after 5 seconds
+header( "refresh:5;index.php" );
 require_once "../src/config.php";
-// TODO add check if the database is installed. if not create the database with all tables.
 
-//
 $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS);
 
 //test connection and existence of database
@@ -11,6 +11,7 @@ if (!$connection) {
 
 }
 //$connection = mysqli_connect("mysql", "root", "qwerty");
+
 echo "database does not exist \nwill now install database.";
 
 $createDatabase = mysqli_prepare($connection, "CREATE DATABASE IF NOT EXISTS `myflix` DEFAULT CHARACTER SET UTF8");

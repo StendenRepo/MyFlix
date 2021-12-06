@@ -1,7 +1,5 @@
 CREATE DATABASE IF NOT EXISTS `myflix` DEFAULT CHARACTER SET utf8;
-
 USE `myflix`;
-
 -- ---------------------------
 -- table Account
 -- ---------------------------
@@ -20,7 +18,6 @@ CREATE TABLE IF NOT EXISTS `account`
     `city`              VARCHAR(35),
     `verified`          INT         NULL,
     PRIMARY KEY (`ID`)
-
 ) ENGINE = INNODB;
 
 -- ---------------------------
@@ -57,7 +54,6 @@ CREATE TABLE IF NOT EXISTS `film`
     `name`      TIME,
     `accepted`  TINYINT,
     PRIMARY KEY (`id`)
-
 ) ENGINE = INNODB;
 
 -- ---------------------------
@@ -115,3 +111,10 @@ ALTER TABLE `film`
 ALTER TABLE `film`
     ADD
         FOREIGN KEY (`genreId`) REFERENCES genre (`id`);
+
+-- ---------------------------
+-- add foreign keys namechange table
+-- ---------------------------
+ALTER TABLE `nameChange`
+    ADD
+       FOREIGN KEY (`accountId`) REFERENCES account (`id`);

@@ -3,11 +3,11 @@ require_once "../src/config.php";
 show_header($extra_css = ['assets/css/uploadvideo.css']);
 ?>
 <body>
-    <from action="../src/uploadvideos.php" method="POST">
+    <form action="../src/uploader.php" method="post" enctype="multipart/form-data">  
         <label for="title">Title</label>
         <input type="text" id="title" name="title">
 
-        <input type="file" id="upload-video" name="video">
+        <input type="file" name="video" />
 
         <input type="checkbox" id="action" name="genre" value="action">
         <label for="action">Action</label>
@@ -16,7 +16,12 @@ show_header($extra_css = ['assets/css/uploadvideo.css']);
         <input type="checkbox" id="adventure" name="genre" value="adventure">
         <label for="adventure">Adventure</label>
 
-        <button type="submit" name="submit">Upload your video</button>
+        <input type="submit" name="submit_video" value="Upload" />
     </form>
+
+    <?php 
+        if(isset($_GET["error"])){ ?>
+            <p><?=$_GET["error"]?></p>
+        <?php } ?>
 </body>
 <?php show_footer(); ?>

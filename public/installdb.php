@@ -6,10 +6,9 @@ $connection = dbConnect(true);
 if (mysqli_connect_errno()) {
     die("Failed to connect to MySQL: " . mysqli_connect_error());
 }
+var_dump(dbExists());
 
-$databasecheck = dbConnect();
-var_dump($databasecheck);
-if (!$databasecheck) {
+if (!dbExists()) {
     $createDatabase = mysqli_prepare($connection, "CREATE DATABASE IF NOT EXISTS `" . DB_DATABASE . "` DEFAULT CHARACTER SET UTF8mb4 COLLATE utf8mb4_general_ci");
     mysqli_stmt_execute($createDatabase);
     mysqli_select_db($connection, "myflix");

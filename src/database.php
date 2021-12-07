@@ -24,3 +24,14 @@ function dbClose($connection)
 {
     mysqli_close($connection);
 }
+
+/**
+ * test if database 'myflix exists'
+ *
+ * @return bool TRUE if database exists, FALSE if not
+ */
+function dbExists()
+{
+    return mysqli_select_db(dbConnect(), "myflix");
+
+}

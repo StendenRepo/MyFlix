@@ -1,7 +1,11 @@
 <?php
-function dbConnect()
+function dbConnect($install = false)
 {
-	return mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
+	if ($install) {
+		return mysqli_connect(DB_HOST, DB_USER, DB_PASS);
+	}else{
+		return mysqli_connect(DB_HOST, DB_USER, DB_PASS,DB_DATABASE);
+	}
 }
 
 function dbClose($connection)

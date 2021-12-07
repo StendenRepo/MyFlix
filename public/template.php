@@ -4,7 +4,7 @@
  * THIS FILE NEEDS TO BE REMOVED BEFORE PRODUCTION
  */
 require_once "../src/config.php";
-show_header();
+showHeader();
 ?>
     <body>
         <div class="header">
@@ -38,4 +38,4 @@ show_header();
             <input type="submit" value="submit">
         </form>
     </body>
-<?php show_footer(); ?>
+<?php showFooter(); ?>

@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `film`
 (
     `id`        INT NOT NULL AUTO_INCREMENT,
     `accountId` INT NOT NULL,
+    `fileName` varchar(20) NOT NULL,
     `genreId`   INT NOT NULL,
     `length`    INT NOT NULL,
     `name`      TIME,

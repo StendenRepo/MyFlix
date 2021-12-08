@@ -1,16 +1,16 @@
 <?php
-/**
- * Create the connection to the database
+
+/**create the database connection
  *
- * @param $install
  * @return false|mysqli|null
  */
-function dbConnect($install = false)
+function dbConnect()
 {
-    if ($install) {
-        return mysqli_connect(DB_HOST, DB_USER, DB_PASS);
+    $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
+    if (mysqli_errno() < 0) {
+        return false;
     } else {
-        return mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
+        return $connection;
     }
 }
 

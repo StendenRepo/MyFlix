@@ -17,21 +17,11 @@ function dbConnect($install = false)
 /**
  * close the connection to the database
  *
- * @param $connection object you made by creating the connection to the database
+ * @param $connection mysqli object you made by creating the connection to the database
  * @return void
  */
-function dbClose($connection)
+function dbClose(mysqli $connection)
 {
     mysqli_close($connection);
 }
 
-/**
- * test if database 'myflix exists'
- *
- * @return bool TRUE if database exists, FALSE if not
- */
-function dbExists()
-{
-    return mysqli_select_db(dbConnect(), "myflix");
-
-}

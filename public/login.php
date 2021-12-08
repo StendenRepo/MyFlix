@@ -4,16 +4,33 @@ showHeader($extra_css = ['assets/css/template.css']);
 ?>
 
 <?php
-$username = "";
+$email = "";
 $password = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    if(!empty($_POST["username"]) || !empty($_POST["password"])) {
-        $username = $_POST["username"];
+    if(!empty($_POST["email"]) && !empty($_POST["password"])) {
+        $email = $_POST["email"];
         $password = $_POST["password"];
-        echo "niet leeg";
+        $sql = "test@test.com";
+        $sql2 = "test";
+//        $sql = "SELECT emailadress FROM account WHERE emailadress=$email";
+//        $stmtLogin = mysqli_prepare($conn, $sql) OR DIE("stmt errer");
+//
+//        mysqli_stmt_execute($stmtLogin) OR DIE("stmt execute error");
+//
+//        mysqli_stmt_close($stmtLogin);
+        if($email == $sql){
+            if($password == $sql2){
+                echo "you are logged in";
+            }
+            else{
+                echo "wrong information";
+            }
+        }else{
+            echo "wrong information";
+        }
     }else{
-        echo "leeg";
+        echo "please fill in both";
     }
 }
 
@@ -23,10 +40,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <h1>Login</h1>
 
     <form method="post" action="">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" placeholder="Username">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="E-mail adress">
         <label for="password">Password</label>
-        <input  type="password" id="password" name="password">
+        <input  type="password" id="password" name="password" placeholder="Password">
 
         <input type="submit" value="Log in">
     </form>

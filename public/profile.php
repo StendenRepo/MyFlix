@@ -22,39 +22,39 @@ showHeader(['assets/css/profile.css']);
             <form action="" method="post">
                 <div class="inputBox">
                     <label for="userName">Username</label>
-                    <input type="text" id="userName" name="userName" disabled required>
+                    <input type="text" id="userName" name="userName" disabled>
                 </div>
                 <div class="inputBox">
                     <label for="eMail">E-mail address</label>
-                    <input type="text" id="eMail" name="eMail" required>
+                    <input type="text" id="eMail" name="eMail">
                 </div>
                 <div class="inputBox">
                     <label for="passWord">Password</label>
-                    <input type="text" id="passWord" name="passWord" required>
+                    <input type="text" id="passWord" name="passWord">
                 </div>
                 <div class="inputBox">
                     <label for="companyName">Company name</label>
-                    <input type="text" id="companyName" name="companyName" required>
+                    <input type="text" id="companyName" name="companyName">
                 </div>
                 <div class="inputBox">
                     <label for="fullName">Full name</label>
-                    <input type="text" id="fullName" name="fullName" required>
+                    <input type="text" id="fullName" name="fullName">
                 </div>
                 <div class="inputBox">
                     <label for="address">Address</label>
-                    <input type="text" id="address" name="address" required>
+                    <input type="text" id="address" name="address">
                 </div>
                 <div class="inputBox">
                     <label for="postalCode">Postal Code</label>
-                    <input type="text" id="postalCode" name="postalCode" required>
+                    <input type="text" id="postalCode" name="postalCode">
                 </div>
                 <div class="inputBox">
                     <label for="city">City</label>
-                    <input type="text" id="city" name="city" required>
+                    <input type="text" id="city" name="city">
                 </div>
                 <div class="inputBox">
                     <label for="country">Country</label>
-                    <input type="text" id="country" name="country" required>
+                    <input type="text" id="country" name="country">
                 </div>
                 <div class="inputBox">
                     <label for="bankAccount">Bank Account Number</label>

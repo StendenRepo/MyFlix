@@ -17,7 +17,14 @@ showHeader($extraCss = ['assets/css/home.css']);
             <img src="assets/img/Placeholders/Placeholder_4.jpg" alt="placeholder 4">
             <img src="assets/img/Placeholders/Placeholder_5.jpg" alt="placeholder 5">
         </div>
-        <h1>Placeholder 2</h1>
+        <h1>Placeholder</h1>
+        <div class="images">
+            <img src="assets/img/Placeholders/Placeholder_6.jpg" alt="placeholder 6">
+            <img src="assets/img/Placeholders/Placeholder_7.jpg" alt="placeholder 7">
+            <img src="assets/img/Placeholders/Placeholder_8.jpg" alt="placeholder 8">
+            <img src="assets/img/Placeholders/Placeholder_9.jpg" alt="placeholder 9">
+            <img src="assets/img/Placeholders/Placeholder_10.jpg" alt="placeholder 10">
+        </div>
     </div>
 
 </body>

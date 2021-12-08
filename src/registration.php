@@ -3,11 +3,15 @@ include_once "userFunctions.php";
 
 $inputArray = filter_input_array(INPUT_POST, [
     "fn" => FILTER_SANITIZE_STRING,
-    "ln" => FILTER_SANITIZE_STRIPPED,
+    "ln" => FILTER_SANITIZE_STRING,
     "email" => FILTER_VALIDATE_EMAIL,
     "pw" => FILTER_SANITIZE_STRING,
     "confirm-pw" => FILTER_SANITIZE_STRING,
 ], true);
+
+/**
+ * TODO: Change error msg with the lang file errors
+ */
 $errorMsg = [
     "required" => "This is required",
     "password" => "Password must be at least 8 characters long and contain atleast 1 lower case, 1 upper case and 1 numbers",
@@ -16,10 +20,10 @@ $errorMsg = [
 $errors = [];
 $gatheredInfo = [];
 
-//Stop script is there is no POST
 if (!isset($_POST["submit"])) return;
 
-//Check if all values are entered
+//Checks whether the array contains a null | "". then loops through the array and find the null value.
+//Use the key as a reference point and set a message to it in the errors array
 if (in_array(null, $inputArray)) {
     foreach ($inputArray as $key) {
         if (empty($value)) {

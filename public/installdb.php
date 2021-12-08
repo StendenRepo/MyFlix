@@ -6,7 +6,7 @@ $connection = dbConnect(true);
 if (mysqli_connect_errno()) {
     die("Failed to connect to MySQL: " . mysqli_connect_error());
 }
-var_dump(dbExists());
+
 
 if (!dbExists()) {
     $createDatabase = mysqli_prepare($connection, "CREATE DATABASE IF NOT EXISTS `" . DB_DATABASE . "` DEFAULT CHARACTER SET UTF8mb4 COLLATE utf8mb4_general_ci");

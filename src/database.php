@@ -14,10 +14,11 @@ function dbConnect($install = false)
     }
 }
 
+
 /**
  * close the connection to the database
  *
- * @param $connection mysqli object you made by creating the connection to the database
+ * @param mysqli $connection
  * @return void
  */
 function dbClose(mysqli $connection)

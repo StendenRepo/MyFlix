@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `account`
     `genre`        VARCHAR(20) NULL,
     `studioName`   VARCHAR(50),
     `iban`         VARCHAR(30),
-    `adress`       VARCHAR(100),
+    `address`       VARCHAR(100),
     `city`         VARCHAR(35),
     PRIMARY KEY (`ID`)
 ) ENGINE = INNODB;

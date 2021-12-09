@@ -1,4 +1,4 @@
 <?php
-function show_footer() {
+function showFooter() {
     echo '</html>';
 }

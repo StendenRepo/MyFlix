@@ -4,7 +4,6 @@
 CREATE TABLE IF NOT EXISTS `account`
 (
     `id`           INT         NOT NULL AUTO_INCREMENT,
-    `genreId`      INT         NULL,
     `accountLevel` INT         NOT NULL DEFAULT 0,
     `firstName`    varchar(20),
     `lastName`     varchar(20),
@@ -13,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `account`
     `email`        VARCHAR(64) NOT NULL,
     `genre`        VARCHAR(20) NULL,
     `studioName`   VARCHAR(50),
-    `iban`         VARCHAR(30),
+    `iban`         VARCHAR(35),
     `address`       VARCHAR(100),
     `city`         VARCHAR(35),
     PRIMARY KEY (`ID`)
@@ -97,7 +96,7 @@ ALTER TABLE `account`
 
 ALTER TABLE `account`
     ADD
-        FOREIGN KEY (`genreId`) REFERENCES genre (`id`);
+        FOREIGN KEY (`genre`) REFERENCES genre (`id`);
 
 -- ---------------------------
 -- add foreign keys rating table

@@ -1,14 +1,13 @@
 <?php
 /**
- * create the database connection
- *
+ * Create the database connection
+ * @param bool $install
  * @return false|mysqli
  */
-function dbConnect($install = false)
-{
+function dbConnect(bool $install = false): bool|mysqli {
     $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
     if (mysqli_connect_errno() > 0) {
-        die("Could not connect to database");
+        die("Failed to connect to MySQL: " . mysqli_connect_error());
     } else {
 		if ($install){
 			return $connection;
@@ -18,8 +17,7 @@ function dbConnect($install = false)
     }
 }
 /**
- * close the connection to the database
- *
+ * Close the mysqli connection to the database
  * @param mysqli $connection
  * @return void
  */

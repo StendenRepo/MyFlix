@@ -1,20 +1,22 @@
 <?php
-
-/**create the database connection
+/**
+ * create the database connection
  *
- * @return false|mysqli|null
+ * @return false|mysqli
  */
-function dbConnect()
+function dbConnect($install = false)
 {
     $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
-    if (mysqli_errno() < 0) {
-        return false;
+    if (mysqli_connect_errno() > 0) {
+        die("Could not connect to database");
     } else {
+		if ($install){
+			return $connection;
+		}
+		mysqli_select_db($connection, DB_DATABASE);
         return $connection;
     }
 }
-
-
 /**
  * close the connection to the database
  *
@@ -25,4 +27,3 @@ function dbClose(mysqli $connection)
 {
     mysqli_close($connection);
 }
-

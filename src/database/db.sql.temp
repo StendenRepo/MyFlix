@@ -1,21 +1,26 @@
 -- ---------------------------
+-- use database
+-- ---------------------------
+USE myflix;
+
+-- ---------------------------
 -- table Account
 -- ---------------------------
 CREATE TABLE IF NOT EXISTS `account`
 (
-    `id`           INT         NOT NULL AUTO_INCREMENT,
-    `genreId`      INT         NULL,
-    `accountLevel` INT         NOT NULL DEFAULT 0,
-    `firstName`    varchar(20),
-    `lastName`     varchar(20),
-    `username`     VARCHAR(20) NOT NULL,
-    `password`     VARCHAR(64) NOT NULL,
-    `email`        VARCHAR(64) NOT NULL,
-    `genre`        VARCHAR(20) NULL,
-    `studioName`   VARCHAR(50),
-    `iban`         VARCHAR(30),
-    `adress`       VARCHAR(100),
-    `city`         VARCHAR(35),
+    `id`            INT         NOT NULL AUTO_INCREMENT,
+    `genreId`       INT         NULL,
+    `accountTypeId` INT         NOT NULL DEFAULT 0,
+    `firstName`     varchar(20),
+    `lastName`      varchar(20),
+    `username`      VARCHAR(20) NOT NULL,
+    `password`      VARCHAR(64) NOT NULL,
+    `emailadress`   VARCHAR(64) NOT NULL,
+    `genre`         VARCHAR(20) NULL,
+    `studioName`    VARCHAR(50),
+    `iban`          VARCHAR(30),
+    `adress`        VARCHAR(100),
+    `city`          VARCHAR(35),
     PRIMARY KEY (`ID`)
 ) ENGINE = INNODB;
 
@@ -93,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `nameChange`
 -- ---------------------------
 ALTER TABLE `account`
     ADD
-        FOREIGN KEY (`accountLevel`) REFERENCES accountType (`level`);
+        FOREIGN KEY (`accountTypeId`) REFERENCES accountType (`level`);
 
 ALTER TABLE `account`
     ADD

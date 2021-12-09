@@ -1,18 +1,18 @@
 <?php
 require_once "../src/config.php";
 require_once "../src/registration.php";
-show_header(['assets/css/login.css']);
+showHeader(['assets/css/login.css']);
 ?>
     <body>
     <form action="<?= htmlentities($_SERVER["PHP_SELF"]) ?>" method="POST">
         <div>
             <label for="fn">Firstname</label>
-            <input id="fn" name="fn" type="text" value="Cedric" autofocus>
+            <input id="fn" name="fn" type="text" value="firstname" autofocus>
             <small><?= $errors["fn"] ?? "" ?></small>
         </div>
         <div>
             <label for="ln">Lastname</label>
-            <input id="ln" name="ln" type="text" value="smit">
+            <input id="ln" name="ln" type="text" value="lastname">
             <small><?= $errors["ln"] ?? "" ?></small>
         </div>
         <div>
@@ -33,4 +33,4 @@ show_header(['assets/css/login.css']);
         <input type="submit" name="submit" value="Submit">
     </form>
     </body>
-<?php show_footer(); ?>
+<?php showFooter(); ?>

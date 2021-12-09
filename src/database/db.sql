@@ -1,9 +1,4 @@
 -- ---------------------------
--- use database
--- ---------------------------
-USE myflix;
-
--- ---------------------------
 -- table Account
 -- ---------------------------
 CREATE TABLE IF NOT EXISTS `account`

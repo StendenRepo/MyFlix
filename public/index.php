@@ -1,6 +1,6 @@
 <?php
 require_once "../src/config.php";
-showHeader($extraCss = ['assets/css/home.css']);
+showHeader(['assets/css/home.css']);
 ?>
 <body>
     <div class="header">
@@ -26,6 +26,5 @@ showHeader($extraCss = ['assets/css/home.css']);
             <a href="index.php"><img src="assets/img/Placeholders/Placeholder_10.jpg" alt="placeholder 10"></a>
         </div>
     </div>
-
+    <?php showFooter(); ?>
 </body>
-<?php showFooter(); ?>

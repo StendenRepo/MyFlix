@@ -3,14 +3,6 @@
 // Start a user session
 session_start();
 
-const DEBUG = true;
-
-if (DEBUG) {
-    error_reporting(E_ALL);
-    ini_set("display_errors", 1);
-    ini_set("display_startup_errors", 1);
-}
-
 # Database config for PHP
 if (isset($_ENV['MARIADB_HOST'])) {
     // if ENV is set load it from there
@@ -34,4 +26,3 @@ require_once __DIR__ . '/auth.php';
 
 // Load the templates
 require_once __DIR__ . '/templates/index.php';
-

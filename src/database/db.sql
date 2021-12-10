@@ -5,15 +5,15 @@ CREATE TABLE IF NOT EXISTS `account`
 (
     `id`           INT         NOT NULL AUTO_INCREMENT,
     `accountLevel` INT         NOT NULL DEFAULT 0,
-    `firstName`    varchar(20),
-    `lastName`     varchar(20),
+    `firstName`    varchar(20) NOT NULL,
+    `lastName`     varchar(20) NOT NULL,
     `username`     VARCHAR(20) NOT NULL,
     `password`     VARCHAR(64) NOT NULL,
-    `email`        VARCHAR(64) NOT NULL,
-    `genre`        VARCHAR(20) NULL,
+    `email`        VARCHAR(64) NOT NULL UNIQUE,
+    `genre`        INT NULL,
     `studioName`   VARCHAR(50),
     `iban`         VARCHAR(35),
-    `address`       VARCHAR(100),
+    `address`      VARCHAR(100),
     `city`         VARCHAR(35),
     PRIMARY KEY (`ID`)
 ) ENGINE = INNODB;

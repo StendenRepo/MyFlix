@@ -3,19 +3,29 @@
 -- ---------------------------
 CREATE TABLE IF NOT EXISTS `account`
 (
-    `id`            INT         NOT NULL AUTO_INCREMENT,
-    `genreId`       INT         NOT NULL,
-    `accountTypeId` INT         NOT NULL,
-    `username`      VARCHAR(20) NOT NULL,
-    `password`      VARCHAR(64) NOT NULL,
-    `emailadress`   VARCHAR(64) NOT NULL,
-    `genre`         VARCHAR(20) NULL,
-    `studioName`    VARCHAR(50),
-    `iban`          VARCHAR(30),
-    `adress`        VARCHAR(100),
-    `city`          VARCHAR(35),
-    `verified`      tinyint(1) DEFAULT 0,
-    PRIMARY KEY (`ID`)
+    `id`           INT         NOT NULL AUTO_INCREMENT,
+    `accountLevel` INT         NOT NULL DEFAULT 0,
+    `firstName`    varchar(20) NULL,
+    `lastName`     varchar(20) NULL,
+    `username`     VARCHAR(20) NOT NULL,
+    `password`     VARCHAR(64) NOT NULL,
+    `email`        VARCHAR(64) NOT NULL UNIQUE,
+    `companyId`    INT         NULL,
+    PRIMARY KEY (`id`)
+) ENGINE = INNODB;
+
+-- ---------------------------
+-- table accountType
+-- ---------------------------
+CREATE TABLE IF NOT EXISTS `company`
+(
+    `id`         INT NOT NULL AUTO_INCREMENT,
+    `studioName` VARCHAR(50),
+    `genre`      INT,
+    `iban`       VARCHAR(35) UNIQUE,
+    `address`    VARCHAR(100),
+    `city`       VARCHAR(35),
+    primary key (id)
 ) ENGINE = INNODB;
 
 -- ---------------------------
@@ -23,12 +33,20 @@ CREATE TABLE IF NOT EXISTS `account`
 -- ---------------------------
 CREATE TABLE IF NOT EXISTS `accountType`
 (
-    `id`    INT         NOT NULL AUTO_INCREMENT,
-    `name`  VARCHAR(20) NOT NULL,
+    `name`  VARCHAR(30) NOT NULL,
     `level` INT         NOT NULL,
-    PRIMARY KEY (`id`),
+    PRIMARY KEY (`level`),
     UNIQUE (`level`, `name`)
 ) ENGINE = INNODB;
+
+-- ---------------------------
+-- fill table accountType
+-- ---------------------------
+INSERT INTO `accountType`(`name`, `level`)
+VALUES ('viewer', 0),
+       ('content Creator', 1),
+       ('verified content creator', 2),
+       ('moderator', 3);
 
 -- ---------------------------
 -- table genre
@@ -46,11 +64,11 @@ CREATE TABLE IF NOT EXISTS `genre`
 -- ---------------------------
 CREATE TABLE IF NOT EXISTS `film`
 (
-    `id`        INT NOT NULL AUTO_INCREMENT,
-    `accountId` INT NOT NULL,
-    `fileName` varchar(20) NOT NULL,
-    `genreId`   INT NOT NULL,
-    `length`    INT NOT NULL,
+    `id`        INT         NOT NULL AUTO_INCREMENT,
+    `accountId` INT         NOT NULL,
+    `fileName`  varchar(20) NOT NULL,
+    `genreId`   INT         NOT NULL,
+    `length`    INT         NOT NULL,
     `name`      TIME,
     `accepted`  TINYINT(1) DEFAULT 0,
     PRIMARY KEY (`id`)
@@ -84,11 +102,18 @@ CREATE TABLE IF NOT EXISTS `nameChange`
 -- ---------------------------
 ALTER TABLE `account`
     ADD
-        FOREIGN KEY (`accountTypeId`) REFERENCES accountType (`id`);
+        FOREIGN KEY (`accountLevel`) REFERENCES accountType (`level`);
 
 ALTER TABLE `account`
     ADD
-        FOREIGN KEY (`genreId`) REFERENCES genre (`id`);
+        FOREIGN KEY (`companyId`) REFERENCES company(`id`);
+
+-- ---------------------------
+-- add foreign keys account table
+-- ---------------------------
+ALTER TABLE `company`
+    ADD
+        FOREIGN KEY (`genre`) REFERENCES genre (`id`);
 
 -- ---------------------------
 -- add foreign keys rating table

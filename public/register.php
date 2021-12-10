@@ -6,29 +6,24 @@ showHeader(['assets/css/login.css']);
     <body>
     <form action="<?= htmlentities($_SERVER["PHP_SELF"]) ?>" method="POST">
         <div>
-            <label for="fn">Firstname</label>
-            <input id="fn" name="fn" type="text" value="firstname" autofocus>
-            <small><?= $errors["fn"] ?? "" ?></small>
-        </div>
-        <div>
-            <label for="ln">Lastname</label>
-            <input id="ln" name="ln" type="text" value="lastname">
-            <small><?= $errors["ln"] ?? "" ?></small>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" value="username123" autofocus>
+            <small class="error"><?= $errors["username"] ?? "" ?></small>
         </div>
         <div>
             <label for="email">E-Mail</label>
             <input id="email" name="email" type="text" value="cedsmit@gmail.com">
-            <small><?= $errors["email"] ?? "" ?></small>
+            <small class="error"><?= $errors["email"] ?? "" ?></small>
         </div>
         <div>
             <label for="pw">Password</label>
             <input id="pw" name="pw" type="password" value="Hallo123password">
-            <small><?= $errors["pw"] ?? "" ?></small>
+            <small class="error"><?= $errors["pw"] ?? "" ?></small>
         </div>
         <div>
             <label for="confirm-pw">Confirm Password</label>
             <input id="confirm-pw" name="confirm-pw" type="password" value="Hallo123password">
-            <small><?= $errors["confirm-pw"] ?? "" ?></small>
+            <small class="error"><?= $errors["confirm-pw"] ?? "" ?></small>
         </div>
         <input type="submit" name="submit" value="Submit">
     </form>

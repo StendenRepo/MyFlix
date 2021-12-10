@@ -5,17 +5,27 @@ CREATE TABLE IF NOT EXISTS `account`
 (
     `id`           INT         NOT NULL AUTO_INCREMENT,
     `accountLevel` INT         NOT NULL DEFAULT 0,
-    `firstName`    varchar(20) NOT NULL,
-    `lastName`     varchar(20) NOT NULL,
+    `firstName`    varchar(20) NULL,
+    `lastName`     varchar(20) NULL,
     `username`     VARCHAR(20) NOT NULL,
     `password`     VARCHAR(64) NOT NULL,
     `email`        VARCHAR(64) NOT NULL UNIQUE,
-    `genre`        INT NULL,
-    `studioName`   VARCHAR(50),
-    `iban`         VARCHAR(35),
-    `address`      VARCHAR(100),
-    `city`         VARCHAR(35),
-    PRIMARY KEY (`ID`)
+    `companyId`    INT         NULL,
+    PRIMARY KEY (`id`)
+) ENGINE = INNODB;
+
+-- ---------------------------
+-- table accountType
+-- ---------------------------
+CREATE TABLE IF NOT EXISTS `company`
+(
+    `id`         INT NOT NULL AUTO_INCREMENT,
+    `studioName` VARCHAR(50),
+    `genre`      INT,
+    `iban`       VARCHAR(35) UNIQUE,
+    `address`    VARCHAR(100),
+    `city`       VARCHAR(35),
+    primary key (id)
 ) ENGINE = INNODB;
 
 -- ---------------------------
@@ -95,6 +105,13 @@ ALTER TABLE `account`
         FOREIGN KEY (`accountLevel`) REFERENCES accountType (`level`);
 
 ALTER TABLE `account`
+    ADD
+        FOREIGN KEY (`companyId`) REFERENCES company(`id`);
+
+-- ---------------------------
+-- add foreign keys account table
+-- ---------------------------
+ALTER TABLE `company`
     ADD
         FOREIGN KEY (`genre`) REFERENCES genre (`id`);
 

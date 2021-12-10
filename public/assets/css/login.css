@@ -1,3 +1,9 @@
 h1 {
-    color: var(--text_color);
+    color: var(--text-white);
+}
+
+small.error {
+    box-sizing: border-box;
+    margin: .5rem 0;
+    color: var(--red);
 }

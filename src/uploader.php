@@ -16,16 +16,9 @@ if(isset($_POST["submit_video"]) && isset($_FILES["video"])){
     $genres = $_POST["genre"];
 
     if(validateUpload($title, $videoName, $videoType, $videoTmpName, $videoError, $genres)){
+        /* waiting for database */
 
-        // Temporary until database is avaiable
-
-        $videoSafeName = uniqid();
-
-        $videoNameSplit = explode('.', $videoName);
-        $videoExtention = strtolower(end($videoNameSplit));
-
-        $videoTmpDestination = __DIR__ . "/../public/tmpUpload/$videoSafeName.$videoExtention";
-        move_uploaded_file($videoTmpName, $videoTmpDestination);
+        echo "Yay";
     }
 
 } else{
@@ -55,5 +48,6 @@ function validateUpload($title, $name, $type, $tmpName, $error, $genres){
         $fileError = "There was an issue with uploading your file, try again.";
         header("Location: ../public/uploadVideo.php?error=$fileError");
     }
+}
 
 ?>

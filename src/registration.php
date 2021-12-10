@@ -1,5 +1,4 @@
 <?php
-include_once "userFunctions.php";
 
 $inputArray = filter_input_array(INPUT_POST, [
     "username" => FILTER_SANITIZE_STRING,

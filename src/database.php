@@ -4,9 +4,8 @@
  * @param bool $install
  * @return false|mysqli
  */
-function dbConnect(bool $install = false): bool|mysqli
-{
-    $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
+function dbConnect(bool $install = false): bool|mysqli {
+    $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS);
     if (mysqli_connect_errno() > 0) {
         die("Failed to connect to MySQL: " . mysqli_connect_error());
     }
@@ -17,7 +16,6 @@ function dbConnect(bool $install = false): bool|mysqli
     return $connection;
 
 }
-
 /**
  * Close the mysqli connection to the database
  * @param mysqli $connection

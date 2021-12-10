@@ -14,7 +14,7 @@ function showHeader(array $extraCss = [], bool $useTemplate = true) {
         }
     }
     echo '<!DOCTYPE html>
-<html lang="en">
+<html lang="'. $langFile .'">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

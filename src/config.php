@@ -26,3 +26,8 @@ require_once 'auth.php';
 // Load the templates
 require_once 'templates/index.php';
 
+/**
+ * we staticly load in the english translate page.
+ * this can later be modified to dynamically import the lang of choice.
+ *  */ 
+require_once 'lang/en.php';

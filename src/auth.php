@@ -7,8 +7,9 @@
  */
 function register(string $username, string $email, string $pass)
 {
+    // TODO: return a session with a error msg "email already exists"
     if (getUserByEmail($email)) {
-        echo "User already exists";
+        $msg = "Email already exists";
         return;
     }
 
@@ -21,6 +22,10 @@ function register(string $username, string $email, string $pass)
         $username, $email, $hashedPass);
 
     mysqli_stmt_execute($stmt);
+
+
+    header("Location:login.php?registration=success");
+    exit;
 }
 
 /**
@@ -32,7 +37,6 @@ function register(string $username, string $email, string $pass)
  */
 function getUserByEmail(string $email): bool|array
 {
-    echo $email;
     $db = dbConnect();
     $stmt = mysqli_prepare($db, "SELECT * from account where email = ?");
 
@@ -53,6 +57,12 @@ function getUserByEmail(string $email): bool|array
 
 }
 
+/**
+ * hash password with the bcrypt algorithm
+ *
+ * @param string $password
+ * @return string returns hashed password
+ */
 function hashPassword(string $password): string
 {
     return password_hash($password, PASSWORD_BCRYPT);

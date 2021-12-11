@@ -31,8 +31,6 @@ if (in_array(null, $inputArray)) {
     return;
 }
 
-$_SESSION["username"] = $inputArray["username"];
-
 if (!checkStrLength($inputArray["username"], 20))
     return $errors["username"] = "Username cannot exceed 20 characters";
 

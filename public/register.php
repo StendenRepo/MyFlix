@@ -9,8 +9,7 @@ showHeader(['assets/css/login.css']);
         <div>
             <label for="username">Username</label>
             <input id="username" name="username" type="text" value="username123" autofocus>
-            <small class="error"><?= $errors["username"] ?? "" ?></small>
-            <small class="error"><?= $_SESSION["username"] ?? "" ?></small>
+            <small class="error"><?= $errors["username"] ?? $_SESSION["username"] ?? "" ?></small>
         </div>
         <div>
             <label for="email">E-Mail</label>

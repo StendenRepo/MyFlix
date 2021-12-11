@@ -16,11 +16,13 @@ function register(string $username, string $email, string $pass): ?array
 
     $stmt = mysqli_prepare($db, "INSERT INTO account (username, email, password) VALUES (?, ?, ?)");
 
-    mysqli_stmt_bind_param($stmt, "sss",
-        $username, $email, $hashedPass);
+    if (!mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPass) ||
+        !mysqli_stmt_execute($stmt)) {
+        die("Something went wrong with preparing the statement \n" . mysqli_error($db));
+    }
 
-    mysqli_stmt_execute($stmt);
-
+    mysqli_stmt_close($stmt);
+    dbClose($db);
 
     header("Location:login.php?registration=success");
     exit;
@@ -33,7 +35,6 @@ function register(string $username, string $email, string $pass): ?array
  * @param string $email
  * @return array|false
  */
-
 function getUserByEmail(string $email): bool|array
 {
     $db = dbConnect();
@@ -53,7 +54,6 @@ function getUserByEmail(string $email): bool|array
     }
 
     return mysqli_fetch_assoc($result);
-
 }
 
 /**

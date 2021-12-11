@@ -14,7 +14,6 @@
  * @param string $password
  * @return bool returns true if pattern matches the subject, false if it does not.
  */
-
 function isValidPassword(string $password): bool
 {
     if (preg_match("/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$/", $password)) {

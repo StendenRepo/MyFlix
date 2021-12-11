@@ -55,11 +55,3 @@ if (isset($errors)) {
 //tijdelijk return errors van register en print die op de pagina uit.
 //After we make sure every fields meets the requirements then we start the register process.
 $errors = register($inputArray["username"], $inputArray["email"], $inputArray["pw"]);
-
-
-
-
-
-
-
-

@@ -3,15 +3,13 @@
  * @param string $username
  * @param string $email
  * @param string $pass
- * @return void
+ * @return array|null
  */
-function register(string $username, string $email, string $pass)
+function register(string $username, string $email, string $pass): ?array
 {
     // TODO: return a session with a error msg "email already exists"
-    if (getUserByEmail($email)) {
-        $msg = "Email already exists";
-        return;
-    }
+    if (getUserByEmail($email))
+        return ["email" => "Email already exists"];
 
     $db = dbConnect();
     $hashedPass = hashPassword($pass);

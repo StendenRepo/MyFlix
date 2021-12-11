@@ -1,5 +1,7 @@
 <?php
 
+include "../utils/forms.php";
+
 $inputArray = filter_input_array(INPUT_POST, [
     "username" => FILTER_SANITIZE_STRING,
     "email" => FILTER_VALIDATE_EMAIL,
@@ -11,11 +13,10 @@ $inputArray = filter_input_array(INPUT_POST, [
  * TODO: Change error msg with the lang file errors
  */
 $errorMsg = [
-    "required" => "This is required",
+    "required" => "This is field required",
     "password" => "Password must be at least 8 characters long and contain atleast 1 lower case, 1 upper case and 1 numbers",
     "matchPassword" => "Passwords do NOT match"
 ];
-$errors = [];
 
 if (!isset($_POST["submit"])) return;
 
@@ -30,6 +31,13 @@ if (in_array(null, $inputArray)) {
     return;
 }
 
+$_SESSION["username"] = $inputArray["username"];
+
+if (!checkStrLength($inputArray["username"], 20))
+    return $errors["username"] = "Username cannot exceed 20 characters";
+
+if (!checkStrLength($inputArray["email"], 64))
+    return $errors["email"] = "Email cannot exceed 64 characters";
 
 if (!isValidPassword($inputArray["pw"]))
     return $errors["pw"] = $errorMsg["password"];
@@ -37,7 +45,10 @@ if (!isValidPassword($inputArray["pw"]))
 if (!didPasswordMatch($inputArray["pw"], $inputArray["confirm-pw"]))
     return $errors["confirm-pw"] = $errorMsg["matchPassword"];
 
-register($inputArray["username"], $inputArray["email"], $inputArray["pw"]);
+//TODO:  Ask leraar voor een beter oplossing dan dit.
+//tijdelijk return errors van register en print die op de pagina uit.
+
+$errors = register($inputArray["username"], $inputArray["email"], $inputArray["pw"]);
 
 
 

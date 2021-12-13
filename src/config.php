@@ -17,7 +17,7 @@ if (isset($_ENV['MARIADB_HOST'])) {
     define('DB_DATABASE', 'myflix');
 }
 
-$langFile = "en"
+$langFile = "en";
 
 /**
  * we staticly load in the english translate page.

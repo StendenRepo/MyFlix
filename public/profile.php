@@ -17,60 +17,68 @@ showHeader(['assets/css/profile.css']);
 
             ?>
 
-        <div class="profileContainer">
-            <h2>Profile</h2>
-            <form action="" method="post">
-                <div class="inputBox">
-                    <label for="userName">Username</label>
-                    <input type="text" id="userName" name="userName" disabled>
-                </div>
-                <div class="inputBox">
-                    <label for="eMail">E-mail address</label>
-                    <input type="text" id="eMail" name="eMail">
-                </div>
-                <div class="inputBox">
-                    <label for="passWord">Password</label>
-                    <input type="text" id="passWord" name="passWord">
-                </div>
-                <div class="inputBox">
-                    <label for="companyName">Company name</label>
-                    <input type="text" id="companyName" name="companyName">
-                </div>
-                <div class="inputBox">
-                    <label for="fullName">Full name</label>
-                    <input type="text" id="fullName" name="fullName">
-                </div>
-                <div class="inputBox">
-                    <label for="address">Address</label>
-                    <input type="text" id="address" name="address">
-                </div>
-                <div class="inputBox">
-                    <label for="postalCode">Postal Code</label>
-                    <input type="text" id="postalCode" name="postalCode">
-                </div>
-                <div class="inputBox">
-                    <label for="city">City</label>
-                    <input type="text" id="city" name="city">
-                </div>
-                <div class="inputBox">
-                    <label for="country">Country</label>
-                    <input type="text" id="country" name="country">
-                </div>
-                <div class="inputBox">
-                    <label for="bankAccount">Bank Account Number</label>
-                    <input type="text" id="bankAccount" name="bankAccount">
-                </div>
-                <div class="inputBox">
-                    <label for="accountType">Account Type</label>
-                    <select id="accountType" name="accountType">
-                        <option value="viewer">Viewer</option>
-                        <option value="contentCreator">Content Creator</option>
-                    </select>
-                </div>
-                <div class="inputBox">
-                    <button type="submit" class="button">Update Profile</button>
-                </div>
-            </form>
+        <div id="profileContainer">
+            <div id = "titleContainer">
+                <h2 id="profileTitle">Your Profile</h2>
+            </div>
+            <div id = "formContainer">
+                <form action="" method="post">
+                    <div class="inputBox">
+                        <label for="userName">Username</label>
+                        <input type="text" id="userName" name="userName" disabled>
+                    </div>
+                    <div class="inputBox">
+                        <label for="eMail">E-mail address</label>
+                        <input type="email" id="eMail" name="eMail" placeholder="E-mail">
+                    </div>
+                    <div class="inputBox">
+                        <label for="passWord">Password</label>
+                        <input type="password" id="passWord" name="passWord" placeholder="Password">
+                    </div>
+                    <div class="inputBox">
+                        <label for="cPassWord">Confirm password</label>
+                        <input type="password" id="cPassWord" name="cPassWord" placeholder="Re-enter your password">
+                    </div>
+                    <div class="inputBox">
+                        <label for="companyName">Company name</label>
+                        <input type="text" id="companyName" name="companyName" placeholder="Company name">
+                    </div>
+                    <div class="inputBox">
+                        <label for="fullName">Full name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Full name">
+                    </div>
+                    <div class="inputBox">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="Address">
+                    </div>
+                    <div class="inputBox">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" id="postalCode" name="postalCode" placeholder="Postal code">
+                    </div>
+                    <div class="inputBox">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="City">
+                    </div>
+                    <div class="inputBox">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" name="country" placeholder="Country">
+                    </div>
+                    <div class="inputBox">
+                        <label for="bankAccount">Bank Account Number</label>
+                        <input type="text" id="bankAccount" name="bankAccount" placeholder="Bank Account Number">
+                    </div>
+                    <div class="inputBox">
+                        <label for="accountType">Account Type</label>
+                        <select id="accountType" name="accountType">
+                            <option value="viewer">Viewer</option>
+                            <option value="contentCreator">Content Creator</option>
+                        </select>
+                    </div>
+                    <div id="button">
+                        <input type="submit" value="Update Profile">
+                    </div>
+                </form>
+            </div>
         </div>
 
         </body>

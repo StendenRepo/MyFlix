@@ -1,5 +1,4 @@
 <?php
-
 // Start a user session
 session_start();
 
@@ -17,6 +16,15 @@ if (isset($_ENV['MARIADB_HOST'])) {
     define('DB_PASS', '');
     define('DB_DATABASE', 'myflix');
 }
+
+$langFile = "en";
+
+/**
+ * we staticly load in the english translate page.
+ * this can later be modified to dynamically import the lang of choice.
+ *  */
+require_once 'lang/'.$langFile.'.php';
+
 
 // Load the database
 require_once __DIR__ . '/database.php';

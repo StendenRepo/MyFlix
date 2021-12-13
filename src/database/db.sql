@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `account`
     `password`     VARCHAR(64) NOT NULL,
     `email`        VARCHAR(64) NOT NULL UNIQUE,
     `companyId`    INT         NULL,
+    `verified`     INT         NOT NULL DEFAULT 0,
     PRIMARY KEY (`id`)
 ) ENGINE = INNODB;
 
@@ -105,7 +106,7 @@ ALTER TABLE `account`
 
 ALTER TABLE `account`
     ADD
-        FOREIGN KEY (`companyId`) REFERENCES company(`id`);
+        FOREIGN KEY (`companyId`) REFERENCES company (`id`);
 
 -- ---------------------------
 -- add foreign keys account table

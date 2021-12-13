@@ -2,10 +2,11 @@
 require_once "../src/config.php";
 require_once "../src/registration.php";
 
-showHeader(['assets/css/register.css']);
+showHead("Register", ['assets/css/register.css']);
 ?>
     <body>
-    <img class="company-logo" src="/assets/img/logo.png">
+    <img class="company-logo" src="./assets/img/logo.png" alt="Company Logo">
+    <h1>Register your MyFlix Account</h1>
     <form action="<?= htmlentities($_SERVER["PHP_SELF"]) ?>" method="POST">
         <div class="input">
             <label for="username">Username</label>
@@ -27,7 +28,9 @@ showHeader(['assets/css/register.css']);
             <input id="confirm-pw" name="confirm-pw" type="password" value="Hallo123password">
             <small class="error"><?= $errors["confirm-pw"] ?? "" ?></small>
         </div>
-        <input type="submit" name="submit" value="Submit">
+        <div class="action">
+            <input type="submit" name="submit" value="Register">
+        </div>
     </form>
     </body>
 <?php showFooter(); ?>

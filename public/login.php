@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$password = $_POST["password"];
 		$conn = dbConnect();
 
-		$sql = "SELECT password FROM account WHERE emailadress=''";
+		$sql = "SELECT password FROM account WHERE emailadress='" . $email . "'";
 		$stmtLogin = mysqli_prepare($conn, $sql) or die("prepare error");
 
 		mysqli_stmt_execute($stmtLogin) or die("stmt execute error");
@@ -24,13 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		mysqli_stmt_store_result($stmtLogin);
 
 		if (mysqli_stmt_num_rows($stmtLogin) == 1) {
-			while (mysqli_stmt_fetch($stmtLogin))   {
-                if(password_verify($password, $passwordTest)){
-                    $error = "yeey right information";
-                }else{
-                    $error ="wrong information";
-                }
-            }
+			while (mysqli_stmt_fetch($stmtLogin)) {
+				if (password_verify($password, $passwordTest)) {
+					$error = "doorsturen";
+				} else {
+					$error = "wrong information";
+				}
+			}
 
 
 		} else {
@@ -39,10 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 		mysqli_stmt_close($stmtLogin);
+		dbClose($conn);
 
-	}else{
-        $error = "please fill in everything";
-    }
+	} else {
+		$error = "please fill in everything";
+	}
 }
 
 ?>

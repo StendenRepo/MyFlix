@@ -237,3 +237,6 @@ _Pvt_Extensions
 /CleanArchitecture.ndproj
 
 .vscode
+
+# MacOS Junk
+.DS_Store

@@ -5,7 +5,7 @@ showHeader(['assets/css/profile.css']);
 
 <!DOCTYPE html>
 
-    <html>
+    <html lang="en">
         <head>
             <meta charset="utf-8">
             <title>Profile page</title>
@@ -14,7 +14,7 @@ showHeader(['assets/css/profile.css']);
 
         <body>
             <?php
-
+                include 'profileConfig.php';
             ?>
 
         <div id="profileContainer">
@@ -23,6 +23,11 @@ showHeader(['assets/css/profile.css']);
             </div>
             <div id = "formContainer">
                 <form action="" method="post">
+                    <?php
+
+                        $sql = "";
+
+                    ?>
                     <div class="inputBox">
                         <label for="userName">Username</label>
                         <input type="text" id="userName" name="userName" disabled>
@@ -44,8 +49,12 @@ showHeader(['assets/css/profile.css']);
                         <input type="text" id="companyName" name="companyName" placeholder="Company name">
                     </div>
                     <div class="inputBox">
-                        <label for="fullName">Full name</label>
-                        <input type="text" id="fullName" name="fullName" placeholder="Full name">
+                        <label for="firstName">First name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="First name">
+                    </div>
+                    <div class="inputBox">
+                        <label for="lastName">Last name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last name">
                     </div>
                     <div class="inputBox">
                         <label for="address">Address</label>

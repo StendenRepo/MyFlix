@@ -1,13 +1,13 @@
 <?php
-//setup
-$lang = [""];
+// Setup
+$lang = [];
 
 // Global
 $lang["options"] = "options";
 $lang["settings"] = "settings";
 
 // Homepage
-$lang["home"] = ["Home"];
+$lang["home"] = "Home";
 
 // Header
 $lang["searchPlaceholder"] = "search";
@@ -42,10 +42,3 @@ $lang["bankPlaceholder"] = "Enter your IBAN here";
 $lang["submit"] = "Complete registration";
 $lang["existingUser"] = "Already have an account?";
 $lang["loginLink"] = "Log in";
-
-
-// Profile page
-
-
-// Upload page
-

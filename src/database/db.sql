@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `account`
     `password`     VARCHAR(64) NOT NULL,
     `email`        VARCHAR(64) NOT NULL UNIQUE,
     `companyId`    INT         NULL,
-    `verified`     INT         NOT NULL DEFAULT 0,
+    `verified`     TINYINT(1)  NOT NULL DEFAULT 0,
     PRIMARY KEY (`id`)
 ) ENGINE = INNODB;
 

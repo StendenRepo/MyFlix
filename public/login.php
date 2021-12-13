@@ -6,34 +6,43 @@ showHeader(['assets/css/login.css']);
 <?php
 $email = "";
 $password = "";
+$error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!empty($_POST["email"]) && !empty($_POST["password"])) {
 		$email = $_POST["email"];
 		$password = $_POST["password"];
-		$sql = "test@test.com";
-		$sql2 = "test";
-//		$conn = dbConnect();
-//        $sql = "SELECT emailadress FROM account WHERE emailadress=$email";
-//        $stmtLogin = mysqli_prepare($conn, $sql) OR DIE("stmt errer");
-//
-//        mysqli_stmt_execute($stmtLogin) OR DIE("stmt execute error");
-//
-//        mysqli_stmt_close($stmtLogin);
-//        $sql2= "SELECT password FROM account WHERE emailadres = $email";
-//        if()
-		if ($email == $sql) {
-			if ($password == $sql2) {
-				echo "you are logged in";
-			} else {
-				echo "wrong information";
-			}
+		$conn = dbConnect();
+
+		$sql = "SELECT password FROM account WHERE emailadress=''";
+		$stmtLogin = mysqli_prepare($conn, $sql) or die("prepare error");
+
+		mysqli_stmt_execute($stmtLogin) or die("stmt execute error");
+
+		mysqli_stmt_bind_result($stmtLogin, $passwordTest);
+
+		mysqli_stmt_store_result($stmtLogin);
+
+		if (mysqli_stmt_num_rows($stmtLogin) == 1) {
+			while (mysqli_stmt_fetch($stmtLogin))   {
+                if(password_verify($password, $passwordTest)){
+                    $error = "yeey right information";
+                }else{
+                    $error ="wrong information";
+                }
+            }
+
+
 		} else {
-			echo "wrong information";
+			$error = "wrong information";
 		}
-	} else {
-		echo "please fill in both";
-	}
+
+
+		mysqli_stmt_close($stmtLogin);
+
+	}else{
+        $error = "please fill in everything";
+    }
 }
 
 ?>
@@ -42,7 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="flex-container">
         <div class="LoginImg">
-            <img src="assets/img/logo.png">
+            <a href="index.php">
+                <img src="assets/img/logo.png">
+            </a>
         </div>
 
         <div class="LoginForm">
@@ -56,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="test">
                     <input type="submit" value="Log in" class="LoginButton">
                 </div>
+				<?php echo $error; ?>
             </form>
         </div>
         <div class="LoginNew">

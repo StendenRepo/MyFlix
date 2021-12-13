@@ -1,7 +1,8 @@
 <?php
 
-include "../utils/forms.php";
+include_once "../utils/forms.php";
 
+global $lang;
 $inputArray = filter_input_array(INPUT_POST, [
     "username" => FILTER_SANITIZE_STRING,
     "email" => FILTER_VALIDATE_EMAIL,
@@ -9,16 +10,6 @@ $inputArray = filter_input_array(INPUT_POST, [
     "confirm-pw" => FILTER_SANITIZE_STRING,
 ], true);
 
-/**
- * TODO: Change error msg with the lang file errors
- */
-$errorMsg = [
-    "required" => "This is field required",
-    "password" => "Password must be at least 8 characters long and contain atleast 1 lower case, 1 upper case and 1 numbers",
-    "matchPassword" => "Passwords do NOT match",
-    "exceedUsernameLength" => "Username cannot exceed 20 characters",
-    "exceedEmailLength" => "Email cannot exceed 64 characters",
-];
 
 if (!isset($_POST["submit"])) return;
 
@@ -26,9 +17,8 @@ if (!isset($_POST["submit"])) return;
 //Use the key as a reference point and set a message to it in the errors array
 if (in_array(null, $inputArray)) {
     foreach ($inputArray as $key => $value) {
-        if (empty($value)) {
-            $errors[$key] = $errorMsg["required"];
-        }
+        if (empty($value))
+            $errors[$key] = $lang["required"];
     }
     // User has not filled in all fields no point in going further.
     return;
@@ -36,19 +26,17 @@ if (in_array(null, $inputArray)) {
 
 
 if (!checkStrLength($inputArray["username"], 20))
-    $errors["username"] = $errorMsg["exceedUsernameLength"];
+    $errors["username"] = $lang["exceedUsernameLength"];
 
 if (!checkStrLength($inputArray["email"], 64))
-    $errors["email"] = $errorMsg["exceedEmailLength"];
+    $errors["email"] = $lang["exceedEmailLength"];
 
 if (!isValidPassword($inputArray["pw"]))
-    $errors["pw"] = $errorMsg["password"];
+    $errors["pw"] = $lang["passwordReq"];
 
 if (!didPasswordMatch($inputArray["pw"], $inputArray["confirm-pw"]))
-    $errors["confirm-pw"] = $errorMsg["matchPassword"];
+    $errors["confirm-pw"] = $lang["wrongPassword"];
 
-if (isset($errors)) {
-    return;
-}
+if (isset($errors)) return;
 
 $errors = register($inputArray["username"], $inputArray["email"], $inputArray["pw"]);

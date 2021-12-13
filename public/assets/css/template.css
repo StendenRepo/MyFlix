@@ -59,6 +59,7 @@ input, textarea, select {
 
 select, input[type=button], input[type=submit] {
     height: 40px;
+    border-radius: var(--border-radius);
 }
 
 select {
@@ -76,7 +77,11 @@ textarea {
 
 /* Changes the color of the outline when a input is selected */
 input:not([type="button"]):focus, textarea:focus, select:focus {
-    outline: 3px solid var(--red);
+    border: 2px solid var(--red);
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: .1s;
+
 }
 
 /* Styling for buttons */

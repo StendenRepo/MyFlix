@@ -7,9 +7,10 @@
  */
 function register(string $username, string $email, string $pass): ?array
 {
-    // TODO: return a session with a error msg "email already exists"
+    global $lang;
+
     if (getUserByEmail($email))
-        return ["email" => "Email already exists"];
+        return ["email" => $lang["emailExists"]];
 
     $db = dbConnect();
     $hashedPass = hashPassword($pass);

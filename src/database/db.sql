@@ -44,9 +44,8 @@ CREATE TABLE IF NOT EXISTS `accountType`
 -- ---------------------------
 INSERT INTO `accountType`(`name`, `level`)
 VALUES ('viewer', 0),
-       ('content Creator', 1),
-       ('verified content creator', 2),
-       ('moderator', 3);
+       ('content creator', 1),
+       ('moderator', 5);
 
 -- ---------------------------
 -- table genre

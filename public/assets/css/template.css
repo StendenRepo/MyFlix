@@ -4,7 +4,7 @@
     --white: white;
     --black: #010001;
     --background: #2d2d2d;
-    --text-gray: #7e7e7e;
+    --text-gray: #a19f9f;
     --text-white: white;
     --border-radius: 10px;
 }
@@ -59,6 +59,7 @@ input, textarea, select {
 
 select, input[type=button], input[type=submit] {
     height: 40px;
+    border-radius: var(--border-radius);
 }
 
 select {
@@ -76,12 +77,17 @@ textarea {
 
 /* Changes the color of the outline when a input is selected */
 input:not([type="button"]):focus, textarea:focus, select:focus {
-    outline: 3px solid var(--red);
+    border: 2px solid var(--red);
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: .1s;
+
 }
 
 /* Styling for buttons */
 .red-btn, .red-btn-filled, input[type=submit], input[type=button], button {
     cursor: pointer;
+    text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
     color: var(--text-gray);
@@ -102,7 +108,7 @@ form {
 
 form input, form textarea, form select {
     display: block;
-    margin: 10px 20px;
+    margin: 10px 0;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -124,4 +130,8 @@ input::-webkit-inner-spin-button {
 /* For firefox */
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+a {
+    color: var(--text-white);
 }

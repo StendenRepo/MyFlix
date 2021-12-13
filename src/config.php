@@ -1,4 +1,5 @@
 <?php
+
 // Start a user session
 session_start();
 
@@ -18,11 +19,10 @@ if (isset($_ENV['MARIADB_HOST'])) {
 }
 
 // Load the database
-require_once 'database.php';
+require_once __DIR__ . '/database.php';
 
 // Load the auth
-require_once 'auth.php';
+require_once __DIR__ . '/auth.php';
 
 // Load the templates
-require_once 'templates/index.php';
-
+require_once __DIR__ . '/templates/index.php';

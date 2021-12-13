@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `account`
     `password`     VARCHAR(64) NOT NULL,
     `email`        VARCHAR(64) NOT NULL UNIQUE,
     `companyId`    INT         NULL,
+    `verified`     TINYINT(1)  NOT NULL DEFAULT 0,
     PRIMARY KEY (`id`)
 ) ENGINE = INNODB;
 
@@ -44,9 +45,8 @@ CREATE TABLE IF NOT EXISTS `accountType`
 -- ---------------------------
 INSERT INTO `accountType`(`name`, `level`)
 VALUES ('viewer', 0),
-       ('content Creator', 1),
-       ('verified content creator', 2),
-       ('moderator', 3);
+       ('content creator', 1),
+       ('moderator', 2);
 
 -- ---------------------------
 -- table genre
@@ -106,7 +106,7 @@ ALTER TABLE `account`
 
 ALTER TABLE `account`
     ADD
-        FOREIGN KEY (`companyId`) REFERENCES company(`id`);
+        FOREIGN KEY (`companyId`) REFERENCES company (`id`);
 
 -- ---------------------------
 -- add foreign keys account table

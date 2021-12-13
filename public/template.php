@@ -4,14 +4,10 @@
  * THIS FILE NEEDS TO BE REMOVED BEFORE PRODUCTION
  */
 require_once "../src/config.php";
-showHeader();
+showHead('Template');
 ?>
     <body>
-        <div class="header">
-            <img src="assets/img/logo.png" alt="logo" height="45">
-            <input type="text" placeholder="Search">
-            <button class="red-btn-filled">My Account</button>
-        </div>
+        <?php showHeader(); ?>
         <h1>H1</h1>
         <h2>H2</h2>
         <h3>H3</h3>

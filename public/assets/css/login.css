@@ -1,0 +1,37 @@
+body {
+    background-color: black;
+}
+
+.flex-container  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.LoginForm {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+}
+
+label   {
+    margin: 10px 30px;
+}
+
+.LoginInput   {
+    width: 400px;
+}
+
+.loginImg   {
+    height: 25vh;
+}
+
+img {
+    width: 400px;
+}
+
+.LoginButton    {
+    width: 200px;
+}

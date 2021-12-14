@@ -57,7 +57,7 @@ input, textarea, select {
     border-radius: var(--border-radius);
 }
 
-select, input[type=button], input[type=submit] {
+select {
     height: 40px;
     border-radius: var(--border-radius);
 }

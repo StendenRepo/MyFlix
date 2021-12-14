@@ -235,3 +235,8 @@ _Pvt_Extensions
 .fake/
 /NDependOut
 /CleanArchitecture.ndproj
+
+.vscode
+
+# MacOS Junk
+.DS_Store

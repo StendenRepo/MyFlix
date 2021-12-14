@@ -17,12 +17,20 @@ if (isset($_ENV['MARIADB_HOST'])) {
     define('DB_DATABASE', 'myflix');
 }
 
+$langFile = "en";
+
+/**
+ * we staticly load in the english translate page.
+ * this can later be modified to dynamically import the lang of choice.
+ *  */
+require_once 'lang/'.$langFile.'.php';
+
+
 // Load the database
-require_once 'database.php';
+require_once __DIR__ . '/database.php';
 
 // Load the auth
-require_once 'auth.php';
+require_once __DIR__ . '/auth.php';
 
 // Load the templates
-require_once 'templates/index.php';
-
+require_once __DIR__ . '/templates/index.php';

@@ -32,10 +32,7 @@ function isValidPassword(string $password): bool
  */
 function didPasswordMatch(string $password, string $confirmPassword): bool
 {
-    if (strcmp($password, $confirmPassword) === 0) {
-        return true;
-    }
-    return false;
+    return (strcmp($password, $confirmPassword) === 0);
 }
 
 /**

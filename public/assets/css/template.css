@@ -102,7 +102,6 @@ input:not([type="button"]):focus, textarea:focus, select:focus {
 }
 
 form {
-    padding: 20px;
     background-color: var(--black);
 }
 

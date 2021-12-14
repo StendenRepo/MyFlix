@@ -1,6 +1,6 @@
 <?php
 // Setup
-//$lang = [];
+$lang = [];
 
 // Global
 $lang["options"] = "options";

@@ -11,32 +11,32 @@ $error = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!empty($_POST["email"]) && !empty($_POST["password"])) {
 		$email = $_POST["email"];
-		$password = $_POST["password"];
+		$inputPassword = $_POST["password"];
 		$conn = dbConnect();
 
-		$sql = "SELECT password FROM account WHERE emailadress='" . $email . "'";
-		$stmtLogin = mysqli_prepare($conn, $sql) or die("prepare error");
 
-		mysqli_stmt_execute($stmtLogin) or die("stmt execute error");
-
-		mysqli_stmt_bind_result($stmtLogin, $passwordTest);
-
+		$sqlLogin = "SELECT id, username, password FROM account WHERE emailadress=?";
+		$stmtLogin = mysqli_prepare($conn, $sqlLogin);
+		mysqli_stmt_bind_param($stmtLogin, "s", $email);
+		mysqli_stmt_execute($stmtLogin);
+		mysqli_stmt_bind_result($stmtLogin, $id, $username, $password);
 		mysqli_stmt_store_result($stmtLogin);
+
 
 		if (mysqli_stmt_num_rows($stmtLogin) == 1) {
 			while (mysqli_stmt_fetch($stmtLogin)) {
-				if (password_verify($password, $passwordTest)) {
-					$error = "doorsturen";
+				if (password_verify($inputPassword, $password)) {
+					$_SESSION['userId'] = $id;
+					$_SESSION['username'] = $username;
+					header("location: index.php");
+					exit;
 				} else {
 					$error = "wrong information";
 				}
 			}
-
-
 		} else {
 			$error = "wrong information";
 		}
-
 
 		mysqli_stmt_close($stmtLogin);
 		dbClose($conn);

@@ -78,7 +78,6 @@ textarea {
 /* Changes the color of the outline when a input is selected */
 input:not([type="button"]):focus, textarea:focus, select:focus {
     outline: 2px solid var(--red);
-    transition: .1s;
 }
 
 /* Styling for buttons */

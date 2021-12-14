@@ -11,7 +11,7 @@ $createDatabase = mysqli_prepare($connection, "CREATE DATABASE IF NOT EXISTS `" 
 mysqli_stmt_execute($createDatabase);
 mysqli_select_db($connection, DB_DATABASE);
 
-$sqlPath = "../src/database/db.sql";
+$sqlPath = "../database/db.sql";
 $sql = file_get_contents($sqlPath);
 $sqlArray = explode(";", $sql);
 

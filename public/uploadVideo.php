@@ -22,6 +22,6 @@ show_header($extra_css = ['assets/css/uploadvideo.css']);
     <?php 
         if(isset($_GET["error"])){ ?>
             <p><?=$_GET["error"]?></p>
-        <?php } ?>
+    <?php } ?>
 </body>
 <?php show_footer(); ?>

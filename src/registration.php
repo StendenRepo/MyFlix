@@ -35,7 +35,7 @@ if (!isValidPassword($inputArray["pw"]))
     $errors["pw"] = $lang["passwordReq"];
 
 if (!didPasswordMatch($inputArray["pw"], $inputArray["confirm-pw"]))
-    $errors["confirm-pw"] = $lang["wrongPassword"];
+    $errors["confirmPw"] = $lang["wrongPassword"];
 
 if (isset($errors)) return;
 

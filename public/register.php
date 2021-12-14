@@ -26,7 +26,7 @@ showHead("Register", ['assets/css/register.css']);
         <div class="input">
             <label for="confirm-pw">Confirm Password</label>
             <input id="confirm-pw" name="confirm-pw" type="password">
-            <small class="error"><?= $errors["confirm-pw"] ?? "" ?></small>
+            <small class="error"><?= $errors["confirmPw"] ?? "" ?></small>
         </div>
         <div class="action">
             <input type="submit" name="submit" value="Register">

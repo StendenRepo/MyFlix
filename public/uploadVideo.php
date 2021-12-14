@@ -1,8 +1,9 @@
 <?php
 require_once "../src/config.php";
-show_header($extra_css = ['assets/css/uploadvideo.css']);
+showHead("Upload Video", ['assets/css/uploadvideo.css']);
 ?>
 <body>
+    <?php showHeader() ?>
     <form action="../src/uploader.php" method="post" enctype="multipart/form-data">  
         <label for="title">Title</label>
         <input type="text" id="title" name="title">
@@ -24,4 +25,4 @@ show_header($extra_css = ['assets/css/uploadvideo.css']);
             <p><?=$_GET["error"]?></p>
     <?php } ?>
 </body>
-<?php show_footer(); ?>
+<?php showFooter(); ?>

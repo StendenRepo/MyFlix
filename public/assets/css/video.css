@@ -1,0 +1,45 @@
+video {
+    display: block;
+    margin: 0 auto;
+    width: 80vw;
+    max-height: 80vh;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls button[data-state="play"] {
+    background-color: #010001;
+    color: red;
+}
+
+.video-player {
+    position: relative;
+}
+
+#start {
+    position: absolute;
+    height: 100px;
+    top: CALC((100% - 100px) / 2);
+    left: CALC((100% - 100px) / 2);
+}
+
+#video-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+    background-color: #010001;
+}
+
+.hidden {
+    display: none !important;
+}

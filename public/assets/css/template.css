@@ -7,6 +7,7 @@
     --text-gray: #a19f9f;
     --text-white: white;
     --border-radius: 10px;
+    --header-height: 100px;
 }
 
 /* Reset the CSS and set the font */
@@ -133,4 +134,8 @@ input[type=number] {
 
 a {
     color: var(--text-white);
+}
+
+.content {
+    height: CALC(100vh - var(--header-height));
 }

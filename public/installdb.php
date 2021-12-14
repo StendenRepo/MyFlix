@@ -25,5 +25,5 @@ foreach ($sqlArray as $query) {
 }
 
 dbClose($connection);
-header("refresh:2;url= /");
-echo "u wordt terug geleid naar de homepagina";
+header("refresh:2;url=index.php");
+echo "You will be redirected to the home page";

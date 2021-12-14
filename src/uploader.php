@@ -12,20 +12,33 @@ if(isset($_POST["submit_video"]) && isset($_FILES["video"])){
     $videoType = $_FILES["video"]["type"];
     $videoTmpName = $_FILES["video"]["tmp_name"];
     $videoError = $_FILES["video"]["error"];
+    $videoSaveName = uniqid();
+    $videoNameSpliter = explode(".", $videoName);
+    $videoExtention = strtolower(end($videoNameSpliter));
 
     $genres = $_POST["genre"];
 
-    if(validateUpload($title, $videoName, $videoType, $videoTmpName, $videoError, $genres)){
-        /* waiting for database */
+    $filePath = __DIR__ . "../../public/assets/video/$videoSaveName.$videoExtention";
 
-        echo "Yay";
+    if(validateUpload($title, $videoType, $videoError, $genres)){
+        uploadVideo($videoTmpName, $filePath);
     }
 
 } else{
     header("Location: ../public/uploadVideo.php");
 }
 
-function validateUpload($title, $name, $type, $tmpName, $error, $genres){
+function uploadVideo($videoSaveName, $filePath){
+    if(move_uploaded_file($videoSaveName, $filePath)){
+        echo "yay";
+        // Order: id, accountId, fileName, genreId, length, name, accptedId
+        $uploadQuery = "INSERT INTO `film` VALUES('', '', '$videoSaveName', '', '', '', '')";
+    }
+}
+
+function validateUpload($title, $type, $error, $genres){
+    $errorLocation = "Location : ../public/uploadVideo.php?error=";
+
     if($error === 0){
         $allowedExtentions = array("video/mp4", "video/webm", "video/avi", "video/flv");
         if(in_array($type, $allowedExtentions)){

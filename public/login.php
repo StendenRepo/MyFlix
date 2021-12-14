@@ -1,6 +1,6 @@
 <?php
 require_once "../src/config.php";
-showHeader(['assets/css/login.css']);
+showHead("login",['assets/css/login.css']);
 ?>
 
 <?php

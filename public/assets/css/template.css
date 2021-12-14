@@ -87,6 +87,7 @@ input:not([type="button"]):focus, textarea:focus, select:focus {
 
 /* Styling for buttons */
 .red-btn, .red-btn-filled, input[type=submit], input[type=button], button {
+    height: 45px;
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;

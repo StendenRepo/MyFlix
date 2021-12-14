@@ -73,6 +73,7 @@ select:focus {
 textarea {
     resize: none;
     height: 70px;
+    width: 234.4px;
 }
 
 /* Changes the color of the outline when a input is selected */

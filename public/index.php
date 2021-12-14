@@ -1,13 +1,9 @@
 <?php
 require_once "../src/config.php";
-showHeader(['assets/css/home.css']);
+showHead("Videos", ['assets/css/home.css']);
 ?>
 <body>
-    <div class="header">
-        <img src="assets/img/logo.png" alt="logo" height="45">
-        <input type="text" placeholder="Search">
-        <button class="red-btn-filled">My Account</button>
-    </div>
+    <?php showHeader(); ?>
     <div class="content">
         <h1>Placeholder</h1>
         <div class="images">
@@ -26,5 +22,5 @@ showHeader(['assets/css/home.css']);
             <a href="index.php"><img src="assets/img/Placeholders/Placeholder_10.jpg" alt="placeholder 10"></a>
         </div>
     </div>
-    <?php showFooter(); ?>
 </body>
+<?php showFooter(); ?>

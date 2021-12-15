@@ -66,10 +66,10 @@ CREATE TABLE IF NOT EXISTS `film`
 (
     `id`        INT         NOT NULL AUTO_INCREMENT,
     `accountId` INT         NOT NULL,
-    `fileName`  varchar(20) NOT NULL,
+    `path`      VARCHAR(40) NOT NULL,
     `genreId`   INT         NOT NULL,
-    `length`    INT         NOT NULL,
-    `name`      TIME,
+    `length`    TIME        NOT NULL,
+    name      VARCHAR(30),
     `accepted`  TINYINT(1) DEFAULT 0,
     PRIMARY KEY (`id`)
 ) ENGINE = INNODB;

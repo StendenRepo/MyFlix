@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `account`
 CREATE TABLE IF NOT EXISTS `company`
 (
     `id`         INT                NOT NULL AUTO_INCREMENT,
-    `studioName` VARCHAR(50)        NOT NULL,
+    `studioName` VARCHAR(50)        NOT NULL UNIQUE,
     `genre`      INT                NOT NULL,
     `iban`       VARCHAR(35) UNIQUE NOT NULL,
     `address`    VARCHAR(100)       NOT NULL,

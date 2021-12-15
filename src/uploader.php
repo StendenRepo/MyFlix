@@ -37,7 +37,6 @@ function uploadVideo($videoSaveName, $filePath){
 }
 
 function validateUpload($title, $type, $error, $genres){
-    $errorLocation = "Location : ../public/uploadVideo.php?error=";
 
     if($error === 0){
         $allowedExtentions = array("video/mp4", "video/webm", "video/avi", "video/flv");

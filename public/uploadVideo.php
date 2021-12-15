@@ -8,7 +8,11 @@ showHead("Upload Video", ['assets/css/uploadvideo.css']);
         <label for="title">Title</label>
         <input type="text" id="title" name="title">
 
-        <input type="file" name="video" />
+        <label for="video">Video file</label>
+        <input type="file" name="video">
+
+        <label for="thumbnail">Thumbnail file</label>
+        <input type="file" name="thumbnail">
 
         <input type="checkbox" id="action" name="genre" value="action">
         <label for="action">Action</label>
@@ -17,7 +21,7 @@ showHead("Upload Video", ['assets/css/uploadvideo.css']);
         <input type="checkbox" id="adventure" name="genre" value="adventure">
         <label for="adventure">Adventure</label>
 
-        <input type="submit" name="submit_video" value="Upload" />
+        <input type="submit" name="submit_video" value="Upload">
     </form>
 
     <?php 

@@ -7,6 +7,8 @@ if(isset($_POST["submit_video"]) && isset($_FILES["video"])){
     print_r($_FILES["thumbnail"]);
     echo "</pre>";
 
+    $conn = dbConnect();
+
     $title = $_POST["title"];
 
     $accountId = $_SESSION['userId'];
@@ -32,7 +34,7 @@ if(isset($_POST["submit_video"]) && isset($_FILES["video"])){
     $videoPath = __DIR__ . "../../public/assets/video/$videoSaveName.$videoExtention";
     $imgPath = __DIR__ . "../../public/assets/img/thumbnails/$imgSaveName.$imgExtention";
 
-    if(validateUpload($title, $videoType, $videoError, $genres, $imgError, $imgType)){
+    if(validateUpload($title, $videoType, $videoError, $genre, $imgError, $imgType)){
         uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName, $imgPath, $genre);
     }
 
@@ -47,18 +49,18 @@ function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName,
             echo "Superyay";
         }
         echo "yay";
-        // Order: id, accountId, fileName, genreId, length, name, accptedId
+        // Order: id, accountId, path, genreId, length, name, accpted
         $uploadQuery = "INSERT INTO `film` VALUES('', '$accountId', '$videoPath', '$genre', '', '$title', '')";
     }
 }
 
-function validateUpload($title, $type, $error, $genres, $imgError, $imgType){
+function validateUpload($title, $type, $error, $genre, $imgError, $imgType){
 
     if($error === 0){
         $allowedExtentions = array("video/mp4", "video/webm", "video/avi", "video/flv");
         if(in_array($type, $allowedExtentions)){
             if(!empty($title)){
-                if(!empty($genres)){
+                if(!empty($genre)){
                     if($imgError === 0){
                     $allowedImgExt = array("image/png", "image/jpeg");
                         if(in_array($imgType, $allowedImgExt)){
@@ -72,7 +74,7 @@ function validateUpload($title, $type, $error, $genres, $imgError, $imgType){
                         header("Location: ../public/uploadVideo.php?error=$imgError");
                     }
                 } else{
-                    $noGenre = "Make sure to select 1 or more genres.";
+                    $noGenre = "Make sure to select a genre.";
                     header("Location: ../public/uploadVideo.php?error=$noGenre");
                 }
             } else{

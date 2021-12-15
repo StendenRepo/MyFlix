@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `company`
     `address`    VARCHAR(100) NOT NULL,
     `city`       VARCHAR(35)  NOT NULL,
     primary key (`id`)
+
 ) ENGINE = INNODB;
 
 -- ---------------------------

@@ -42,3 +42,9 @@ $lang["bankPlaceholder"] = "Enter your IBAN here";
 $lang["submit"] = "Complete registration";
 $lang["existingUser"] = "Already have an account?";
 $lang["loginLink"] = "Log in";
+
+// Error message
+$lang["passwordReq"] = "Password must be at least 8 characters long and contain atleast 1 lower case, 1 upper case and 1 numbers";
+$lang["exceedUserLength"] = "Username cannot exceed 20 characters";
+$lang["exceedEmailLength"] = "Email cannot exceed 64 characters";
+$lang["emailExists"] = "Email already exist";

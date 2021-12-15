@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background: var(--black);
 }
 
 .flex-container  {
@@ -10,17 +10,13 @@ body {
     height: 100vh;
 }
 
-.LoginForm {
+.loginForm {
     height: 40vh;
     display: flex;
     justify-content: center;
 }
 
-label   {
-    margin: 10px 30px;
-}
-
-.LoginInput   {
+.loginInput   {
     width: 400px;
 }
 
@@ -32,6 +28,10 @@ img {
     width: 400px;
 }
 
-.LoginButton    {
-    width: 200px;
+.loginButton    {
+    width: 400px;
+}
+
+.registerText   {
+    text-align: center;
 }

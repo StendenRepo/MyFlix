@@ -20,13 +20,14 @@ CREATE TABLE IF NOT EXISTS `account`
 -- ---------------------------
 CREATE TABLE IF NOT EXISTS `company`
 (
-    `id`         INT NOT NULL AUTO_INCREMENT,
-    `studioName` VARCHAR(50) NOT NULL,
-    `genre`      INT NOT NULL,
-    `iban`       VARCHAR(35) UNIQUE NOT NULL,
+    `id`         INT          NOT NULL AUTO_INCREMENT,
+    `studioName` VARCHAR(50)  NOT NULL UNIQUE,
+    `genre`      INT          NOT NULL,
+    `iban`       VARCHAR(35)  NOT NULL UNIQUE,
     `address`    VARCHAR(100) NOT NULL,
-    `city`       VARCHAR(35) NOT NULL,
-    primary key (id)
+    `city`       VARCHAR(35)  NOT NULL,
+    primary key (`id`)
+
 ) ENGINE = INNODB;
 
 -- ---------------------------
@@ -69,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `film`
     `path`      VARCHAR(40) NOT NULL,
     `genreId`   INT         NOT NULL,
     `length`    TIME        NOT NULL,
-    name      VARCHAR(30),
+    `name`      VARCHAR(30) NOT NULL,
     `accepted`  TINYINT(1) DEFAULT 0,
     PRIMARY KEY (`id`)
 ) ENGINE = INNODB;

@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$inputPassword = htmlspecialchars($_POST["password"]);
 		$conn = dbConnect();
 
-		$sqlLogin = "SELECT id, username, password FROM account WHERE emailadress=?";
+		$sqlLogin = "SELECT id, username, password FROM account WHERE email=?";
 		$stmtLogin = mysqli_prepare($conn, $sqlLogin);
 		mysqli_stmt_bind_param($stmtLogin, "s", $email);
 		mysqli_stmt_execute($stmtLogin);

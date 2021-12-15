@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `film`
     `id`        INT         NOT NULL AUTO_INCREMENT,
     `accountId` INT         NOT NULL,
     `path`      VARCHAR(40) NOT NULL,
-    `thumbnail` VARCHAR(40) NOT NULL,
+    `thumbnail` VARCHAR(50) NOT NULL,
     `genreId`   INT         NOT NULL,
     `length`    TIME        NOT NULL,
     `name`      VARCHAR(30) NOT NULL,

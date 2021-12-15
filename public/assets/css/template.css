@@ -7,6 +7,7 @@
     --text-gray: #a19f9f;
     --text-white: white;
     --border-radius: 10px;
+    --header-height: 100px;
 }
 
 /* Reset the CSS and set the font */
@@ -57,8 +58,8 @@ input, textarea, select {
     border-radius: var(--border-radius);
 }
 
-select, input[type=button], input[type=submit] {
-    height: 40px;
+select, input {
+    height: 45px;
     border-radius: var(--border-radius);
 }
 
@@ -73,19 +74,17 @@ select:focus {
 textarea {
     resize: none;
     height: 70px;
+    width: 234.4px;
 }
 
 /* Changes the color of the outline when a input is selected */
 input:not([type="button"]):focus, textarea:focus, select:focus {
-    border: 2px solid var(--red);
-    border-radius: var(--border-radius);
-    outline: none;
-    transition: .1s;
-
+    outline: 2px solid var(--red);
 }
 
 /* Styling for buttons */
 .red-btn, .red-btn-filled, input[type=submit], input[type=button], button {
+    height: 45px;
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
@@ -133,4 +132,8 @@ input[type=number] {
 
 a {
     color: var(--text-white);
+}
+
+.content {
+    height: CALC(100vh - var(--header-height));
 }

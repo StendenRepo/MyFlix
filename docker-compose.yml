@@ -3,16 +3,14 @@ version: '3'
 services:
   php:
     build: .
-    container_name: php
     env_file:
-      - &env config/docker.env
+      - &env .env
     volumes:
       - ./:/var/www
     restart: unless-stopped
 
   nginx:
     image: nginx:alpine
-    container_name: webserver
     ports:
       - "80:80"
     volumes:
@@ -25,7 +23,6 @@ services:
 
   mysql:
     image: mariadb
-    container_name: db
     env_file:
       - *env
     ports:
@@ -35,7 +32,6 @@ services:
 
   phpmyadmin:
     image: phpmyadmin
-    container_name: pma
     environment:
       PMA_HOST: mysql
     ports:

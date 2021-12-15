@@ -20,10 +20,10 @@ if (isset($_ENV['MARIADB_HOST'])) {
 $langFile = "en";
 
 /**
- * we staticly load in the english translate page.
+ * we statically load in the english translate page.
  * this can later be modified to dynamically import the lang of choice.
  *  */
-require_once 'lang/'.$langFile.'.php';
+require_once __DIR__ . '/lang/' . $langFile . '.php';
 
 
 // Load the database

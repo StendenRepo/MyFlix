@@ -27,28 +27,28 @@ if(isset($_POST["submit_video"]) && isset($_FILES["video"])){
     $imgNameSplitter = explode(".", $imgName);
     $imgExtention = strtolower(end($imgNameSplitter));
 
-    $genres = $_POST["genre"];
+    $genre = $_POST["genre"];
 
     $videoPath = __DIR__ . "../../public/assets/video/$videoSaveName.$videoExtention";
     $imgPath = __DIR__ . "../../public/assets/img/thumbnails/$imgSaveName.$imgExtention";
 
     if(validateUpload($title, $videoType, $videoError, $genres, $imgError, $imgType)){
-        uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName, $imgPath, $genres);
+        uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName, $imgPath, $genre);
     }
 
 } else{
     header("Location: ../public/uploadVideo.php");
 }
 
-function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName, $imgPath, $genres){
+function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName, $imgPath, $genre){
 
     if(move_uploaded_file($videoTmpName, $videoPath)){
         if(move_uploaded_file($imgTmpName, $imgPath)){
             echo "Superyay";
         }
-        echo "yay <br>";
+        echo "yay";
         // Order: id, accountId, fileName, genreId, length, name, accptedId
-        $uploadQuery = "INSERT INTO `film` VALUES('', '$accountId', '$videoPath', '$genres', '', '$title', '')";
+        $uploadQuery = "INSERT INTO `film` VALUES('', '$accountId', '$videoPath', '$genre', '', '$title', '')";
     }
 }
 

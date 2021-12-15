@@ -14,11 +14,11 @@ showHead("Upload Video", ['assets/css/uploadvideo.css']);
         <label for="thumbnail">Thumbnail file</label>
         <input type="file" name="thumbnail">
 
-        <input type="checkbox" id="action" name="genre" value="action">
+        <input type="radio" id="action" name="genre" value="1">
         <label for="action">Action</label>
-        <input type="checkbox" id="horror" name="genre" value="horror">
+        <input type="radio" id="horror" name="genre" value="2">
         <label for="horror">Horror</label>
-        <input type="checkbox" id="adventure" name="genre" value="adventure">
+        <input type="radio" id="adventure" name="genre" value="3">
         <label for="adventure">Adventure</label>
 
         <input type="submit" name="submit_video" value="Upload">

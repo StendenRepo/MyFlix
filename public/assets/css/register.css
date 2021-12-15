@@ -41,3 +41,7 @@ small.error {
     margin-bottom: 1rem;
     color: var(--red);
 }
+
+.registerLink {
+    text-align: center;
+}

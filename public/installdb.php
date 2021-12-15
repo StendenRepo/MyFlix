@@ -24,6 +24,18 @@ foreach ($sqlArray as $query) {
     }
 }
 
+$sqlPath = "../database/data.sql";
+$sql = file_get_contents($sqlPath);
+$sqlArray = explode(";", $sql);
+
+foreach ($sqlArray as $query) {
+	if (!empty($query)) {
+		$stmt = mysqli_prepare($connection, $query . ";");
+		mysqli_stmt_execute($stmt);
+	} else {
+		break;
+	}
+}
 dbClose($connection);
 header("refresh:2;url=index.php");
 echo "You will be redirected to the home page";

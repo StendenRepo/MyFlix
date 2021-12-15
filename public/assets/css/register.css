@@ -4,23 +4,23 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
     margin: 0 auto;
 }
 
 img {
-    width: 20%;
-    margin-bottom: 1.1rem;
+    width: 80vw;
+    max-width: 300px;
+    margin-bottom: 3.5rem;
 }
 
 h1 {
     font-size: 1.5rem;
+    text-align: center;
     margin-bottom: 1.5rem;
 }
 
 form {
     padding: 20px;
-    width: 50%;
 }
 
 .input {
@@ -34,11 +34,14 @@ label {
 
 input {
     width: 100%;
-    margin: 0;
 }
 
 small.error {
     box-sizing: border-box;
-    margin: 0 0 1rem 0;
+    margin-bottom: 1rem;
     color: var(--red);
+}
+
+.registerLink {
+    text-align: center;
 }

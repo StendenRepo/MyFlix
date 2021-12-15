@@ -9,8 +9,9 @@ showHead("profile", (['assets/css/profile.css']));
         <head>
             <meta charset="utf-8">
             <title>Profile page</title>
-            <link rel="stylesheet" href="assets/css/profile.css">
         </head>
+
+        <?php require_once './profileConfig.php'; ?>
 
         <body>
             <div id="profileContainer">
@@ -19,46 +20,32 @@ showHead("profile", (['assets/css/profile.css']));
                 </div>
 
                 <div id = "formContainer">
-                    <form action="" method="post">
-                        <?php
-                            $conn = dbConnect() or die("Database connection failed");
-                            $sql = "SELECT * FROM account";
-                            $result = mysqli_query($conn, $sql);
-
-                            if (mysqli_num_rows($result) > 0) {
-                                while ($row = mysqli_fetch_assoc($result)) {
-                        ?>
+                    <form action="" method="post" id="myForm">
 
                         <div class="inputBox">
                             <label for="userName">Username</label>
-                            <input type="text" id="userName" name="userName" disabled "<?php echo $row['username']; ?>">
+                            <input type="text" id="userName" name="userName" disabled value="<?php echo $username; ?>">
                         </div>
                         <div class="inputBox">
                             <label for="eMail">E-mail address</label>
-                            <input type="email" id="eMail" name="eMail" "<?php echo $row['email']; ?>">
+                            <input type="email" id="eMail" name="eMail" value="<?php echo $email; ?>">
                         </div>
                         <div class="inputBox">
                             <label for="passWord">Password</label>
-                            <input type="password" id="passWord" name="passWord" placeholder="Password" "<?php echo $row['password']; ?>">
+                            <input type="password" id="passWord" name="passWord" placeholder="New password">
                         </div>
                         <div class="inputBox">
                             <label for="cPassWord">Confirm password</label>
-                            <input type="password" id="cPassWord" name="cPassWord" placeholder="Re-enter your password" "<?php echo $row['password']; ?>">
+                            <input type="password" id="cPassWord" name="cPassWord" placeholder="Re-enter new password">
                         </div>
                         <div class="inputBox">
                             <label for="firstName">First name</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="First name" value="<?php echo $row['firstName']; ?>">
+                            <input type="text" id="firstName" name="firstName" disabled value="<?php echo $firstName; ?>">
                         </div>
                         <div class="inputBox">
                             <label for="lastName">Last name</label>
-                            <input type="text" id="lastName" name="lastName" value="<?php echo $row['lastName']; ?>">
+                            <input type="text" id="lastName" name="lastName" disabled value="<?php echo $lastName; ?>">
                         </div>
-
-                        <?php
-                                }
-                            }
-                        ?>
-
                         <div class="inputBox">
                             <label for="companyName">Company name</label>
                             <input type="text" id="companyName" name="companyName" placeholder="Company name">

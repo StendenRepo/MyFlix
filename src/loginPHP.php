@@ -2,10 +2,9 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!empty($_POST["email"]) && !empty($_POST["password"])) {
-		$email = $_POST["email"];
-		$inputPassword = $_POST["password"];
+		$email = htmlspecialchars($_POST["email"]);
+		$inputPassword = htmlspecialchars($_POST["password"]);
 		$conn = dbConnect();
-
 
 		$sqlLogin = "SELECT id, username, password FROM account WHERE emailadress=?";
 		$stmtLogin = mysqli_prepare($conn, $sqlLogin);
@@ -37,8 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$error = "please fill in everything";
 	}
 
-	if(!empty($_GET['registration']))	{
-		if($_GET['registration'] == 'succes')	{
+	if (!empty($_GET['registration'])) {
+		if ($_GET['registration'] == 'succes') {
 			$succes = "You have succesfully made an account, please log in.";
 		}
 	}

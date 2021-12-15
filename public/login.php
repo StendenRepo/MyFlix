@@ -18,7 +18,7 @@ showHead("login", ['assets/css/login.css']);
 
         <div class="loginForm">
             <form method="post" action="login.php">
-                <?= $succes; ?>
+				<?= $succes; ?>
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" placeholder="E-mailadress" class="loginInput">
 

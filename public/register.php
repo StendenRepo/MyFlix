@@ -34,5 +34,11 @@ showHead("Register", ['assets/css/register.css']);
                 <input type="submit" name="submit" value="Register">
             </div>
         </form>
+
+        <div class="registerLink">
+            <p>Do you already have an account</p>
+            <a href="login.php">Log in</a>
+        </div>
+
     </body>
 <?php showFooter(); ?>

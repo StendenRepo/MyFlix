@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `company`
     `iban`       VARCHAR(35) UNIQUE NOT NULL,
     `address`    VARCHAR(100)       NOT NULL,
     `city`       VARCHAR(35)        NOT NULL,
-    primary key (id)
+    primary key (`id`)
 ) ENGINE = INNODB;
 
 -- ---------------------------
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `film`
     `path`      VARCHAR(40) NOT NULL,
     `genreId`   INT         NOT NULL,
     `length`    TIME        NOT NULL,
-    name        VARCHAR(30),
+    `name`      VARCHAR(30) NOT NULL,
     `accepted`  TINYINT(1) DEFAULT 0,
     PRIMARY KEY (`id`)
 ) ENGINE = INNODB;

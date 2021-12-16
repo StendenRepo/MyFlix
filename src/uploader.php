@@ -48,6 +48,8 @@ function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName,
             $stmt = "INSERT INTO `film` (id,accountId,path,thumbnail,genreId,length,name,accepted)
             VALUES('', '$accountId', '$videoPath', '$imgPath', '$genre', '', '$title', '')";
             mysqli_query($conn, $stmt);
+
+            header("Location: index.php");
         }
     }
 }

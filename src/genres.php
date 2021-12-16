@@ -21,8 +21,8 @@ function getGenres(){
 
     // Displays the results
     foreach($combined as $id => $genre){
-        ?><input type="radio" id="<?php echo $genre ?>" name="genre" value="<?php echo $id; ?>">
-        <label for="<?php echo $genre; ?>"><?php echo $genre; ?></label><?php
+        ?><input type="radio" id="<?= $genre ?>" name="genre" value="<?= $id; ?>">
+        <label for="<?= $genre; ?>"><?= $genre; ?></label><?php
     }
 }
 ?>

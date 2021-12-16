@@ -1,11 +1,12 @@
 <?php
 require_once "../src/config.php";
 require_once "../src/genres.php";
+require_once "../src/uploader.php";
 showHead("Upload Video", ['assets/css/uploadvideo.css']);
 ?>
 <body>
     <?php showHeader() ?>
-    <form action="../src/uploader.php" method="post" enctype="multipart/form-data">  
+    <form action="" method="post" enctype="multipart/form-data">  
         <label for="title">Title</label>
         <input type="text" id="title" name="title">
 

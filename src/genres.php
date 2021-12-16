@@ -1,5 +1,7 @@
 <?php
 function getGenres(){
+
+    // Database connection and SELECT statement
     $conn = dbConnect();
     $idStmt = mysqli_query($conn, "SELECT `id` FROM `genre`");
     $genreStmt = mysqli_query($conn, "SELECT `name` FROM `genre`");

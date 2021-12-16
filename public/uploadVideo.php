@@ -6,7 +6,7 @@ showHead("Upload Video", ['assets/css/uploadvideo.css']);
 ?>
 <body>
     <?php showHeader() ?>
-    <form action="uploadVideo.php" method="post" enctype="multipart/form-data">  
+    <form action="<?= htmlentities($_SERVER["PHP_SELF"]) ?>" method="post" enctype="multipart/form-data">  
         <label for="title">Title</label>
         <input type="text" id="title" name="title">
 
@@ -16,14 +16,13 @@ showHead("Upload Video", ['assets/css/uploadvideo.css']);
         <label for="thumbnail">Thumbnail file</label>
         <input type="file" name="thumbnail">
 
-        <?php getGenres(); ?>
+        <?php foreach(getGenres() as $genre): ?>
+            <input type="radio" name="genre" id="<?= $genre["id"]?>" value="<?= $genre["id"]?>">
+            <label for="<?= $genre["id"] ?>"><?= $genre["name"] ?></label>
+        <?php endforeach ?>
 
         <input type="submit" name="submit_video" value="Upload">
     </form>
-
-    <?php 
-        if(isset($_GET["error"])){ ?>
-            <p><?=$_GET["error"]?></p>
-    <?php } ?>
+    <p><?= $_GET["error"] ?? "" ?></p>
 </body>
 <?php showFooter(); ?>

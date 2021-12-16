@@ -50,6 +50,7 @@ function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName,
             mysqli_query($conn, $stmt);
 
             header("Location: index.php");
+            die();
         }
     }
 }
@@ -81,26 +82,32 @@ function validateUpload($title, $type, $error, $genre, $imgError, $imgType){
                             // sends error message's
                             $incImgType = "Make sure to give upload a .png, .jpg image file.";
                             header("Location: uploadVideo.php?error=$incImgType");
+                            die();
                         }
                     } else{
                         $imgError = "There was an issue with uploading you thumbnail, try again.";
                         header("Location: uploadVideo.php?error=$imgError");
+                        die();
                     }
                 } else{
                     $noGenre = "Make sure to select a genre.";
                     header("Location: uploadVideo.php?error=$noGenre");
+                    die();
                 }
             } else{
                 $noTitle = "Make sure to give your video a title.";
                 header("Location: uploadVideo.php?error=$noTitle");
+                die();
             }
         } else{
             $incType = "Make sure that you upload a .mp4, .webm, .avi or .flv video file.";
             header("Location: uploadVideo.php?error=$incType");
+            die();
         }
     } else{
         $fileError = "There was an issue with uploading your video, try again.";
         header("Location: uploadVideo.php?error=$fileError");
+        die();
     }
 }
 

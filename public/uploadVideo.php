@@ -6,7 +6,7 @@ showHead("Upload Video", ['assets/css/uploadvideo.css']);
 ?>
 <body>
     <?php showHeader() ?>
-    <form action="" method="post" enctype="multipart/form-data">  
+    <form action="uploadVideo.php" method="post" enctype="multipart/form-data">  
         <label for="title">Title</label>
         <input type="text" id="title" name="title">
 

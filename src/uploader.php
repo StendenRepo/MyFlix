@@ -1,7 +1,5 @@
 <?php
 
-require_once("config.php");
-
 if(isset($_POST["submit_video"]) && isset($_FILES["video"])){
 
     $conn = dbConnect();
@@ -36,6 +34,9 @@ if(isset($_POST["submit_video"]) && isset($_FILES["video"])){
     if(validateUpload($title, $videoType, $videoError, $genre, $imgError, $imgType)){
         uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName, $imgPath, $genre, $conn);
     }
+    
+    mysqli_stmt_close($stmt);
+    dbClose($db);
 }
 
 function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName, $imgPath, $genre, $conn){

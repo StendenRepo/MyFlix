@@ -19,5 +19,8 @@ function getGenres(){
         ?><input type="radio" id="<?= $genre ?>" name="genre" value="<?= $id; ?>">
         <label for="<?= $genre; ?>"><?= $genre; ?></label><?php
     }
+
+    mysqli_stmt_close($stmt);
+    dbClose($db);
 }
 ?>

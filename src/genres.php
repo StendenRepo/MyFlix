@@ -3,17 +3,12 @@ function getGenres(){
 
     // Database connection and SELECT statement
     $conn = dbConnect();
-    $idStmt = mysqli_query($conn, "SELECT `id` FROM `genre`");
-    $genreStmt = mysqli_query($conn, "SELECT `name` FROM `genre`");
+    $stmt = mysqli_query($conn, "SELECT `id`, `name` FROM `genre`");
 
-    // Puts ids in array
-    while($idRow = mysqli_fetch_array($idStmt)){
-        $ids[] = $idRow["id"];
-    }
-
-    // Puts genres in array
-    while($genreRow = mysqli_fetch_array($genreStmt)){
-        $genres[] = $genreRow["name"];
+    // Puts statement into 2 arrays
+    while($row = mysqli_fetch_array($stmt)){
+        $genres[] = $row["name"];
+        $ids[] = $row["id"];
     }
 
     // Combines both arrays into one

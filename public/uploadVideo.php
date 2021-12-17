@@ -23,6 +23,8 @@ showHead("Upload Video", ['assets/css/uploadvideo.css']);
 
         <input type="submit" name="submit_video" value="Upload">
     </form>
-    <p><?= $_GET["error"] ?? "" ?></p>
+
+    <!-- shorthand for isset -->
+    <p><?= htmlspecialchars($_GET["error"] ?? ""); ?></p>
 </body>
 <?php showFooter(); ?>

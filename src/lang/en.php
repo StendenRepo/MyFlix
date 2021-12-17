@@ -48,3 +48,11 @@ $lang["passwordReq"] = "Password must be at least 8 characters long and contain 
 $lang["exceedUserLength"] = "Username cannot exceed 20 characters";
 $lang["exceedEmailLength"] = "Email cannot exceed 64 characters";
 $lang["emailExists"] = "Email already exist";
+
+// Upload page
+$lang["fileError"] = "There was an issue with uploading your video, try again.";
+$lang["incType"] = "Make sure that you upload a .mp4, .webm, .avi or .flv video file.";
+$lang["noTitle"] = "Make sure to give your video a title.";
+$lang["noGenre"] = "Make sure to select a genre.";
+$lang["imgError"] = "There was an issue with uploading you thumbnail, try again.";
+$lang["incImgType"] = "Make sure to give upload a .png, .jpg image file.";

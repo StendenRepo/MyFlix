@@ -4,6 +4,8 @@ function getGenres(){
     $conn = dbConnect();
     $stmt = mysqli_query($conn, "SELECT `id`, `name` FROM `genre`");
 
+
+    // puts data into array
     $data = [];
     while($row = mysqli_fetch_assoc($stmt)){
         array_push($data, $row);

@@ -20,7 +20,8 @@ if (in_array(null, $inputArray)) {
 		if (empty($value))
 			$errors[$key] = $lang["required"];
 	}
-	// User has not filled in all fields no point in going further.
+
+    // User has not filled in all fields no point in going further.
 	return;
 }
 

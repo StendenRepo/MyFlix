@@ -32,5 +32,12 @@ require_once __DIR__ . '/database.php';
 // Load the auth
 require_once __DIR__ . '/auth.php';
 
+// Load the Authentication for routes
+require_once __DIR__ . '/authHandler.php';
+
 // Load the templates
 require_once __DIR__ . '/templates/index.php';
+
+
+//Start the authentication check
+authHandler();

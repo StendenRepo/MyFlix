@@ -4,10 +4,10 @@ include_once "../utils/forms.php";
 
 global $lang;
 $inputArray = filter_input_array(INPUT_POST, [
-	"username" => FILTER_SANITIZE_STRING,
-	"email" => FILTER_VALIDATE_EMAIL,
-	"pw" => FILTER_SANITIZE_STRING,
-	"confirm-pw" => FILTER_SANITIZE_STRING,
+    "username" => FILTER_SANITIZE_STRING,
+    "email" => FILTER_SANITIZE_EMAIL,
+    "pw" => FILTER_SANITIZE_STRING,
+    "confirm-pw" => FILTER_SANITIZE_STRING,
 ], true);
 
 
@@ -23,20 +23,24 @@ if (in_array(null, $inputArray)) {
 
     // User has not filled in all fields no point in going further.
 	return;
+
 }
 
 
 if (!checkStrLength($inputArray["username"], 20))
-	$errors["username"] = $lang["exceedUsernameLength"];
+    $errors["username"] = $lang["exceedUserLength"];
 
 if (!checkStrLength($inputArray["email"], 64))
-	$errors["email"] = $lang["exceedEmailLength"];
+    $errors["email"] = $lang["exceedEmailLength"];
+
+if (!filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL))
+    $errors["email"] = $lang["emailNotValid"];
 
 if (!isValidPassword($inputArray["pw"]))
-	$errors["pw"] = $lang["passwordReq"];
+    $errors["pw"] = $lang["passwordReq"];
 
 if (!didPasswordMatch($inputArray["pw"], $inputArray["confirm-pw"]))
-	$errors["confirmPw"] = $lang["wrongPassword"];
+    $errors["confirmPw"] = $lang["passwordMatch"];
 
 if (isset($errors)) return;
 

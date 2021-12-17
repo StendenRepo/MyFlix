@@ -5,6 +5,7 @@
  * @param $id
  * @return bool|array|null
  */
+
 function getVideo($id): bool|array|null {
 
     if (!is_numeric($id)) {
@@ -25,6 +26,5 @@ function getVideo($id): bool|array|null {
     mysqli_stmt_execute($stmt);
 
     $res = mysqli_stmt_get_result($stmt);
-
     return mysqli_fetch_array($res, MYSQLI_ASSOC);
 }

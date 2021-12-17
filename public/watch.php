@@ -3,6 +3,8 @@ require_once __DIR__ . '/../src/config.php';
 require_once __DIR__ . '/../src/watch.php';
 
 $videoData = false;
+// TODO CHANGE VALUE OF MODERATION BASED ON ROLE
+$moderation = false;
 
 if (!empty($_GET['v'])) {
     $videoData = getVideo($_GET['v']);
@@ -10,6 +12,7 @@ if (!empty($_GET['v'])) {
 if (!$videoData) {
     showHead($lang['videoNotFound'], ["assets/css/video.css"]);
 } else {
+    // Show header with the video title in it
     showHead(htmlspecialchars($videoData['name']), ["assets/css/video.css"]);
 }
 ?>
@@ -19,8 +22,44 @@ if (!$videoData) {
             <?php if (!$videoData) { ?>
                 <h1><?= $lang['videoNotFound'] ?></h1>
             <?php } else { ?>
-                <h1><?= htmlspecialchars($videoData['name']) ?></h1>
-                <h2><?= htmlspecialchars($videoData['studioName']) ?></h2>
+                <div class="video-header">
+                    <div class="video-info">
+                        <h1><?= htmlspecialchars($videoData['name']) ?></h1>
+                        <h2><?= htmlspecialchars($videoData['studioName']) ?></h2>
+                    </div>
+                    <div class="moderation">
+                        <?php if ($moderation) { ?>
+                            <!-- Approve icon-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
+                                <g transform="translate(-1495 -159)">
+                                    <rect rx="10" width="54" height="54" fill="var(--green)"
+                                          transform="translate(1495 159)"/>
+                                    <g transform="translate(1511.542 178.44)">
+                                        <line x1="12" y2="22" fill="none" stroke-width="7" stroke-linecap="round"
+                                              stroke="var(--background)" transform="translate(9.458 -4.44)"/>
+                                        <line x1="9" y1="9" fill="none" stroke-width="7" stroke-linecap="round"
+                                              stroke="var(--background)" transform="translate(0.458 8.56)"/>
+                                    </g>
+                                </g>
+                            </svg>
+                            <!-- Denied icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
+                                <g transform="translate(-1566 -159)">
+                                    <rect rx="10" width="54" height="54" fill="var(--red)"
+                                          transform="translate(1566 159)"/>
+                                    <g transform="translate(1585.258 175.243)">
+                                        <line x1="15.293" y2="21.657" fill="none" stroke-width="7"
+                                              stroke-linecap="round" stroke="var(--background)"/>
+                                        <line x2="15.341" y2="21.657" fill="none" stroke-width="7"
+                                              stroke-linecap="round" stroke="var(--background)"/>
+                                    </g>
+                                </g>
+                            </svg>
+
+                        <?php } ?>
+                    </div>
+                </div>
+
                 <div class="video-player">
                     <video controls class="video" id="video" preload="metadata">
                         <source src="<?= htmlspecialchars($videoData['path']) ?>">

@@ -42,6 +42,7 @@ $lang["bankPlaceholder"] = "Enter your IBAN here";
 $lang["submit"] = "Complete registration";
 $lang["existingUser"] = "Already have an account?";
 $lang["loginLink"] = "Log in";
+$lang["passwordMatch"] = "Password do not match, try again.";
 
 // Error message
 $lang["passwordReq"] = "Password must be at least 8 characters long and contain atleast 1 lower case, 1 upper case and 1 numbers";
@@ -51,5 +52,4 @@ $lang["emailExists"] = "Email already exist";
 
 // watch.php
 $lang["videoNotFound"] = "Video not found";
-
-global $lang;
+$lang["emailNotValid"] = "This email is not valid";

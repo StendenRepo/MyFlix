@@ -10,6 +10,7 @@ $conn = dbConnect();
 //query
 $sql = "SELECT *, genre.name AS genreName 
         FROM genre JOIN film ON genre.id = film.genreId 
+        WHERE film.accepted = 1
         ORDER BY genreName, film.name";
 
 //get results

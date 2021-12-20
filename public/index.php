@@ -34,26 +34,15 @@ foreach ($data as $row) {
         //loop through array and get the data.
 		foreach ($genres as $genre => $items) {
             //check if there are enough videos in the genre.
-			if (count($items) > 4) {
-				echo "<h1>" . $genre . "</h1>";
-				echo "<div class='images'>";
-                //takes 5 videos from the genre
-				for ($id = 0; $id < 5; $id++) {
-					echo "<a href='watch.php?v=" . $items[$id]['id'] . "'>
+			$amount = min(5, count($items));
+			echo "<h1>" . $genre . "</h1>";
+			echo "<div class='images'>";
+			//takes 5 videos from the genre
+			for ($id = 0; $id < $amount; $id++) {
+				echo "<a href='watch.php?v=" . $items[$id]['id'] . "'>
 					<img src='" . $items[$id]['thumbnail'] . "' alt='" . $items[$id]['name'] . "'></a>";
-				}
-				echo "</div>";
-			}else{
-                $amount = count($items);
-				echo "<h1>" . $genre . "</h1>";
-				echo "<div class='images'>";
-				//takes 5 videos from the genre
-				for ($id = 0; $id < $amount; $id++) {
-					echo "<a href='watch.php?v=" . $items[$id]['id'] . "'>
-					<img src='" . $items[$id]['thumbnail'] . "' alt='" . $items[$id]['name'] . "'></a>";
-				}
-				echo "</div>";
             }
+			echo "</div>";
 		}
 		?>
 

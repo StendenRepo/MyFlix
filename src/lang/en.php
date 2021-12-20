@@ -49,4 +49,7 @@ $lang["passwordReq"] = "Password must be at least 8 characters long and contain 
 $lang["exceedUserLength"] = "Username cannot exceed 20 characters";
 $lang["exceedEmailLength"] = "Email cannot exceed 64 characters";
 $lang["emailExists"] = "Email already exist";
+
+// watch.php
+$lang["videoNotFound"] = "Video not found";
 $lang["emailNotValid"] = "This email is not valid";

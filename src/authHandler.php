@@ -4,6 +4,7 @@ $webRoutes = [
     "index" => null,
     "login" => null,
     "register" => null,
+    "installdb" => null,
     "watch" => 0
 ];
 

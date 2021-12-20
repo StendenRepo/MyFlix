@@ -52,4 +52,6 @@ $lang["emailExists"] = "Email already exist";
 
 // watch.php
 $lang["videoNotFound"] = "Video not found";
+$lang["videoNoStudio"] = "The studio that uploaded this video does not exist anymore";
+$lang["videoNoStudioTitle"] = "Film studio not found";
 $lang["emailNotValid"] = "This email is not valid";

@@ -35,3 +35,7 @@ img {
 .registerText {
     text-align: center;
 }
+
+#reset {
+    color: var(--text-gray);
+}

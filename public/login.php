@@ -24,6 +24,7 @@ showHead("login", ['assets/css/login.css']);
 
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Password" class="loginInput">
+                <a id="reset" href="passwordreset.php"><?= $lang["resetPassword"] ?></a>
 
 				<?= $error; ?>
 

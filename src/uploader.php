@@ -1,12 +1,11 @@
 <?php
 
-if(isset($_POST["submit_video"])){
+if (isset($_POST["submitVideo"])) {
     $video = $_FILES["video"];
     $img = $_FILES["thumbnail"];
     $title = $_POST["title"];
 
     $accountId = $_SESSION['userId'];
-
     getFileData("video", $video);
 
     getFileData("img", $img);
@@ -31,7 +30,7 @@ function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName,
         if(move_uploaded_file($imgTmpName, $imgPath)){
             
             // prepares statment
-            $stmt = mysqli_prepare($conn, "INSERT INTO `film` (accountId, path, thumbnail, genreId, length, name) VALUES(?, ?, ?, ?, ?, ?)");
+            $stmt = mysqli_prepare($conn, "INSERT INTO film (accountId, path, thumbnail, genreId, length, name) VALUES(?, ?, ?, ?, ?, ?)");
 
             // binding parameters and executing statement
             if(!mysqli_stmt_bind_param($stmt, "ississ", $accountId, $videoPath, $imgPath, $genre, $length, $title) ||

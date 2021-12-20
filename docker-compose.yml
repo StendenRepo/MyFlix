@@ -7,6 +7,7 @@ services:
       - &env .env
     volumes:
       - ./:/var/www
+      - ./config/custom.php.ini:/usr/local/etc/php/conf.d/php.ini
     restart: unless-stopped
 
   nginx:

@@ -47,7 +47,7 @@ function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName,
             mysqli_stmt_close($stmt);
             dbClose($conn);
 
-            // header("Location: index.php");
+            header("Location: index.php");
             die();
         }
     }

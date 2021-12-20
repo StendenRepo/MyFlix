@@ -18,12 +18,7 @@ if(isset($_POST["submit_video"])){
     $videoPath = "../public/assets/video/$videoSaveName.$videoExtension";
     $imgPath = "../public/assets/thumbnail/$imgSaveName.$imgExtension";
 
-    echo "<pre>";
-    var_dump($video);
-    var_dump($img);
-    echo "</pre>";
-
-    if(validateUpload($title, $videoType, $videoError, $genre, $imgError, $imgType)){
+    if(validateUpload($title, $videoType, $videoError, $genre, $imgError, $imgType , $video, $img)){
         uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName, $imgPath, $genre, $length);
     }
 }
@@ -53,12 +48,24 @@ function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName,
     }
 }
 
-function validateUpload($title, $type, $error, $genre, $imgError, $imgType){
+function validateUpload($title, $type, $error, $genre, $imgError, $imgType, $video, $img){
     global $lang;
-    
+
+    // checks if a video was submitted
+    if(empty($video)){
+        header("Location: uploadVideo.php?error=" . $lang['noVideo']);
+        die();
+    }
+
+    // checks if an image was submitted
+    if(empty($img)){
+        header("Location: uploadVideo?error=" . $lang['noThumbnail']);
+        die();
+    }
+
     // checks for errors while uploading video's
     if($error !== 0){
-        // header("Location: uploadVideo.php?error=" . $lang['fileError']);
+        header("Location: uploadVideo.php?error=" . $lang['fileError']);
         die();
     }
 

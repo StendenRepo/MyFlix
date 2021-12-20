@@ -21,7 +21,7 @@ showHead("Upload Video", ['assets/css/uploadvideo.css']);
             <label for="<?= $genre["id"] ?>"><?= $genre["name"] ?></label>
         <?php endforeach ?>
 
-        <input type="submit" name="submit_video" value="Upload">
+        <input type="submit" name="submitVideo" value="Upload">
     </form>
 
     <!-- shorthand for isset -->

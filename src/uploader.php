@@ -40,7 +40,7 @@ function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName,
 
             mysqli_stmt_close($stmt);
             dbClose($conn);
-            
+
             global $lang;
             header("Location: uploadvideo.php?upload=" . $lang["success"]);
             die();
@@ -50,18 +50,6 @@ function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName,
 
 function validateUpload($title, $type, $error, $genre, $imgError, $imgType, $video, $img){
     global $lang;
-
-    // checks if a video was submitted
-    if(empty($video)){
-        header("Location: uploadVideo.php?error=" . $lang['noVideo']);
-        die();
-    }
-
-    // checks if an image was submitted
-    if(empty($img)){
-        header("Location: uploadVideo?error=" . $lang['noThumbnail']);
-        die();
-    }
 
     // checks for errors while uploading video's
     if($error !== 0){

@@ -15,8 +15,8 @@ if(isset($_POST["submit_video"])){
 
     $length = "5";
 
-    $videoPath = "../public/assets/video/$videoSaveName.$videoExtension";
-    $imgPath = "../public/assets/thumbnail/$imgSaveName.$imgExtension";
+    $videoPath = "assets/video/$videoSaveName.$videoExtension";
+    $imgPath = "assets/thumbnail/$imgSaveName.$imgExtension";
 
     if(validateUpload($title, $videoType, $videoError, $genre, $imgError, $imgType , $video, $img)){
         uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName, $imgPath, $genre, $length);
@@ -41,8 +41,9 @@ function uploadVideo($videoTmpName, $videoPath, $accountId, $title, $imgTmpName,
 
             mysqli_stmt_close($stmt);
             dbClose($conn);
-
-            header("Location: index.php");
+            
+            global $lang;
+            header("Location: uploadvideo.php?upload=" . $lang["success"]);
             die();
         }
     }

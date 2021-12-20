@@ -58,3 +58,4 @@ $lang["imgError"] = "There was an issue with uploading you thumbnail, try again.
 $lang["incImgType"] = "Make sure to give upload a .png, .jpg image file.";
 $lang['noVideo'] = "Make sure to select a video";
 $lang['noImg'] = "Make sure to select an image";
+$lang["success"] = "Video was succesfully uploaded!";

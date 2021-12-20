@@ -26,5 +26,6 @@ showHead("Upload Video", ['assets/css/uploadvideo.css']);
 
     <!-- shorthand for isset -->
     <p><?= htmlspecialchars($_GET["error"] ?? ""); ?></p>
+    <p><?= htmlspecialchars($_GET["upload"] ?? ""); ?></p>
 </body>
 <?php showFooter(); ?>

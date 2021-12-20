@@ -9,6 +9,7 @@
     --text-white: white;
     --border-radius: 10px;
     --header-height: 100px;
+    --text-error: #ff6b6b;
 }
 
 /* Reset the CSS and set the font */
@@ -87,6 +88,7 @@ input:not([type="button"]):focus, textarea:focus, select:focus {
 .red-btn, .red-btn-filled, input[type=submit], input[type=button], button {
     height: 45px;
     cursor: pointer;
+    text-align: center;
     text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
@@ -107,7 +109,7 @@ form {
 
 form input, form textarea, form select {
     display: block;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 /* Inherit fonts for inputs and buttons */

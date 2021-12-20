@@ -14,7 +14,14 @@ $lang["searchPlaceholder"] = "search";
 $lang["accountButton"] = "My account";
 $lang["logout"] = "Log out";
 
+$lang["login"] = "Log in";
+$lang["register"] = "Register";
+
 // Login
+$lang["loginHeader"] = "Login to your Account";
+$lang["loginNewUser"] = "New to MyFlix?";
+$lang["loginFillAllFields"] = "Please fill in everything";
+$lang["loginWrongCredentials"] = "Wrong information";
 $lang["usernameLabel"] = "Username";
 $lang["passwordLabel"] = "Password";
 $lang["UsernamePlaceholder"] = "Enter your username";
@@ -24,8 +31,10 @@ $lang["resetPassword"] = "Forgot your password?";
 $lang["wrongPassword"] = "Username and password do not match, please try again.";
 $lang["newUser"] = "New to MyFlix?";
 $lang["registerLink"] = "register";
+$lang["registerSuccess"] = "You have successfully made an account, please log in.";
 
 // Registration
+$lang["registerHeader"] = "Register your Account";
 $lang["required"] = "This field is required";
 $lang["confirmPasswordLabel"] = "Confirm Password";
 $lang["confirmPasswordPlaceholder"] = "Confirm your password";
@@ -39,10 +48,11 @@ $lang["cityLabel"] = "city";
 $lang["cityPlaceholder"] = "Enter your city";
 $lang["bankLabel"] = "Bank account (IBAN)";
 $lang["bankPlaceholder"] = "Enter your IBAN here";
-$lang["submit"] = "Complete registration";
+$lang["registerSubmit"] = "Make Account";
 $lang["existingUser"] = "Already have an account?";
 $lang["loginLink"] = "Log in";
 $lang["passwordMatch"] = "Password do not match, try again.";
+$lang["registerAlreadyAccount"] = "Do you already have an account?";
 
 // Error message
 $lang["passwordReq"] = "Password must be at least 8 characters long and contain atleast 1 lower case, 1 upper case and 1 numbers";

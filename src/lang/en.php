@@ -48,3 +48,8 @@ $lang["passwordReq"] = "Password must be at least 8 characters long and contain 
 $lang["exceedUserLength"] = "Username cannot exceed 20 characters";
 $lang["exceedEmailLength"] = "Email cannot exceed 64 characters";
 $lang["emailExists"] = "Email already exist";
+
+// Password Reset
+$lang["resetPw"] = "In order to reset your password, please contact MyFlix administration via the E-mail address bellow.";
+$lang["returnTxt"] = "Return to login";
+$lang["return"] = "Return";

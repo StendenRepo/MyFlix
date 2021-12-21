@@ -57,6 +57,50 @@ function getUserByEmail(string $email): bool|array
     return mysqli_fetch_assoc($result);
 }
 
+
+function getCurrentUserId()
+{
+    if (!isset($_SESSION["userId"]))
+        return false;
+
+    return $_SESSION["userId"];
+}
+
+/**
+ * @param int $userId
+ * @return false|int
+ */
+function getUserAccountLevel(int $userId): bool|int
+{
+    $db = dbConnect();
+    $stmt = mysqli_prepare($db, "SELECT accountLevel FROM account where id = ?");
+
+    if (!mysqli_stmt_bind_param($stmt, "i", $userId) || !mysqli_stmt_execute($stmt)) {
+        die("Something went wrong with preparing the statements \n" . mysqli_error($db));
+    }
+
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_free_result($stmt);
+    mysqli_stmt_close($stmt);
+    dbClose($db);
+
+    if (mysqli_num_rows($result) === 0)
+        return false;
+
+    return mysqli_fetch_assoc($result)["accountLevel"];
+}
+
+/**
+ * @return bool returns user id if the user is logged in else returns false.
+ */
+function isUserLoggedIn(): bool
+{
+    if (!isset($_SESSION["userId"]))
+        return false;
+
+    return true;
+}
+
 /**
  * hash password with the bcrypt algorithm
  *
@@ -67,4 +111,3 @@ function hashPassword(string $password): string
 {
     return password_hash($password, PASSWORD_BCRYPT);
 }
-

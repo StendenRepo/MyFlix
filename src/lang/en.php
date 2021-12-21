@@ -42,12 +42,14 @@ $lang["bankPlaceholder"] = "Enter your IBAN here";
 $lang["submit"] = "Complete registration";
 $lang["existingUser"] = "Already have an account?";
 $lang["loginLink"] = "Log in";
+$lang["passwordMatch"] = "Password do not match, try again.";
 
 // Error message
 $lang["passwordReq"] = "Password must be at least 8 characters long and contain atleast 1 lower case, 1 upper case and 1 numbers";
 $lang["exceedUserLength"] = "Username cannot exceed 20 characters";
 $lang["exceedEmailLength"] = "Email cannot exceed 64 characters";
 $lang["emailExists"] = "Email already exist";
+
 
 // Upload page
 $lang["fileError"] = "There was an issue with uploading your video, try again.";
@@ -59,3 +61,8 @@ $lang["incImgType"] = "Make sure to give upload a .png, .jpg image file.";
 $lang['noVideo'] = "Make sure to select a video";
 $lang['noImg'] = "Make sure to select an image";
 $lang["success"] = "Video was succesfully uploaded!";
+
+// watch.php
+$lang["videoNotFound"] = "Video not found";
+$lang["emailNotValid"] = "This email is not valid";
+

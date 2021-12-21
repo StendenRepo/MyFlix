@@ -10,12 +10,12 @@ showHead("Reset Password", ['assets/css/pwreset.css']);
                 </a>
             </div>
             <div id="resetMsg">
-                <p id="msg"><?= $lang["resetPw"] ?></h1>
+                <p id="msg"><?= $lang["resetPw"] ?></p>
                 <h1><a href="mailto:administrationr@myflix.com">administration@myflix.com</a></h1>
             </div>
             
-            <a href="login.php"><?= $lang["returnTxt"] ?><a>
-                
+            <a href="login.php"><?= $lang["returnTxt"] ?></a>
+
         </div>
     </body>
 <?php showFooter(); ?>

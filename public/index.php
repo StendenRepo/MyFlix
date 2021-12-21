@@ -22,31 +22,31 @@ $genres = [];
 
 //give nested array a name
 foreach ($data as $row) {
-    $genres[$row['genreName']][] = $row;
+	$genres[$row['genreName']][] = $row;
 }
 
 ?>
     <body>
-        <?php showHeader(); ?>
-        <div class="content">
-            <?php
-            //loop through array and get the data.
-            foreach ($genres as $genre => $items) {
-                //check if there are enough videos in the genre.
-                $amount = min(5, count($items));
-                echo "<div class='genre'>";
-                echo "<h1>" . $genre . "</h1>";
-                echo "<div class='images'>";
-                //takes 5 videos from the genre
-                for ($id = 0; $id < $amount; $id++) {
-                    echo "<a href='watch.php?v=" . $items[$id]['id'] . "'>
+	<?php showHeader(); ?>
+    <div class="content">
+		<?php
+		//loop through array and get the data.
+		foreach ($genres as $genre => $items) {
+			//check if there are enough videos in the genre.
+			$amount = min(5, count($items));
+			echo "<div class='genre'>";
+			echo "<h1>" . $genre . "</h1>";
+			echo "<div class='images'>";
+			//takes 5 videos from the genre
+			for ($id = 0; $id < $amount; $id++) {
+				echo "<a href='watch.php?v=" . $items[$id]['id'] . "'>
 					<img src='" . $items[$id]['thumbnail'] . "' alt='" . $items[$id]['name'] . "'></a>";
-                }
-                echo "</div>";
-                echo "</div>";
-            }
-            ?>
-        </div>
+			}
+			echo "</div>";
+			echo "</div>";
+		}
+		?>
+    </div>
     </body>
 <?php
 showFooter();

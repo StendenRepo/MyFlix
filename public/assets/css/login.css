@@ -35,7 +35,6 @@ img {
 
 #error  {
     color: var(--red);
-    /*margin-left: 20px;*/
     text-align: center;
     margin-bottom: 20px;
 }

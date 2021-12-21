@@ -1,6 +1,15 @@
+"use strict";
+
+// Waits until the page if fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-    const video = document.getElementById('video')
+
+    // Finds the video on the page
+    const video = document.getElementById('video');
+    if (!video) return
+
+    // Finds the start button on the page
     const startButton = document.getElementById('start');
+    // Checks if the browser can play the video
     const videoWorks = !!document.createElement('video').canPlayType;
     if (videoWorks) {
         video.controls = false;

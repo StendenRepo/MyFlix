@@ -1,9 +1,11 @@
 <?php
 require_once "../src/config.php";
 require_once "../src/registration.php";
+
+// Makes the translation global accessible
 global $lang;
 
-showHead("Register", ['assets/css/auth.css']);
+showHead($lang["register"], ['assets/css/auth.css']);
 ?>
     <body>
         <a href="index.php">

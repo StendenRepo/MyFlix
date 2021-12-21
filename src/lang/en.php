@@ -14,7 +14,7 @@ $lang["searchPlaceholder"] = "search";
 $lang["accountButton"] = "My account";
 $lang["logout"] = "Log out";
 
-$lang["login"] = "Log in";
+$lang["login"] = "Login";
 $lang["register"] = "Register";
 
 // Login
@@ -26,7 +26,6 @@ $lang["usernameLabel"] = "Username";
 $lang["passwordLabel"] = "Password";
 $lang["UsernamePlaceholder"] = "Enter your username";
 $lang["passwordPlaceholder"] = "Enter your password";
-$lang["login"] = "Log in";
 $lang["resetPassword"] = "Forgot your password?";
 $lang["wrongPassword"] = "Username and password do not match, please try again.";
 $lang["newUser"] = "New to MyFlix?";
@@ -50,7 +49,6 @@ $lang["bankLabel"] = "Bank account (IBAN)";
 $lang["bankPlaceholder"] = "Enter your IBAN here";
 $lang["registerSubmit"] = "Make Account";
 $lang["existingUser"] = "Already have an account?";
-$lang["loginLink"] = "Log in";
 $lang["passwordMatch"] = "Password do not match, try again.";
 $lang["registerAlreadyAccount"] = "Do you already have an account?";
 

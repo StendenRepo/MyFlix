@@ -5,7 +5,11 @@ $password = "";
 $error = "";
 $succes = "";
 require_once "../src/login.php";
-showHead("Login", ['assets/css/auth.css']);
+
+// Makes the translation global accessible
+global $lang;
+
+showHead($lang["login"], ['assets/css/auth.css']);
 ?>
     <body>
         <div class="flex-container">

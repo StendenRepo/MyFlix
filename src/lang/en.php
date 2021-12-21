@@ -53,3 +53,8 @@ $lang["emailExists"] = "Email already exist";
 // watch.php
 $lang["videoNotFound"] = "Video not found";
 $lang["emailNotValid"] = "This email is not valid";
+
+// logout
+$lang["logoutSuccess"] = "You have been successfully logged out!";
+$lang["returnHome"] = "Return to home";
+$lang["returnLogin"] = "Return to login";

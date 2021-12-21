@@ -57,6 +57,15 @@ function getUserByEmail(string $email): bool|array
     return mysqli_fetch_assoc($result);
 }
 
+
+function getCurrentUserId()
+{
+    if (!isset($_SESSION["userId"]))
+        return false;
+
+    return $_SESSION["userId"];
+}
+
 /**
  * @param int $userId
  * @return false|int
@@ -89,7 +98,7 @@ function isUserLoggedIn(): bool
     if (!isset($_SESSION["userId"]))
         return false;
 
-    return $_SESSION["userId"];
+    return true;
 }
 
 /**

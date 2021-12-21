@@ -52,7 +52,17 @@ $lang["emailExists"] = "Email already exist";
 
 
 // Upload page
-$lang["fileError"] = "There was an issue with uploading your video, try again.";
+$lang["uploadVideo"] = "Upload Video";
+$lang["fileError"] = [
+    'There is no error, the file uploaded with success',
+    'The uploaded file exceeds the upload_max_filesize directive in php.ini',
+    'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
+    'The uploaded file was only partially uploaded',
+    'No file was uploaded',
+    'Missing a temporary folder',
+    'Failed to write file to disk.',
+    'A PHP extension stopped the file upload.',
+];
 $lang["incType"] = "Make sure that you upload a .mp4, .webm, .avi or .flv video file.";
 $lang["noTitle"] = "Make sure to give your video a title.";
 $lang["noGenre"] = "Make sure to select a genre.";
@@ -60,7 +70,11 @@ $lang["imgError"] = "There was an issue with uploading you thumbnail, try again.
 $lang["incImgType"] = "Make sure to give upload a .png, .jpg image file.";
 $lang['noVideo'] = "Make sure to select a video";
 $lang['noImg'] = "Make sure to select an image";
-$lang["success"] = "Video was succesfully uploaded!";
+$lang["success"] = "Video was successfully uploaded!";
+$lang["uploadPlaceholderError"] = "Could not upload placeholder";
+$lang["uploadVideoError"] = "Could not upload video";
+$lang["uploadVideoLength"] = "Video name is to big or small";
+$lang["genreDoesNotExist"] = "Genre does not exist";
 
 // watch.php
 $lang["videoNotFound"] = "Video not found";

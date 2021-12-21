@@ -20,16 +20,19 @@ body {
 }
 
 #titleContainer {
-    width: 140px;
+    width: 1000px;
     height: 50px;
-    margin: auto;
+    padding-left: 400px;
 }
 
-#button {
-    height: 100px;
-    width: 140px;
-    margin-left: 335px;
-    margin-top: 335px;
+#cancelButton {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+#updateButton {
+    padding-top: 30px;
+    padding-left: 300px;
 }
 
 #myForm {

@@ -84,7 +84,7 @@ function getUserAccountLevel(int $userId): bool|int
 /**
  * @return bool returns user id if the user is logged in else returns false.
  */
-function isUserLoggedIn(): bool
+function isUserLoggedIn(): int
 {
     if (!isset($_SESSION["userId"]))
         return false;

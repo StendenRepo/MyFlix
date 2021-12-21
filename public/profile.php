@@ -1,6 +1,7 @@
 <?php
 require_once "../src/config.php";
 showHead("profile", (['assets/css/profile.css']));
+
 ?>
 
 <!DOCTYPE html>
@@ -11,12 +12,12 @@ showHead("profile", (['assets/css/profile.css']));
             <title>Profile page</title>
         </head>
 
-        <?php require_once './profileConfig.php'; ?>
+        <?php require_once './profileQuery.php'; ?>
 
         <body>
             <div id="profileContainer">
                 <div id = "titleContainer">
-                    <h2 id="profileTitle">Your Profile</h2>
+                    <h2 id="profileTitle">Edit Profile</h2>
                 </div>
 
                 <div id = "formContainer">
@@ -31,14 +32,6 @@ showHead("profile", (['assets/css/profile.css']));
                             <input type="email" id="eMail" name="eMail" value="<?php echo $email; ?>">
                         </div>
                         <div class="inputBox">
-                            <label for="passWord">Password</label>
-                            <input type="password" id="passWord" name="passWord" placeholder="New password">
-                        </div>
-                        <div class="inputBox">
-                            <label for="cPassWord">Confirm password</label>
-                            <input type="password" id="cPassWord" name="cPassWord" placeholder="Re-enter new password">
-                        </div>
-                        <div class="inputBox">
                             <label for="firstName">First name</label>
                             <input type="text" id="firstName" name="firstName" disabled value="<?php echo $firstName; ?>">
                         </div>
@@ -47,42 +40,34 @@ showHead("profile", (['assets/css/profile.css']));
                             <input type="text" id="lastName" name="lastName" disabled value="<?php echo $lastName; ?>">
                         </div>
                         <div class="inputBox">
-                            <label for="companyName">Company name</label>
-                            <input type="text" id="companyName" name="companyName" placeholder="Company name">
+                            <label for="companyName">Studio name</label>
+                            <input type="text" id="studioName" name="studioName" value="<?php echo $studioName; ?>">
                         </div>
                         <div class="inputBox">
                             <label for="address">Address</label>
-                            <input type="text" id="address" name="address" placeholder="Address">
-                        </div>
-                        <div class="inputBox">
-                            <label for="postalCode">Postal Code</label>
-                            <input type="text" id="postalCode" name="postalCode" placeholder="Postal code">
+                            <input type="text" id="address" name="address" value="<?php echo $address; ?>">
                         </div>
                         <div class="inputBox">
                             <label for="city">City</label>
-                            <input type="text" id="city" name="city" placeholder="City">
-                        </div>
-                        <div class="inputBox">
-                            <label for="country">Country</label>
-                            <input type="text" id="country" name="country" placeholder="Country">
+                            <input type="text" id="city" name="city" value="<?php echo $city; ?>">
                         </div>
                         <div class="inputBox">
                             <label for="bankAccount">Bank Account Number</label>
-                            <input type="text" id="bankAccount" name="bankAccount" placeholder="Bank Account Number">
+                            <input type="text" id="bankAccount" name="bankAccount" value="<?php echo $iban; ?>">
                         </div>
-                        <div class="inputBox">
-                            <label for="accountType">Account Type</label>
-                            <select id="accountType" name="accountType">
-                                <option value="viewer">Viewer</option>
-                                <option value="contentCreator">Content Creator</option>
-                            </select>
+                        <div id="updateButton">
+                            <input type="submit" name="update" value="Update Profile">
                         </div>
-                        <div id="button">
-                            <input type="submit" value="Update Profile">
+                        <div id="cancelButton">
+                            <input type="submit" name="cancel" value="Cancel">
                         </div>
                     </form>
                 </div>
             </div>
+
+            <?php
+                require_once './profileUpdate.php';
+            ?>
 
         </body>
     </html>

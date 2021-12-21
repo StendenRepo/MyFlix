@@ -17,13 +17,15 @@ $lang["logout"] = "Log out";
 // Login
 $lang["usernameLabel"] = "Username";
 $lang["passwordLabel"] = "Password";
-$lang["UsernamePlaceholder"] = "Enter your username";
+$lang["placeholderEmail"] = "Enter your email";
 $lang["passwordPlaceholder"] = "Enter your password";
 $lang["login"] = "Log in";
 $lang["resetPassword"] = "Forgot your password?";
 $lang["wrongPassword"] = "Username and password do not match, please try again.";
+$lang["forgotInformation"] = "Please fill in both";
 $lang["newUser"] = "New to MyFlix?";
-$lang["registerLink"] = "register";
+$lang["registerLink"] = "Register";
+$lang["success"] = "You have successfully made an account, please log in.";
 
 // Registration
 $lang["required"] = "This field is required";

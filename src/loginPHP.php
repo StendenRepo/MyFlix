@@ -1,4 +1,5 @@
 <?php
+global $lang;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!empty($_POST["email"]) && !empty($_POST["password"])) {
@@ -22,23 +23,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					header("location: index.php");
 					exit;
 				} else {
-					$error = "wrong information";
+					$error = $lang['wrongPassword'];
 				}
 			}
 		} else {
-			$error = "wrong information";
+			$error = $lang['wrongPassword'];
 		}
 
 		mysqli_stmt_close($stmtLogin);
 		dbClose($conn);
 
 	} else {
-		$error = "please fill in everything";
+		$error = $lang['forgotInformation'];
 	}
 
 	if (!empty($_GET['registration'])) {
 		if ($_GET['registration'] == 'succes') {
-			$succes = "You have succesfully made an account, please log in.";
+			$success = $lang['success'];
 		}
 	}
 

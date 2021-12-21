@@ -13,9 +13,9 @@ showHead("Reset Password", ['assets/css/pwreset.css']);
                 <p id="msg"><?= $lang["resetPw"] ?></h1>
                 <h1><a href="mailto:administrationr@myflix.com">administration@myflix.com</a></h1>
             </div>
-            <div id="return">
-                <a href="login.php"><?= $lang["returnTxt"] ?><a>
-            </div>
+            
+            <a href="login.php"><?= $lang["returnTxt"] ?><a>
+                
         </div>
     </body>
 <?php showFooter(); ?>

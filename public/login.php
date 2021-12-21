@@ -19,14 +19,14 @@ showHead("login", ['assets/css/login.css']);
 
         <div class="loginForm">
             <form method="post" action="login.php">
-				<?= $success; ?>
+                <p id="error"><?= $success; ?><?= $error; ?></p>
                 <label for="email"></label>
-                <input type="email" id="email" name="email" placeholder="<?= $lang['placeholderEmail'] ?>" class="loginInput">
+                <input type="email" id="email" name="email" placeholder="<?= $lang['placeholderEmail'] ?>"
+                       class="loginInput">
 
                 <label for="password"></label>
-                <input type="password" id="password" name="password" placeholder="<?= $lang['passwordPlaceholder'] ?>" class="loginInput">
-
-				<?= $error; ?>
+                <input type="password" id="password" name="password" placeholder="<?= $lang['passwordPlaceholder'] ?>"
+                       class="loginInput">
 
                 <input type="submit" value="<?= $lang['login'] ?>" class="loginButton">
             </form>

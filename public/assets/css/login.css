@@ -18,6 +18,7 @@ body {
 
 .loginInput {
     width: 400px;
+    margin-bottom: 20px;
 }
 
 .loginImg {
@@ -30,8 +31,15 @@ img {
 
 .loginButton {
     width: 400px;
+    margin-top: 30px;
 }
 
 .registerText {
     text-align: center;
+}
+
+#error  {
+    color: var(--red);
+    /*margin-left: 20px;*/
+    /*text-align: center;*/
 }

@@ -1,6 +1,9 @@
 <?php
 require_once "../src/config.php";
-showHead("Reset Password", ['assets/css/pwreset.css']);
+
+global $lang;
+
+showHead($lang["resetPassword"], ['assets/css/pwreset.css']);
 ?>
     <body>
         <div id="container">

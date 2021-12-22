@@ -54,6 +54,7 @@ $lang["emailExists"] = "Email already exist";
 
 
 // Password Reset
+$lang["passwordReset"] = "Reset Password";
 $lang["resetPw"] = "In order to reset your password, please contact MyFlix administration via the E-mail address bellow.";
 $lang["returnTxt"] = "Return to login";
 $lang["return"] = "Return";

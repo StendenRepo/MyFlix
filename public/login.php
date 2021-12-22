@@ -27,8 +27,6 @@ showHead("login", ['assets/css/login.css']);
 
         <div class="loginForm">
             <form method="post" action="login.php">
-
-				<?= $succes; ?>
                 <p id="error"><?= $success; ?><?= $error; ?></p>
                 <label for="email"></label>
                 <input type="email" id="email" name="email" placeholder="<?= $lang['placeholderEmail'] ?>"

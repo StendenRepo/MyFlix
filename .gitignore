@@ -243,3 +243,7 @@ _Pvt_Extensions
 
 # Test php files
 *test.php
+
+# Prefent the upload of videos and thumbnails
+public/assets/video/*
+public/assets/thumbnail/*

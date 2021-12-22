@@ -5,8 +5,16 @@ $password = "";
 $error = "";
 $success = "";
 require_once "../src/loginPHP.php";
+
+if (isUserLoggedIn()) {
+    header("Location: index.php");
+    exit;
+}
+
 global $lang;
+
 showHead("login", ['assets/css/login.css']);
+
 ?>
     <body>
 

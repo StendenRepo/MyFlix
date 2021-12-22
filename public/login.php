@@ -5,8 +5,16 @@ $password = "";
 $error = "";
 $success = "";
 require_once "../src/loginPHP.php";
+
+if (isUserLoggedIn()) {
+    header("Location: index.php");
+    exit;
+}
+
 global $lang;
+
 showHead("login", ['assets/css/login.css']);
+
 ?>
     <body>
 
@@ -23,7 +31,6 @@ showHead("login", ['assets/css/login.css']);
                 <label for="email"></label>
                 <input type="email" id="email" name="email" placeholder="<?= $lang['placeholderEmail'] ?>"
                        class="loginInput">
-
                 <label for="password"></label>
                 <input type="password" id="password" name="password" placeholder="<?= $lang['passwordPlaceholder'] ?>"
                        class="loginInput">

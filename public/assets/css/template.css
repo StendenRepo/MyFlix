@@ -142,3 +142,8 @@ a {
 .hidden {
     display: none !important;
 }
+
+/* Makes error readable */
+.xdebug-error.xe-warning {
+    color: black;
+}

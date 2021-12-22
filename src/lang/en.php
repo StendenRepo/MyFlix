@@ -52,6 +52,13 @@ $lang["exceedUserLength"] = "Username cannot exceed 20 characters";
 $lang["exceedEmailLength"] = "Email cannot exceed 64 characters";
 $lang["emailExists"] = "Email already exist";
 
+
+// Password Reset
+$lang["passwordReset"] = "Reset Password";
+$lang["resetPw"] = "In order to reset your password, please contact MyFlix administration via the E-mail address bellow.";
+$lang["returnTxt"] = "Return to login";
+$lang["return"] = "Return";
+
 // watch.php
 $lang["videoNotFound"] = "Video not found";
 $lang["emailNotValid"] = "This email is not valid";

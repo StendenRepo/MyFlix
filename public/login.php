@@ -31,7 +31,6 @@ showHead("login", ['assets/css/login.css']);
                 <label for="email"></label>
                 <input type="email" id="email" name="email" placeholder="<?= $lang['placeholderEmail'] ?>"
                        class="loginInput">
-
                 <label for="password"></label>
                 <input type="password" id="password" name="password" placeholder="<?= $lang['passwordPlaceholder'] ?>"
                        class="loginInput">

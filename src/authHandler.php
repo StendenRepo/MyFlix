@@ -5,7 +5,6 @@ $webRoutes = [
     "login" => null,
     "register" => null,
     "watch" => 0,
-    "logoutbutton" => 0, // temporary
     "logout" => null
 ];
 

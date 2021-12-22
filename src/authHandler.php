@@ -1,12 +1,14 @@
 <?php
 
 $webRoutes = [
-    "index"         => null,
-    "login"         => null,
-    "register"      => null,
-    "installdb"     => null,
-    "watch"         => 0,
-    "passwordReset" => null,
+
+    "index"       => null,
+    "login"       => null,
+    "register"    => null,
+    "installdb"   => null,
+    "uploadVideo" => 1,
+    "watch"       => 0
+    "passwordReset" => null
 ];
 
 

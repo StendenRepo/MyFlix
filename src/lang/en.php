@@ -17,13 +17,15 @@ $lang["logout"] = "Log out";
 // Login
 $lang["usernameLabel"] = "Username";
 $lang["passwordLabel"] = "Password";
-$lang["UsernamePlaceholder"] = "Enter your username";
+$lang["placeholderEmail"] = "Enter your email";
 $lang["passwordPlaceholder"] = "Enter your password";
 $lang["login"] = "Log in";
 $lang["resetPassword"] = "Forgot your password?";
 $lang["wrongPassword"] = "Username and password do not match, please try again.";
+$lang["forgotInformation"] = "Please fill in both fields";
 $lang["newUser"] = "New to MyFlix?";
-$lang["registerLink"] = "register";
+$lang["registerLink"] = "Register";
+$lang["success"] = "You have successfully made an account, please log in.";
 
 // Registration
 $lang["required"] = "This field is required";
@@ -42,6 +44,7 @@ $lang["bankPlaceholder"] = "Enter your IBAN here";
 $lang["submit"] = "Complete registration";
 $lang["existingUser"] = "Already have an account?";
 $lang["loginLink"] = "Log in";
+$lang["passwordMatch"] = "Password do not match, try again.";
 
 // Error message
 $lang["passwordReq"] = "Password must be at least 8 characters long and contain atleast 1 lower case, 1 upper case and 1 numbers";
@@ -49,7 +52,12 @@ $lang["exceedUserLength"] = "Username cannot exceed 20 characters";
 $lang["exceedEmailLength"] = "Email cannot exceed 64 characters";
 $lang["emailExists"] = "Email already exist";
 
+
 // Password Reset
 $lang["resetPw"] = "In order to reset your password, please contact MyFlix administration via the E-mail address bellow.";
 $lang["returnTxt"] = "Return to login";
 $lang["return"] = "Return";
+
+// watch.php
+$lang["videoNotFound"] = "Video not found";
+$lang["emailNotValid"] = "This email is not valid";

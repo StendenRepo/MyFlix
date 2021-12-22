@@ -1,8 +1,9 @@
 <?php
 require_once "../src/config.php";
 session_destroy();
+header("refresh: 4; index.php");
 
-showHead("Logout", ["assets/css/logout.css"]);
+showHead($lang['logout'], ["assets/css/logout.css"]);
 ?>
     <body>
         <a href="index.php">
@@ -11,16 +12,8 @@ showHead("Logout", ["assets/css/logout.css"]);
 
         <h1><?= $lang["logoutSuccess"] ?></h1>
 
-        <div>
-            <div class="logoutText">
-                <p><?= $lang["returnHome"] ?></p>
-                <a href="index.php"><?= $lang["home"] ?></a>
-            </div>
-
-            <div class="logoutText">
-                <p><?= $lang["returnLogin"] ?></p>
-                <a href="login.php"><?= $lang["login"] ?></a>
-            </div>
+        <div class="logoutText">
+            <p><?= $lang["logoutRedirect"] ?></p>
         </div>
     </body>
 <?php showFooter(); ?>

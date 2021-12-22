@@ -56,5 +56,4 @@ $lang["emailNotValid"] = "This email is not valid";
 
 // logout
 $lang["logoutSuccess"] = "You have been successfully logged out!";
-$lang["returnHome"] = "Return to home";
-$lang["returnLogin"] = "Return to login";
+$lang["logoutRedirect"] = "You will be redirected in 4 seconds";

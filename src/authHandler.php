@@ -5,6 +5,8 @@ $webRoutes = [
     "login" => null,
     "register" => null,
     "installdb" => null,
+    "upgrade" => 0,
+    "template" => null,
     "watch" => 0
 ];
 

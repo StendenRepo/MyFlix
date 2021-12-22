@@ -55,3 +55,11 @@ $lang["emailExists"] = "Email already exist";
 // watch.php
 $lang["videoNotFound"] = "Video not found";
 $lang["emailNotValid"] = "This email is not valid";
+
+// upgrade
+$lang["companyName"] = "Company name";
+$lang["iban"] = "IBAN";
+$lang["address"] = "address";
+$lang["firstName"] = "first name";
+$lang["lastName"] = "last name";
+$lang["city"] = "city";

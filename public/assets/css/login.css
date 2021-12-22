@@ -33,10 +33,6 @@ img {
     text-align: center;
 }
 
-#reset {
-    color: var(--text-gray);
-}
-
 #error {
     color: var(--red);
     text-align: center;

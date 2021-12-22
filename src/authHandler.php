@@ -1,16 +1,18 @@
 <?php
 
 $webRoutes = [
-    "index" => null,
-    "login" => null,
-    "register" => null,
-    "watch" => 0,
     "logout" => null
+    "index"       => null,
+    "login"       => null,
+    "register"    => null,
+    "installdb"   => null,
+    "uploadVideo" => 1,
+    "watch"       => 0
+    "passwordReset" => null
 ];
 
 
-function authHandler()
-{
+function authHandler() {
     global $webRoutes;
     $route = getRoute();
 
@@ -48,8 +50,7 @@ function authHandler()
  *
  * @return string returns the current page
  */
-function getRoute(): string
-{
+function getRoute(): string {
     return explode(".", basename($_SERVER["PHP_SELF"]))[0];
 }
 

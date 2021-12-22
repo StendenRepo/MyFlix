@@ -6,18 +6,20 @@
     margin: 30px auto;
     width: 800px;
 }
+
 .genre h1::first-letter {
     text-transform: uppercase;
 }
-.genre h1{
+
+.genre h1 {
     padding: 0 5px;
     margin: 20px 0;
 }
+
 .content a {
     display: block;
     width: 150px;
     margin: 0 5px;
-
 }
 
 .content img {

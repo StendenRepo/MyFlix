@@ -17,13 +17,15 @@ $lang["logout"] = "Log out";
 // Login
 $lang["usernameLabel"] = "Username";
 $lang["passwordLabel"] = "Password";
-$lang["UsernamePlaceholder"] = "Enter your username";
+$lang["placeholderEmail"] = "Enter your email";
 $lang["passwordPlaceholder"] = "Enter your password";
 $lang["login"] = "Log in";
 $lang["resetPassword"] = "Forgot your password?";
 $lang["wrongPassword"] = "Username and password do not match, please try again.";
+$lang["forgotInformation"] = "Please fill in both fields";
 $lang["newUser"] = "New to MyFlix?";
-$lang["registerLink"] = "register";
+$lang["registerLink"] = "Register";
+$lang["success"] = "You have successfully made an account, please log in.";
 
 // Registration
 $lang["required"] = "This field is required";
@@ -75,6 +77,13 @@ $lang["uploadPlaceholderError"] = "Could not upload placeholder";
 $lang["uploadVideoError"] = "Could not upload video";
 $lang["uploadVideoLength"] = "Video name is to big or small";
 $lang["genreDoesNotExist"] = "Genre does not exist";
+
+// Password Reset
+$lang["passwordReset"] = "Reset Password";
+$lang["resetPw"] = "In order to reset your password, please contact MyFlix administration via the E-mail address bellow.";
+$lang["returnTxt"] = "Return to login";
+$lang["return"] = "Return";
+
 
 // watch.php
 $lang["videoNotFound"] = "Video not found";

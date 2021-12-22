@@ -1,14 +1,12 @@
 <?php
 
-    require_once "../src/config.php";
+require_once "../src/config.php";
 
 
-
-if(isset($_POST['update'])) {
+if (isset($_POST['update'])) {
     $conn = dbConnect();
 
     $accountId = $_SESSION["userId"];
-    echo $accountId;
 
     $eMail = $_POST['eMail'];
     $studioName = $_POST['studioName'];
@@ -16,17 +14,25 @@ if(isset($_POST['update'])) {
     $city = $_POST['city'];
     $bankAccount = $_POST['bankAccount'];
 
-    // Errors even weer terug zetten.
-    $sqlAccount = "UPDATE account SET email=? WHERE id=?";
-    $sqlCompany = "UPDATE company SET studioName=?, address=?, city=?, iban=? WHERE id=(SELECT companyId FROM account WHERE id=?)";
+    $updateSuccess = "Your profile has been updated.";
 
-    $stmtAccount = mysqli_prepare($conn, $sqlAccount);
-    $stmtCompany = mysqli_prepare($conn, $sqlCompany);
+    $sqlCompany = "UPDATE company as c 
+                   JOIN account as a on a.companyId = c.id 
+                   SET a.email=?, c.studioName=?, c.address=?, c.city=?, c.iban=? 
+                   WHERE a.id =?";
 
-    mysqli_stmt_bind_param($stmtAccount, "si", $eMail, $accountId);
-    mysqli_stmt_execute($stmtAccount);
-
-    mysqli_stmt_bind_param($stmtCompany, "ssssi", $studioName, $address, $city, $bankAccount, $accountId);
-    mysqli_stmt_execute($stmtCompany);
-
+    if ($stmtCompany = mysqli_prepare($conn, $sqlCompany)) {
+        if (mysqli_stmt_bind_param($stmtCompany, "sssssi", $eMail, $studioName, $address, $city, $bankAccount, $accountId)) {
+            if (!mysqli_stmt_execute($stmtCompany)) {
+                echo "Query error in company table." . "<br>";
+                die(mysqli_error($conn));
+            }
+            else {
+                $updateSuccess;
+            }
+        }
+    } else {
+        echo "Prepare error in company table." . "<br>";
+        die(mysqli_error($conn));
+    }
 }

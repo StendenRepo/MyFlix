@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: #2D2D2D;
 }
 
 #profileContainer {
@@ -7,35 +7,61 @@ body {
     max-width: 890px;
     width: 100%;
     margin: auto;
+    background-color: #2D2D2D;
 }
 
 #formContainer {
     width: 1000px;
     height: 500px;
+    background-color: #2D2D2D;
+}
+
+#myForm {
+    display: grid;
+    grid-template-columns: 30% 30%;
+    grid-column-gap: 100px;
+    background-color: #2D2D2D;
+    margin-left: 100px;
 }
 
 .inputBox {
-    padding-left: 30px;
     vertical-align: top;
+    margin: 0 auto;
 }
 
 #titleContainer {
     width: 1000px;
     height: 50px;
-    padding-left: 400px;
+    padding-left: 370px;
 }
 
 #cancelButton {
-    padding-top: 30px;
-    padding-left: 30px;
+    padding-left: 145px;
 }
 
 #updateButton {
-    padding-top: 30px;
-    padding-left: 300px;
+    /*padding-top: 30px;*/
 }
 
-#myForm {
-    display: flex;
-    flex-wrap: wrap;
+.input {
+    background-color: #3B3B3B;
+    width: 300px;
+    height: 50px;
+    color: #707070;
+    font-family: Arial, Verdana, Helvetica;
+    font-weight: bold;
+}
+
+#cancel {
+    width: 155px;
+}
+
+label {
+    color: white;
+    font-family: Arial, Verdana, Helvetica;
+    font-weight: bold;
+}
+
+#userName, #firstName, #lastName {
+    background-color: #5F5F5F;
 }

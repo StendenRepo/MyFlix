@@ -44,7 +44,8 @@ showHead("profile", (['assets/css/profile.css']));
                 </div>
                 <div class="inputBox">
                     <label for="eMail">E-mail address</label>
-                    <input type="email" class="input" id="eMail" name="eMail" value="<?php echo $email; ?>">
+                    <input type="email" class="input" id="eMail" name="eMail"
+                           value="<?php echo $email; ?>">
                 </div>
                 <div class="inputBox">
                     <label for="companyName">Studio name</label>
@@ -53,25 +54,27 @@ showHead("profile", (['assets/css/profile.css']));
                 </div>
                 <div class="inputBox">
                     <label for="address">Address</label>
-                    <input type="text" class="input" id="address" name="address" value="<?php echo $address; ?>">
+                    <input type="text" class="input" id="address" name="address"
+                           value="<?php echo $address; ?>">
                 </div>
                 <div class="inputBox">
                     <label for="city">City</label>
-                    <input type="text" class="input" id="city" name="city" value="<?php echo $city; ?>">
+                    <input type="text" class="input" id="city" name="city"
+                           value="<?php echo $city; ?>">
                 </div>
                 <div class="inputBox">
                     <label for="bankAccount">Bank Account Number</label>
-                    <input type="text" class="input" id="bankAccount" name="bankAccount" value="<?php echo $iban; ?>">
+                    <input type="text" class="input" id="bankAccount" name="bankAccount"
+                           value="<?php echo $iban; ?>">
                 </div>
                 <div id="cancelButton">
-                    <input type="submit" id="cancel" name="cancel" value="Cancel">
+                    <input type="submit" id="cancel" name="cancel"
+                           value="Cancel">
                 </div>
                 <div id="updateButton">
-                    <input type="submit" name="update" value="Update Profile">
+                    <input type="submit" name="update"
+                           value="Update Profile">
                 </div>
-                    <?php if($updateSuccess) {
-                        echo "<div id='success'>" . $updateSuccess . "</div>";
-                    }?>
             </form>
         </div>
     </div>

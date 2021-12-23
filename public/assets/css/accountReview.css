@@ -1,0 +1,26 @@
+p {
+    font-size: 1.25rem;
+}
+
+#accountContainer {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 55%;
+}
+
+.studioInfo {
+    background-color: #3b3b3b;
+    border-radius: var(--border-radius);
+    width: 400px;
+    margin: 15px;
+    padding: 15px 30px;
+}
+
+.label {
+    color: var(--white);
+    margin-bottom: 10px;
+}

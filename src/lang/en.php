@@ -53,3 +53,13 @@ $lang["emailExists"] = "Email already exist";
 // watch.php
 $lang["videoNotFound"] = "Video not found";
 $lang["emailNotValid"] = "This email is not valid";
+
+// Account moderation
+$lang["accountModeration"] = "Account Moderation";
+$lang["filmStudio"] = "Film studio's";
+$lang["view"] = "View";
+$lang["accountId"] = "Account ID";
+$lang["studioName"] = "Studio Name";
+$lang["genre"] = "Genre";
+$lang["address"] = "Address";
+$lang["city"] = "City";

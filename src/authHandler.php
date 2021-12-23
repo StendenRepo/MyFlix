@@ -5,7 +5,9 @@ $webRoutes = [
     "login" => null,
     "register" => null,
     "installdb" => null,
-    "watch" => 0
+    "watch" => 0,
+    "accountMod" => 2,
+    "accountReview" => 2
 ];
 
 

@@ -7,7 +7,7 @@ $webRoutes = [
     "register"    => null,
     "installdb"   => null,
     "uploadVideo" => 1,
-    "watch"       => 0
+    "watch"       => 0,
     "passwordReset" => null
 ];
 

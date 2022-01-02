@@ -5,6 +5,7 @@
     --black: #010001;
     --green: #00c75c;
     --background: #2d2d2d;
+    --header-black: #222222;
     --text-gray: #a19f9f;
     --text-white: white;
     --border-radius: 10px;
@@ -134,6 +135,9 @@ input[type=number] {
 a {
     color: var(--text-white);
 }
+a.noLink{
+    text-decoration: none;
+}
 
 .content {
     height: CALC(100vh - var(--header-height));
@@ -141,4 +145,14 @@ a {
 
 .hidden {
     display: none !important;
+}
+
+/* Makes error readable */
+.xdebug-error.xe-warning {
+    color: black;
+}
+
+/* Makes sure the h1 and h2 blocks always begins with a capital */
+h1::first-letter, h2::first-letter {
+    text-transform: uppercase;
 }

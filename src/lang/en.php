@@ -53,3 +53,7 @@ $lang["emailExists"] = "Email already exist";
 // watch.php
 $lang["videoNotFound"] = "Video not found";
 $lang["emailNotValid"] = "This email is not valid";
+
+// Search
+$lang["searchNoResultTitle"] = "No results";
+$lang["searchNoResult"] = "This search has no results try different keywords";

@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `account`
     `accountLevel` INT         NOT NULL DEFAULT 0,
     `firstName`    varchar(20) NULL,
     `lastName`     varchar(20) NULL,
-    `username`     VARCHAR(20) NOT NULL,
+    `username`     VARCHAR(20) NOT NULL UNIQUE,
     `password`     VARCHAR(64) NOT NULL,
     `email`        VARCHAR(64) NOT NULL UNIQUE,
     `companyId`    INT         NULL,

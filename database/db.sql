@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `film`
     `path`      VARCHAR(40) NOT NULL,
     `thumbnail` VARCHAR(50) NOT NULL,
     `genreId`   INT         NOT NULL,
-    `length`    TIME        NOT NULL,
+    `length`    TIME        NULL,
     `name`      VARCHAR(30) NOT NULL,
     `accepted`  TINYINT(1)  NOT NULL DEFAULT 0,
     PRIMARY KEY (`id`)

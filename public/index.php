@@ -31,11 +31,12 @@ foreach ($data as $row) {
             foreach ($genres as $genre => $items) {
                 // Check if there are enough videos in the genre.
                 $amount = min(5, count($items));
-                echo "<div class='genre'>"; ?>
+                echo "<div class='genre'>";?>
                 <a href="search.php?genre=<?= htmlspecialchars($items[0]['genreId']) ?>" class="noLink">
                     <h1><?= htmlspecialchars($genre) ?></h1>
                 </a>
-                <?php echo "<div class='images'>";
+                <?php
+                echo "<div class='images'>";
                 // Takes 5 videos from the genre
                 for ($id = 0; $id < $amount; $id++) {
                     echo "<a href='watch.php?v=" . $items[$id]['id'] . "'>
@@ -47,4 +48,7 @@ foreach ($data as $row) {
             ?>
         </div>
     </body>
-<?php showFooter(); ?>
+<?php
+showFooter();
+dbClose($conn);
+?>

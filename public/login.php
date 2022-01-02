@@ -3,9 +3,18 @@ require_once "../src/config.php";
 $email = "";
 $password = "";
 $error = "";
-$succes = "";
+$success = "";
 require_once "../src/loginPHP.php";
+
+if (isUserLoggedIn()) {
+    header("Location: index.php");
+    exit;
+}
+
+global $lang;
+
 showHead("login", ['assets/css/login.css']);
+
 ?>
     <body>
 
@@ -18,21 +27,20 @@ showHead("login", ['assets/css/login.css']);
 
         <div class="loginForm">
             <form method="post" action="login.php">
-				<?= $succes; ?>
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="E-mailadress" class="loginInput">
+                <p id="error"><?= $success; ?><?= $error; ?></p>
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="<?= $lang['placeholderEmail'] ?>"
+                       class="loginInput">
+                <label for="password"></label>
+                <input type="password" id="password" name="password" placeholder="<?= $lang['passwordPlaceholder'] ?>"
+                       class="loginInput">
 
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Password" class="loginInput">
-
-				<?= $error; ?>
-
-                <input type="submit" value="Log in" class="loginButton">
+                <input type="submit" value="<?= $lang['login'] ?>" class="loginButton">
             </form>
         </div>
         <div class="registerText">
-            <p>New to MyFlix?</p>
-            <a href="register.php">Register</a>
+            <p><?= $lang['newUser'] ?></p>
+            <a href="register.php"><?= $lang['registerLink'] ?></a>
         </div>
     </div>
 

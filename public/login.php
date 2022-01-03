@@ -14,7 +14,7 @@ if (isUserLoggedIn()) {
     exit;
 }
 
-showHead($lang["login"], ['assets/css/login.css']);
+showHead($lang["login"], ['assets/css/auth.css']);
 
 ?>
     <body>

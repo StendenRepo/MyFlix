@@ -9,7 +9,13 @@ require_once "../src/login.php";
 // Makes the translation global accessible
 global $lang;
 
-showHead($lang["login"], ['assets/css/auth.css']);
+if (isUserLoggedIn()) {
+    header("Location: index.php");
+    exit;
+}
+
+showHead($lang["login"], ['assets/css/login.css']);
+
 ?>
     <body>
         <div class="flex-container">
@@ -33,5 +39,7 @@ showHead($lang["login"], ['assets/css/auth.css']);
                 <small class="link"><?= $lang["register"] ?></small>
             </a>
         </div>
+    </div>
+
     </body>
 <?php showFooter(); ?>

@@ -1,15 +1,18 @@
 <?php
 
 $webRoutes = [
-    "index" => null,
-    "login" => null,
-    "register" => null,
-    "watch" => 0
+
+    "index"       => null,
+    "login"       => null,
+    "register"    => null,
+    "installdb"   => null,
+    "uploadVideo" => 1,
+    "watch"       => 0,
+    "passwordReset" => null
 ];
 
 
-function authHandler()
-{
+function authHandler() {
     global $webRoutes;
     $route = getRoute();
 
@@ -25,7 +28,7 @@ function authHandler()
      * check if the current page requires a logged-in user.
      * redirects to login.php with get request Error
      */
-    if (!isUserLoggedIn() && $webRoutes[$route] != null) {
+    if (!isUserLoggedIn()) {
         header("Location: login.php?error=loginRequired");
         echo "You need to be logged in to view this page. you will be redirected to the login page.";
         exit;
@@ -35,7 +38,7 @@ function authHandler()
      * check if the user is allowed to view this page.
      * redirects to login.php with get request Error
      */
-    if (getUserAccountLevel(isUserLoggedIn()) < $webRoutes[$route]) {
+    if (getUserAccountLevel(getCurrentUserId()) < $webRoutes[$route]) {
         header("refresh:5;url=index.php");
         echo "You are not allowed to view this page. you will be redirected to the homepage.";
         exit;
@@ -47,8 +50,7 @@ function authHandler()
  *
  * @return string returns the current page
  */
-function getRoute(): string
-{
+function getRoute(): string {
     return explode(".", basename($_SERVER["PHP_SELF"]))[0];
 }
 

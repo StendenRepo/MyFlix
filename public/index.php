@@ -2,25 +2,53 @@
 require_once "../src/config.php";
 showHead("Videos", ['assets/css/home.css']);
 ?>
+
+<?php
+// Make a connection with the database
+$conn = dbConnect();
+
+// Define the SQL Query
+$sql = "SELECT *, genre.name AS genreName 
+        FROM genre JOIN film ON genre.id = film.genreId 
+        WHERE film.accepted = 1
+        ORDER BY genreName, film.name";
+
+// Get results from the database
+$result = mysqli_query($conn, $sql);
+$data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// Creates an empty array
+$genres = [];
+
+// Give nested array a name
+foreach ($data as $row) {
+    $genres[$row['genreName']][] = $row;
+}
+
+?>
     <body>
         <?php showHeader(); ?>
         <div class="content">
-            <h1>Placeholder</h1>
-            <div class="images">
-                <a href="watch.php?v=1"><img src="assets/img/Placeholders/Placeholder_1.jpg" alt="placeholder 1"></a>
-                <a href="watch.php?v=1"><img src="assets/img/Placeholders/Placeholder_2.jpg" alt="placeholder 2"></a>
-                <a href="watch.php?v=1"><img src="assets/img/Placeholders/Placeholder_3.jpg" alt="placeholder 3"></a>
-                <a href="watch.php?v=1"><img src="assets/img/Placeholders/Placeholder_4.jpg" alt="placeholder 4"></a>
-                <a href="watch.php?v=1"><img src="assets/img/Placeholders/Placeholder_5.jpg" alt="placeholder 5"></a>
-            </div>
-            <h1>Placeholder</h1>
-            <div class="images">
-                <a href="watch.php?v=1"><img src="assets/img/Placeholders/Placeholder_6.jpg" alt="placeholder 6"></a>
-                <a href="watch.php?v=1"><img src="assets/img/Placeholders/Placeholder_7.jpg" alt="placeholder 7"></a>
-                <a href="watch.php?v=1"><img src="assets/img/Placeholders/Placeholder_8.jpg" alt="placeholder 8"></a>
-                <a href="watch.php?v=1"><img src="assets/img/Placeholders/Placeholder_9.jpg" alt="placeholder 9"></a>
-                <a href="watch.php?v=1"><img src="assets/img/Placeholders/Placeholder_10.jpg" alt="placeholder 10"></a>
-            </div>
+            <?php
+            // Loop through array and get the data.
+            foreach ($genres as $genre => $items) {
+                // Check if there are enough videos in the genre.
+                $amount = min(5, count($items));
+                echo "<div class='genre'>";
+                echo "<h1>" . $genre . "</h1>";
+                echo "<div class='images'>";
+                // Takes 5 videos from the genre
+                for ($id = 0; $id < $amount; $id++) {
+                    echo "<a href='watch.php?v=" . $items[$id]['id'] . "'>
+					<img src='" . $items[$id]['thumbnail'] . "' alt='" . $items[$id]['name'] . "'></a>";
+                }
+                echo "</div>";
+                echo "</div>";
+            }
+            ?>
         </div>
     </body>
-<?php showFooter(); ?>
+<?php
+showFooter();
+dbClose($conn);
+?>

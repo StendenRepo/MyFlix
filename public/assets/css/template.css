@@ -51,6 +51,25 @@ body {
     max-height: 45px;
 }
 
+@media screen and (max-width: 705px) {
+    .header {
+        display: block;
+        padding: 20px 0;
+        height: 100%;
+    }
+
+    .header a, .header input {
+        display: block;
+        width: 80vw;
+        margin: 0 auto 20px;
+    }
+
+    .header .logo img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 /* The styling of the form */
 input, textarea, select {
     border: 0;

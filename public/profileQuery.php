@@ -29,6 +29,7 @@
 
     if (mysqli_stmt_num_rows($result) > 0) {
         while (mysqli_stmt_fetch($result)) {
+            $alreadyExists = "";
         }
     } else {
         echo "No data found";

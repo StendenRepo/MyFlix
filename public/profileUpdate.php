@@ -14,8 +14,8 @@ if (isset($_POST['update'])) {
     $city = $_POST['city'];
     $bankAccount = $_POST['bankAccount'];
 
+
     $updateSuccess = "Your profile has been updated.";
-    $fieldError = "Make sure all fields are filled in.";
 
     $sqlCompany = "UPDATE company as c 
                    JOIN account as a on a.companyId = c.id 
@@ -35,10 +35,16 @@ if (isset($_POST['update'])) {
         die(mysqli_error($conn));
     }
 
+    require_once "profileQuery.php";
+
     if (empty($_POST['eMail']) || empty($_POST['studioName']) || empty($_POST['address']) || empty($_POST['city']) ||
         empty($_POST['bankAccount'])) {
         echo "One or more fields are empty.";
+    } elseif (!empty($_POST['eMail']) && $alreadyExists) {
+        echo "This email is already in use.";
+    } elseif (!empty($_POST['bankAccount']) && $alreadyExists) {
+        echo "Enter a valid bank account number.";
     } else {
-            echo $updateSuccess;
-        }
+        echo $updateSuccess;
+    }
 }

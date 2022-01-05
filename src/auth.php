@@ -102,3 +102,26 @@ function hashPassword(string $password): string
 {
     return password_hash($password, PASSWORD_BCRYPT);
 }
+
+function checkEmail(string $eMail): bool
+{
+    $conn = dbConnect();
+    $emailQuery = "SELECT * FROM account WHERE email = ?";
+
+    if ($stmtEmail = mysqli_prepare($conn, $emailQuery)) {
+        if (mysqli_stmt_bind_param($stmtEmail, "s", $eMail)) {
+            if (mysqli_stmt_execute($stmtEmail)) {
+                mysqli_stmt_store_result($stmtEmail);
+
+                if (mysqli_stmt_num_rows($stmtEmail) > 0) {
+                    echo "Email gevonden.";
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}

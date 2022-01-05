@@ -1,7 +1,7 @@
 <?php
 
 $webRoutes = [
-    "logout" => null
+    "logout" => null,
     "index"       => null,
     "login"       => null,
     "register"    => null,

@@ -2,15 +2,34 @@
 require_once __DIR__ . '/../src/config.php';
 require_once __DIR__ . '/../src/watch.php';
 
-$videoData = false;
-// TODO CHANGE VALUE OF MODERATION BASED ON ROLE
-$moderation = false;
+// Makes the translation global accessible
+global $lang;
 
+// Set the default value on false so when it is not overridden it can generate a error
+$videoData = false;
+
+// Get the user level and check if user is moderator or higher
+$userId = getCurrentUserId();
+if (!$userId) {
+    header("Location: login.php?error=loginRequired");
+    die();
+}
+$userLvl = getUserAccountLevel($userId);
+$moderation = ($userLvl > 1);
+
+// Check if a videoId is provided in the url
 if (!empty($_GET['v'])) {
     $videoData = getVideo($_GET['v']);
 }
+
 if (!$videoData) {
+    // When there is no video data for the video tell the browser the page does not exist
+    http_response_code(404);
     showHead($lang['videoNotFound'], ["assets/css/video.css"]);
+} elseif (!$videoData["studioName"]) {
+    // When there is no studio tell the browser the page is not found
+    http_response_code(404);
+    showHead($lang['videoNoStudioTitle'], ["assets/css/video.css"]);
 } else {
     // Show header with the video title in it
     showHead(htmlspecialchars($videoData['name']), ["assets/css/video.css"]);
@@ -20,7 +39,9 @@ if (!$videoData) {
         <?php showHeader(); ?>
         <div class="content">
             <?php if (!$videoData) { ?>
-                <h1><?= $lang['videoNotFound'] ?></h1>
+                <h1 class="text-center"><?= $lang['videoNotFound'] ?></h1>
+            <?php } elseif (!$videoData["studioName"]) { ?>
+                <h1 class="text-center"><?= $lang['videoNoStudio'] ?></h1>
             <?php } else { ?>
                 <div class="video-header">
                     <div class="video-info">
@@ -55,11 +76,9 @@ if (!$videoData) {
                                     </g>
                                 </g>
                             </svg>
-
                         <?php } ?>
                     </div>
                 </div>
-
                 <div class="video-player">
                     <video controls class="video" id="video" preload="metadata">
                         <source src="<?= htmlspecialchars($videoData['path']) ?>">

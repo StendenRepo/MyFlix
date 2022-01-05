@@ -51,3 +51,7 @@ h1::first-letter, h2::first-letter {
 .video-player {
     position: relative;
 }
+
+.text-center{
+    text-align: center;
+}

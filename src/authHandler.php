@@ -1,6 +1,7 @@
 <?php
 
 $webRoutes = [
+    "logout"        => null,
     "index"         => null,
     "login"         => null,
     "register"      => null,
@@ -9,6 +10,7 @@ $webRoutes = [
     "watch"         => 0,
     "passwordReset" => null,
     "search"        => null,
+
 ];
 
 

@@ -47,3 +47,7 @@ h2 {
 .video-player {
     position: relative;
 }
+
+.text-center{
+    text-align: center;
+}

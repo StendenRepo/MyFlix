@@ -2,7 +2,7 @@
 
 MyFlix is an application for Content Creators, so they can upload video content for viewers
 
-## Installation for Development
+## Installation for production
 
 ### Ubuntu 20.04 (Docker)
 Tested on Docker 20.10.11 and docker-compose 1.29.2
@@ -51,6 +51,8 @@ docker-compose up
 
 Go in your web browser to the following url by going to [http://localhost/installdb.php]()
 
+## Installation for Development
+
 ### Windows (Xampp)
 
 Tested on Windows 10 and Xampp version 8.0.13
@@ -71,6 +73,3 @@ git clone git@github.com:cedsmit/MyFlix.git .
 #### 3. Open Xampp and start Apache en Mysql
 
 #### 4. Import the database by going to [http://localhost/installdb.php]()
-
-## Mac OS (Docker)
-There are no steps yet to install MyFlix on MacOS

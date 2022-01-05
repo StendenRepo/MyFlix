@@ -1,0 +1,20 @@
+.thumbnails {
+    display: flex;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.content a {
+    display: block;
+    width: 150px;
+    margin: 0 5px;
+
+}
+
+.content img {
+    max-width: 150px;
+    border-radius: var(--border-radius);
+}

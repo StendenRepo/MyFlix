@@ -4,10 +4,15 @@ require_once __DIR__ . '/../src/watch.php';
 
 $videoData = false;
 // TODO CHANGE VALUE OF MODERATION BASED ON ROLE
-$moderation = false;
+if (getUserAccountLevel(getCurrentUserId()) === 2) {
+    $moderation = true;
+}
+else {
+    $moderation = false;
+}
 
 if (!empty($_GET['v'])) {
-    $videoData = getVideo($_GET['v']);
+    $videoData = getVideo($_GET['v'], $moderation);
 }
 if (!$videoData) {
     showHead($lang['videoNotFound'], ["assets/css/video.css"]);
@@ -15,6 +20,8 @@ if (!$videoData) {
     // Show header with the video title in it
     showHead(htmlspecialchars($videoData['name']), ["assets/css/video.css"]);
 }
+
+
 ?>
     <body>
         <?php showHeader(); ?>
@@ -30,6 +37,11 @@ if (!$videoData) {
                     <div class="moderation">
                         <?php if ($moderation) { ?>
                             <!-- Approve icon-->
+                            
+                            <!--check if video is not yet accepted-->
+                            <?php if(!$videoData["accepted"]) { ?>
+                           
+                            
                             <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
                                 <g transform="translate(-1495 -159)">
                                     <rect rx="10" width="54" height="54" fill="var(--green)"
@@ -42,6 +54,9 @@ if (!$videoData) {
                                     </g>
                                 </g>
                             </svg>
+                            
+                            <?php } ?>
+                            
                             <!-- Denied icon -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
                                 <g transform="translate(-1566 -159)">

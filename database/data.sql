@@ -44,4 +44,3 @@ VALUES (2,"/assets/video/super_video.mp4", "/assets/img/Placeholders/Placehholde
        (2,"/assets/video/super_video.mp4", "/assets/img/Placeholders/Placehholder_8.jpg", 1,"01:03:03","japie 7",1),
        (1,"/assets/video/super_video.mp4", "/assets/img/Placeholders/Placehholder_9.jpg", 1,"01:03:03","japie 8",1),
        (2,"/assets/video/super_video.mp4", "/assets/img/Placeholders/Placehholder_10.jpg", 1,"01:03:03","japie 9",1);
-

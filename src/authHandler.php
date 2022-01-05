@@ -5,6 +5,7 @@ $webRoutes = [
     "login" => null,
     "register" => null,
     "installdb" => null,
+    "videoMod" => null,
     "watch" => 0
 ];
 

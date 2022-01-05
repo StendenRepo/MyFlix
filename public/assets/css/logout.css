@@ -9,15 +9,18 @@ body {
 
 img {
     width: 400px;
+    max-width: 90vw;
 }
 
 h1 {
     font-size: 1.5rem;
     text-align: center;
+    max-width: 80vw;
     margin-bottom: 1.5rem;
 }
 
 .logoutText {
     text-align: center;
     margin-top: 1.5rem;
+    max-width: 80vw;
 }

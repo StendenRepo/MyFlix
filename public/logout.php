@@ -1,6 +1,9 @@
 <?php
 require_once "../src/config.php";
+
+unset($_SESSION);
 session_destroy();
+
 header("refresh: 2; index.php");
 
 global $lang;

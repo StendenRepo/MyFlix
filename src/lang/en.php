@@ -100,3 +100,8 @@ $lang["videoNoStudio"] = "The studio that uploaded this video does not exist any
 $lang["videoNoStudioTitle"] = "Film studio not found";
 $lang["emailNotValid"] = "This email is not valid";
 
+
+// logout
+$lang["logoutSuccess"] = "You have been successfully logged out!";
+$lang["logoutRedirect"] = "You will be redirected in 2 seconds";
+

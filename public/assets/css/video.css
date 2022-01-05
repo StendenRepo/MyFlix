@@ -28,10 +28,6 @@ h2 {
     color: var(--text-gray);
 }
 
-h1::first-letter, h2::first-letter {
-    text-transform: uppercase;
-}
-
 .video-header {
     width: 100%;
     display: flex;

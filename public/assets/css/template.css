@@ -162,6 +162,7 @@ a.noLink {
 }
 
 .content {
+    padding-top: 1px;
     height: CALC(100vh - var(--header-height));
 }
 

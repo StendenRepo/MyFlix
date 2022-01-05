@@ -1,7 +1,6 @@
 .content {
     width: 70vw;
     margin: 0 auto;
-    padding-top: 1px;
 }
 
 .searchHeader {
@@ -19,19 +18,19 @@
 }
 
 .searchVideos {
-    display: flex;
+    gap: 40px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    display: inline-flex;
 }
 
 .searchVideos a {
     display: block;
-    margin: 0 15px 30px;
 }
 
 .searchVideos img {
     width: 150px;
     max-width: 90vw;
+    border-radius: var(--border-radius);
 }
 
 /* Makes sure that the images scale the right way */

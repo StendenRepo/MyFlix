@@ -1,7 +1,9 @@
 <?php
 require_once "../src/config.php";
 session_destroy();
-header("refresh: 4; index.php");
+header("refresh: 2; index.php");
+
+global $lang;
 
 showHead($lang['logout'], ["assets/css/logout.css"]);
 ?>

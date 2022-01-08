@@ -40,6 +40,7 @@ showHead(htmlspecialchars($title), ["assets/css/search.css"]);
                         </a>
                     <?php } elseif ($searchType === "genre") { ?>
                         <h1><?= htmlspecialchars($videos[0]["genre"]) ?></h1>
+                        <h2><?= htmlspecialchars($videos[0]["genreDescription"]) ?></h2>
                     <?php } elseif ($searchType === null) { ?>
                         <h1><?= $lang["searchNoResult"] ?></h1>
                     <?php } ?>

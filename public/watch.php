@@ -4,7 +4,7 @@ require_once __DIR__ . '/../src/watch.php';
 
 $videoData = false;
 // TODO CHANGE VALUE OF MODERATION BASED ON ROLE
-$moderation = false;
+$moderation = true;
 
 if (!empty($_GET['v'])) {
     $videoData = getVideo($_GET['v']);

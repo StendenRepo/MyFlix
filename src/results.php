@@ -13,7 +13,7 @@ function getVideos($creator = null, $genre = null): array {
               FROM film as f 
               JOIN account as a on f.`accountId`= a.`id` 
               JOIN company as c ON a.companyId = c.`id`
-              JOIN genre as g ON c.`genre` = g.`id`
+              JOIN genre as g ON f.`genreId` = g.`id`
               WHERE f.`accepted`=1 AND c.`id`=? OR 
                     f.`accepted`=1 AND g.`id`=?
               ORDER BY f.`id` DESC 

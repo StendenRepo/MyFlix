@@ -2,16 +2,11 @@ video {
     display: block;
     margin: 0 auto;
     max-height: 75vh;
-    width: 80vw;
+    max-width: 80vw;
 }
 
 .content {
-    width: 80vw;
     display: flex;
-    margin: 0 auto;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
 }
 
 #start {
@@ -31,9 +26,13 @@ h2 {
 h1::first-letter, h2::first-letter {
     text-transform: uppercase;
 }
-
+.video-wrapper{
+    margin: 30px auto 0;
+    max-width: 80vw;
+}
 .video-header {
     width: 100%;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -51,19 +50,8 @@ h1::first-letter, h2::first-letter {
     position: relative;
 }
 
-@media screen and (max-width: 705px) {
-    .content {
-        height: 100%;
-        width: 80vw;
-        margin: 40px auto 0;
-    }
-}
 
 @media screen and (max-height: 660px) and (orientation: landscape) {
-    .content{
-        height: 100%;
-        padding-top: 40px;
-    }
     .video{
         max-height: 100%;
     }

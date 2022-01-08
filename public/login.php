@@ -14,6 +14,11 @@ if (isUserLoggedIn()) {
     exit;
 }
 
+// When the user is redirected to the login add an error message
+if (isset($_GET['error']) && $_GET['error'] === "loginRequired") {
+    $error = $lang['loginRequired'];
+}
+
 showHead($lang["login"], ['assets/css/auth.css']);
 
 ?>
@@ -39,7 +44,7 @@ showHead($lang["login"], ['assets/css/auth.css']);
                 <small class="link"><?= $lang["register"] ?></small>
             </a>
         </div>
-    </div>
+        </div>
 
     </body>
 <?php showFooter(); ?>

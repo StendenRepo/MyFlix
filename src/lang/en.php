@@ -18,6 +18,7 @@ $lang["login"] = "Login";
 $lang["register"] = "Register";
 
 // Login
+$lang["loginRequired"] = "To access this page you need to log in";
 $lang["loginHeader"] = "Login to your Account";
 $lang["loginNewUser"] = "New to MyFlix?";
 $lang["loginFillAllFields"] = "Please fill in everything";

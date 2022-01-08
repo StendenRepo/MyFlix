@@ -9,7 +9,8 @@
 function getVideos($creator = null, $genre = null): array {
     $conn = dbConnect();
     // Requests from database where creator = $creator or genre = $genre
-    $query = "SELECT f.`path`, f.`thumbnail`, f.`id`, f.`name`, c.`studioName`,g.`id` as genreId, g.`name` as genre
+    $query = "SELECT f.`path`, f.`thumbnail`, f.`id`, f.`name`, c.`studioName`,g.`id` as genreId, g.`name` as genre, 
+                     g.`description` as genreDescription
               FROM film as f 
               JOIN account as a on f.`accountId`= a.`id` 
               JOIN company as c ON a.companyId = c.`id`

@@ -3,44 +3,41 @@ require_once "../src/config.php";
 $email = "";
 $password = "";
 $error = "";
-$success = "";
-require_once "../src/loginPHP.php";
+$succes = "";
+require_once "../src/login.php";
+
+// Makes the translation global accessible
+global $lang;
 
 if (isUserLoggedIn()) {
     header("Location: index.php");
     exit;
 }
 
-global $lang;
-
-showHead("login", ['assets/css/login.css']);
+showHead($lang["login"], ['assets/css/auth.css']);
 
 ?>
     <body>
-
-    <div class="flex-container">
-        <div class="loginImg">
+        <div class="flex-container">
             <a href="index.php">
-                <img src="assets/img/logo.png" alt="logoMyflix">
+                <img src="assets/img/logo.png" alt="Myflix Logo">
             </a>
-        </div>
 
-        <div class="loginForm">
-            <form method="post" action="login.php">
-                <p id="error"><?= $success; ?><?= $error; ?></p>
-                <label for="email"></label>
-                <input type="email" id="email" name="email" placeholder="<?= $lang['placeholderEmail'] ?>"
-                       class="loginInput">
-                <label for="password"></label>
-                <input type="password" id="password" name="password" placeholder="<?= $lang['passwordPlaceholder'] ?>"
-                       class="loginInput">
+            <h1><?= $lang['loginHeader'] ?></h1>
+            <div class="loginForm">
+                <form method="post" action="login.php">
+                    <?= $succes; ?>
+                    <small class="error"><?= $error ?? "" ?></small>
+                    <input type="email" name="email" placeholder="<?= $lang["emailLabel"] ?>">
 
-                <input type="submit" value="<?= $lang['login'] ?>" class="loginButton">
-            </form>
-        </div>
-        <div class="registerText">
-            <p><?= $lang['newUser'] ?></p>
-            <a href="register.php"><?= $lang['registerLink'] ?></a>
+                    <input type="password" name="password" placeholder="<?= $lang["passwordLabel"] ?>">
+                    <input type="submit" value="<?= $lang["login"] ?>">
+                </form>
+            </div>
+            <a href="register.php">
+                <small><?= $lang["loginNewUser"] ?></small>
+                <small class="link"><?= $lang["register"] ?></small>
+            </a>
         </div>
     </div>
 

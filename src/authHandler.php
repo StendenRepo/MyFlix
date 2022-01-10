@@ -9,7 +9,9 @@ $webRoutes = [
     "template" => null,
     "watch" => 0,
     "uploadVideo" => 1,
-    "passwordReset" => null
+    "passwordReset" => null,
+    "logout" => null,
+    "search" => null,
 ];
 
 

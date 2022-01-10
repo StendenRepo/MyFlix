@@ -8,7 +8,7 @@ $inputArray = filter_input_array(INPUT_POST, [
     "email" => FILTER_SANITIZE_EMAIL,
     "pw" => FILTER_SANITIZE_STRING,
     "confirm-pw" => FILTER_SANITIZE_STRING,
-], true);
+]);
 
 
 if (!isset($_POST["submit"])) return;

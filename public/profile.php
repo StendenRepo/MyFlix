@@ -1,6 +1,6 @@
 <?php
 require_once "../src/config.php";
-showHead("profile", (['assets/css/profile.css']));
+showHead($lang["profile"], (['assets/css/profile.css']));
 ?>
 <?php
 require_once './profileUpdate.php';

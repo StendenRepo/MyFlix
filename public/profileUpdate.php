@@ -2,7 +2,6 @@
 
 require_once "../src/config.php";
 
-
 if (isset($_POST['update'])) {
 	$conn = dbConnect();
 
@@ -15,11 +14,13 @@ if (isset($_POST['update'])) {
 	$bankAccount = filter_var($_POST['bankAccount'], FILTER_SANITIZE_STRING);
 
 	$updateSuccess = "Your profile has been updated.";
+	$error = "";
 
 	require_once "../src/auth.php";
 
 	if (empty($_POST['eMail']) || empty($_POST['studioName']) || empty($_POST['address']) || empty($_POST['city']) ||
 		empty($_POST['bankAccount'])) {
+		//$error = "One or more fields are empty";
 		echo "One or more fields are empty.";
 	} else {
 
@@ -33,11 +34,13 @@ if (isset($_POST['update'])) {
 				if (mysqli_stmt_bind_param($stmtCompany, "sssssi", $eMail, $studioName, $address, $city,
 					$bankAccount, $accountId)) {
 					if (!mysqli_stmt_execute($stmtCompany)) {
+						//$error = "Query error in company table <br>";
 						echo "Query error in company table." . "<br>";
 						die(mysqli_error($conn));
 					}
 				}
 			} else {
+				//$error = "Prepare error in company table <br>"
 				echo "Prepare error in company table." . "<br>";
 				die(mysqli_error($conn));
 			}

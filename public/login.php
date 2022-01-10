@@ -10,7 +10,7 @@ require_once "../src/login.php";
 global $lang;
 
 if (isUserLoggedIn()) {
-    header("Location: index.php");
+    header("Location: profile.php");
     exit;
 }
 
@@ -23,7 +23,7 @@ showHead($lang["login"], ['assets/css/auth.css']);
                 <img src="assets/img/logo.png" alt="Myflix Logo">
             </a>
 
-            <h1><?= $lang['loginHeader'] ?></h1>
+            <h1><?= $lang["loginHeader"] ?></h1>
             <div class="loginForm">
                 <form method="post" action="login.php">
                     <?= $succes; ?>

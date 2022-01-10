@@ -112,6 +112,7 @@ $lang["logoutRedirect"] = "You will be redirected in 2 seconds";
 
 
 //Profile
+$lang["profile"] = "Profile";
 $lang["editProfile"] = "Edit Profile";
 $lang["firstName"] = "First name";
 $lang["lastName"] = "Last name";

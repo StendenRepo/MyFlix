@@ -103,19 +103,41 @@ function hashPassword(string $password): string
     return password_hash($password, PASSWORD_BCRYPT);
 }
 
-function checkEmail(string $eMail): bool
+function checkEmail(string $eMail, $accountId)
 {
     $conn = dbConnect();
-    $emailQuery = "SELECT * FROM account WHERE email = ?";
+    $emailQuery = "SELECT * FROM account WHERE email = ? AND NOT id=?";
+    $updateSuccess = "Your profile has been updated.";
 
     if ($stmtEmail = mysqli_prepare($conn, $emailQuery)) {
-        if (mysqli_stmt_bind_param($stmtEmail, "s", $eMail)) {
+        if (mysqli_stmt_bind_param($stmtEmail, "si", $eMail, $accountId)) {
             if (mysqli_stmt_execute($stmtEmail)) {
                 mysqli_stmt_store_result($stmtEmail);
 
                 if (mysqli_stmt_num_rows($stmtEmail) > 0) {
-                    echo "Email gevonden.";
+                    echo "Email already exists.";
                     return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+    }
+}
+
+function checkIban(string $bankAccount, $accountId)
+{
+    $conn = dbConnect();
+    $ibanQuery = "SELECT * FROM company WHERE iban = ? AND NOT id=?";
+    $updateSuccess = "Your profile has been updated.";
+
+    if ($stmtIban = mysqli_prepare($conn, $ibanQuery)) {
+        if (mysqli_stmt_bind_param($stmtIban, "si", $bankAccount, $accountId)) {
+            if (mysqli_stmt_execute($stmtIban)) {
+                mysqli_stmt_store_result($stmtIban);
+
+                if (mysqli_stmt_num_rows($stmtIban) > 0) {
+                    echo "Enter a valid bank account number.";
                 }
                 else {
                     return true;
@@ -123,5 +145,4 @@ function checkEmail(string $eMail): bool
             }
         }
     }
-    return false;
 }

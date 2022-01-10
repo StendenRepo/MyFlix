@@ -1,5 +1,10 @@
 <?php
-
+if (isset($_SESSION['userId'])){
+	header("location: profile.php");
+}
+else{
+	echo "er is geen sessie";
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!empty($_POST["email"]) && !empty($_POST["password"])) {
 		$email = htmlspecialchars($_POST["email"]);
@@ -38,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	if (!empty($_GET['registration'])) {
 		if ($_GET['registration'] == 'succes') {
-			$succes = "You have succesfully made an account, please log in.";
+			$succes = "You have successfully made an account, please log in.";
 		}
 	}
 

@@ -39,15 +39,11 @@ body {
     padding-left: 145px;
 }
 
-#updateButton {
-    /*padding-top: 30px;*/
-}
-
 .input {
-    background-color: #3B3B3B;
+    background-color: #0000004d;
     width: 300px;
     height: 50px;
-    color: #707070;
+    color: #8e8e8e;
     font-family: Arial, Verdana, Helvetica;
     font-weight: bold;
 }

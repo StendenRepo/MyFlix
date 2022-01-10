@@ -96,5 +96,18 @@ $lang["return"] = "Return";
 
 // watch.php
 $lang["videoNotFound"] = "Video not found";
+$lang["videoNoStudio"] = "The studio that uploaded this video does not exist anymore";
+$lang["videoNoStudioTitle"] = "Film studio not found";
 $lang["emailNotValid"] = "This email is not valid";
+
+
+// Search
+$lang["searchNoResultTitle"] = "No results";
+$lang["searchNoResult"] = "This search has no results try different keywords";
+
+
+// logout
+$lang["logoutSuccess"] = "You have been successfully logged out!";
+$lang["logoutRedirect"] = "You will be redirected in 2 seconds";
+
 

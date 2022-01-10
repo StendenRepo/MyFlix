@@ -52,8 +52,8 @@ if (isset($_POST["submitVideo"])) {
     $videoDb = "assets/video/{$videoData['newFilename']}";
     $videoTarget = __DIR__ . "/../public/$videoDb";
 
-    $imageDb = "assets/thumbnail/{$videoData['newFilename']}";
-    $imageTarget = __DIR__ . "/../public/$videoDb";
+    $imageDb = "assets/thumbnail/{$imageData['newFilename']}";
+    $imageTarget = __DIR__ . "/../public/$imageDb";
 
     $genre = $_POST["genre"];
 

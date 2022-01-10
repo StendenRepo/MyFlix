@@ -2,8 +2,8 @@
 -- data genres
 -- ---------------------------
 INSERT INTO genre(`name`, `description`)
-VALUES ("Horror", "Scary movies "),
-       ("Action", "Shoot everyone you can see");
+VALUES ("horror", "spanning en sensatie en schrikken "),
+       ("actie", "schiet iedereen niet die je kan zien");
 
 -- ---------------------------
 -- data company
@@ -37,8 +37,9 @@ VALUES (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_
        (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_4.jpg", 1, "01:03:03", "japie 3", 1),
        (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_5.jpg", 1, "01:03:03", "japie 4", 0),
        (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_6.jpg", 1, "01:03:03", "japie 5", 1),
-       (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_7.jpg", 2, "01:03:03", "japie 6", 1),
-       (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_8.jpg", 2, "01:03:03", "japie 7", 1),
-       (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_9.jpg", 2, "01:03:03", "japie 8", 1),
-       (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_10.jpg", 2, "01:03:03", "japie 9", 1);
+       (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_7.jpg", 1, "01:03:03", "japie 6", 1),
+       (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_8.jpg", 1, "01:03:03", "japie 7", 1),
+       (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_9.jpg", 1, "01:03:03", "japie 8", 1),
+       (2, "assets/video/super_video.mp4", "assets/img/Placeholders/Placeholder_10.jpg", 1, "01:03:03", "japie 9", 1);
+
 

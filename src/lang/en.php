@@ -26,6 +26,7 @@ $lang["usernameLabel"] = "Username";
 $lang["passwordLabel"] = "Password";
 $lang["placeholderEmail"] = "Enter your email";
 $lang["passwordPlaceholder"] = "Enter your password";
+$lang["login"] = "Log in";
 $lang["resetPassword"] = "Forgot your password?";
 $lang["wrongPassword"] = "Username and password do not match, please try again.";
 $lang["forgotInformation"] = "Please fill in both fields";
@@ -52,6 +53,7 @@ $lang["bankLabel"] = "Bank account (IBAN)";
 $lang["bankPlaceholder"] = "Enter your IBAN here";
 $lang["registerSubmit"] = "Make Account";
 $lang["existingUser"] = "Already have an account?";
+$lang["loginLink"] = "Log in";
 $lang["passwordMatch"] = "Password do not match, try again.";
 $lang["registerAlreadyAccount"] = "Do you already have an account?";
 
@@ -96,8 +98,6 @@ $lang["return"] = "Return";
 
 // watch.php
 $lang["videoNotFound"] = "Video not found";
-$lang["videoNoStudio"] = "The studio that uploaded this video does not exist anymore";
-$lang["videoNoStudioTitle"] = "Film studio not found";
 $lang["emailNotValid"] = "This email is not valid";
 
 
@@ -108,6 +108,8 @@ $lang["address"] = "address";
 $lang["firstName"] = "first name";
 $lang["lastName"] = "last name";
 $lang["city"] = "city";
+$lang["genre"] = "genre";
+$lang["genreDescription"] = "genre description";
 
 // Search
 $lang["searchNoResultTitle"] = "No results";
@@ -117,6 +119,7 @@ $lang["searchNoResult"] = "This search has no results try different keywords";
 // logout
 $lang["logoutSuccess"] = "You have been successfully logged out!";
 $lang["logoutRedirect"] = "You will be redirected in 2 seconds";
+
 
 
 

@@ -1,6 +1,7 @@
 <?php
 require_once "../src/config.php";
 include "../src/upgrade.php";
+require_once "../src/genres.php";
 
 showHead("Upgrade", ['assets/css/upgrade.css']);
 
@@ -28,12 +29,28 @@ echo "</pre>";
         <div class="input">
             <input id="companyName" name="companyName" type="text" placeholder="<?= $lang["companyName"] ?>" required>
         </div>
-        <div class="input">
-            <!--            todo genre dependent from database
-                            optional to add new genre
-            -->
+        <div class="genreSetter">
+            <div class="input">
+                <!--            todo genre dependent from database
+                                optional to add new genre-->
 
+                <select name="genre" id="genre">
+                    <option value="">genre</option>
+                    <?php
 
+                    foreach (getGenres() as $genre) {
+                        print "<option value ='" . $genre['id'] . "'>" . $genre['name'] . "</option>";
+                    }
+                    ?>
+                </select>
+                <div class="input">
+                    <input id="newGenre" name="newGenre" type="text" placeholder="<?= $lang["genre"] ?>">
+                    <input id="genreDescription" name="genreDescription" type="text"
+                           placeholder="<?= $lang["genreDescription"] ?>">
+
+                </div>
+
+            </div>
         </div>
         <div class="input">
             <input id="iban" name="iban" type="text" placeholder="<?= $lang["iban"] ?>" required>

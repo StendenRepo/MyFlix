@@ -48,7 +48,8 @@ showHead($pageTitle, ["assets/css/video.css"]);
                 <div class="video-header">
                     <div class="video-info">
                         <h1><?= htmlspecialchars($videoData['name']) ?></h1>
-                        <h2><?= htmlspecialchars($videoData['studioName']) ?></h2>
+                        <a href="search.php?creator=<?= $videoData['id'] ?>" class="noLink">
+                            <h2><?= htmlspecialchars($videoData['studioName']) ?></h2>
                     </div>
                     <div class="moderation">
                         <?php if ($moderation) { ?>

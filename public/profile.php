@@ -2,33 +2,27 @@
 require_once "../src/config.php";
 showHead("profile", (['assets/css/profile.css']));
 ?>
-
-    <html lang="en">
-
-    <?php
-    require_once './profileUpdate.php';
-    require_once './profileQuery.php';
-    ?>
-
+<?php
+require_once './profileUpdate.php';
+require_once './profileQuery.php';
+?>
+<?php showHeader(); ?>
     <body>
-
-    <?php showHeader(); ?>
-
     <div id="profileContainer">
         <div id="titleContainer">
-            <h2 id="profileTitle">Edit Profile</h2>
+            <h2 id="profileTitle"><?= $lang["editProfile"] ?></h2>
         </div>
 
         <div id="formContainer">
             <form action="" method="post" id="myForm">
 
                 <div class="inputBox">
-                    <label for="userName">Username</label>
+                    <label for="userName"><?= $lang["usernameLabel"] ?></label>
                     <input type="text" class="input" id="userName" name="userName" disabled
                            value="<?= $username; ?>">
                 </div>
                 <div class="inputBox">
-                    <label for="firstName">First name</label>
+                    <label for="firstName"><?= $lang["firstName"] ?></label>
                     <input type="text" class="input" id="firstName" name="firstName" disabled
                            value="<?= $firstName; ?>">
                 </div>
@@ -38,50 +32,48 @@ showHead("profile", (['assets/css/profile.css']));
                            value="<?= $lastName; ?>">
                 </div>
                 <div class="inputBox">
-                    <label for="eMail">E-mail address</label>
+                    <label for="eMail"><?= $lang["emailLabel"] ?></label>
                     <input type="email" class="input" id="eMail" name="eMail"
                            value="<?= $email; ?>">
                 </div>
                 <div class="inputBox">
-                    <label for="companyName">Studio name</label>
+                    <label for="companyName"><?= $lang["studioNameLabel"] ?></label>
                     <input type="text" class="input" id="studioName" name="studioName"
                            value="<?= $studioName; ?>">
                 </div>
                 <div class="inputBox">
-                    <label for="address">Address</label>
+                    <label for="address"><?= $lang["addressLabel"] ?></label>
                     <input type="text" class="input" id="address" name="address"
                            value="<?= $address; ?>">
                 </div>
                 <div class="inputBox">
-                    <label for="city">City</label>
+                    <label for="city"><?= $lang["cityLabel"] ?></label>
                     <input type="text" class="input" id="city" name="city"
-                           value="<?=$city; ?>">
+                           value="<?= $city; ?>">
                 </div>
                 <div class="inputBox">
-                    <label for="bankAccount">Bank Account Number</label>
+                    <label for="bankAccount"><?= $lang["bankLabel"] ?></label>
                     <input type="text" class="input" id="bankAccount" name="bankAccount"
                            value="<?= $iban; ?>">
                 </div>
                 <div id="cancelButton">
                     <input type="submit" id="cancel" name="cancel"
-                           value="Cancel">
+                           value="<?= $lang["cancel"] ?>">
                 </div>
                 <div id="updateButton">
                     <input type="submit" name="update"
-                           value="Update Profile">
+                           value="<?= $lang["update"] ?>">
                 </div>
             </form>
         </div>
     </div>
 
-    <?php
-    if (isset($_POST['cancel'])) {
-        header("Location: index.php");
-        exit();
-    }
-    ?>
-
+	<?php
+	if (isset($_POST['cancel'])) {
+		header("Location: index.php");
+		exit();
+	}
+	?>
     </body>
-    </html>
 
 <?php showFooter(); ?>

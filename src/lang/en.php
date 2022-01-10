@@ -44,9 +44,9 @@ $lang["emailLabel"] = "Email";
 $lang["emailPlaceholder"] = "someone@example.com";
 $lang["studioNameLabel"] = "Studio name";
 $lang["studioNamePlaceholder"] = "Enter your studio name";
-$lang["adressLabel"] = "Adress";
-$lang["adressPlaceholder"] = "Enter your adress";
-$lang["cityLabel"] = "city";
+$lang["addressLabel"] = "Address";
+$lang["addressPlaceholder"] = "Enter your adress";
+$lang["cityLabel"] = "City";
 $lang["cityPlaceholder"] = "Enter your city";
 $lang["bankLabel"] = "Bank account (IBAN)";
 $lang["bankPlaceholder"] = "Enter your IBAN here";
@@ -65,14 +65,14 @@ $lang["emailExists"] = "Email already exist";
 // Upload page
 $lang["uploadVideo"] = "Upload Video";
 $lang["fileError"] = [
-    'There is no error, the file uploaded with success',
-    'The uploaded file exceeds the upload_max_filesize directive in php.ini',
-    'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
-    'The uploaded file was only partially uploaded',
-    'No file was uploaded',
-    'Missing a temporary folder',
-    'Failed to write file to disk.',
-    'A PHP extension stopped the file upload.',
+	'There is no error, the file uploaded with success',
+	'The uploaded file exceeds the upload_max_filesize directive in php.ini',
+	'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
+	'The uploaded file was only partially uploaded',
+	'No file was uploaded',
+	'Missing a temporary folder',
+	'Failed to write file to disk.',
+	'A PHP extension stopped the file upload.',
 ];
 $lang["incType"] = "Make sure that you upload a .mp4, .webm, .avi or .flv video file.";
 $lang["noTitle"] = "Make sure to give your video a title.";
@@ -111,3 +111,9 @@ $lang["logoutSuccess"] = "You have been successfully logged out!";
 $lang["logoutRedirect"] = "You will be redirected in 2 seconds";
 
 
+//Profile
+$lang["editProfile"] = "Edit Profile";
+$lang["firstName"] = "First name";
+$lang["lastName"] = "Last name";
+$lang["cancel"] = "Cancel";
+$lang["update"] = "Update profile";

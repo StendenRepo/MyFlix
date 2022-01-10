@@ -86,7 +86,13 @@ function uploadVideo($title, $genre, $videoData, $imageData, $videoDb, $videoTar
         if (move_uploaded_file($imageData['tmpPath'], $imageTarget)) {
 
             // Prepare the SQL statement
-            $query = "INSERT INTO film (accountId, path, thumbnail, genreId, length, name) VALUES(?, ?, ?, ?, NULL, ?)";
+            if (isUserVerified($accountId)) {
+                $query = "INSERT INTO film (accountId, path, thumbnail, genreId, length, name, accepted) VALUES(?, ?, ?, ?, NULL, ?, 1)";
+            } else {
+                $query = "INSERT INTO film (accountId, path, thumbnail, genreId, length, name) VALUES(?, ?, ?, ?, NULL, ?)";
+            }
+
+
             if (!$stmt = mysqli_prepare($conn, $query)) {
                 echo "DB error : " . mysqli_error($conn);
                 die();

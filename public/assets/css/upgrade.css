@@ -1,3 +1,24 @@
 .genreSetter input {
     display: inline;
+
+}
+
+.upgradeForm {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    align-self: center;
+}
+
+table {
+    align-items: center;
+}
+
+
+#formContainer {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }

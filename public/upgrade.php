@@ -7,65 +7,93 @@ showHead("Upgrade", ['assets/css/upgrade.css']);
 
 global $lang;
 
-//TODO: remove debug when done
-echo "<pre>";
-var_dump($_SESSION);
-var_dump($_POST);
-echo "</pre>";
-
-
 ?>
     <body>
     <?php showHeader() ?>
-    <h1>Add your company data</h1>
-    <form action="<?= htmlentities($_SERVER["PHP_SELF"]) ?>" method="POST">
-        <div class="input">
-            <input id="firstName" name="firstName" type="text" placeholder="<?= $lang["firstName"] ?>" autofocus
-                   required>
-        </div>
-        <div class="input">
-            <input id="lastName" name="lastName" type="text" placeholder="<?= $lang["lastName"] ?>" required>
-        </div>
-        <div class="input">
-            <input id="companyName" name="companyName" type="text" placeholder="<?= $lang["companyName"] ?>" required>
-        </div>
-        <div class="genreSetter">
-            <div class="input">
-                <!--            todo genre dependent from database
-                                optional to add new genre-->
+    <h1>Add company data</h1>
+    <div class="upgradeForm">
+        <form action="<?= htmlentities($_SERVER["PHP_SELF"]) ?>" id="formContainer" method="POST">
+            <table>
+                <tr>
+                    <td>
+                        <div class="input">
+                            <input id="firstName" name="firstName" type="text" placeholder="<?= $lang["firstName"] ?>"
+                                   autofocus required>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input">
+                            <input id="lastName" name="lastName" type="text" placeholder="<?= $lang["lastName"] ?>"
+                                   required>
+                        </div>
+                    </td>
 
-                <select name="genre" id="genre">
-                    <option value="">genre</option>
-                    <?php
+                <tr>
+                    <td>
+                        <div class="input">
+                            <input id="companyName" name="companyName" type="text"
+                                   placeholder="<?= $lang["companyName"] ?>"
+                                   required>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input">
+                            <input id="iban" name="iban" type="text" placeholder="<?= $lang["iban"] ?>" required>
 
-                    foreach (getGenres() as $genre) {
-                        print "<option value ='" . $genre['id'] . "'>" . $genre['name'] . "</option>";
-                    }
-                    ?>
-                </select>
-                <div class="input">
-                    <input id="newGenre" name="newGenre" type="text" placeholder="<?= $lang["genre"] ?>">
-                    <input id="genreDescription" name="genreDescription" type="text"
-                           placeholder="<?= $lang["genreDescription"] ?>">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="genreSetter">
+                            <div class="input">
+                                <select name="genre" id="genre">
+                                    <option value="" disabled selected><?= $lang["genreSellector"] ?></option>
+                                    <?php
 
-                </div>
+                                    foreach (getGenres() as $genre) {
+                                        print "<option value ='" . $genre['id'] . "'>" . $genre['name'] . "</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td>
+                        <div class="input">
+                            <input id="newGenre" name="newGenre" type="text" placeholder="<?= $lang["genre"] ?>">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input">
+                            <input id="genreDescription" name="genreDescription" type="text"
+                                   placeholder="<?= $lang["genreDescription"] ?>">
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div class="input">
+                    <textarea id="address" name="address" type="text" placeholder="<?= $lang["address"] ?>"
+                              required></textarea>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input">
+                            <input id="city" name="city" type="text" placeholder="<?= $lang["city"] ?>" required>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="action">
+                <input type="submit" name="submit" value="<?= $lang["upgradeSubmit"] ?>" required>
             </div>
-        </div>
-        <div class="input">
-            <input id="iban" name="iban" type="text" placeholder="<?= $lang["iban"] ?>" required>
-
-        </div>
-        <div class="input">
-            <textarea id="address" name="address" type="text" placeholder="<?= $lang["address"] ?>" required></textarea>
-        </div>
-        <div class="input">
-            <input id="city" name="city" type="text" placeholder="<?= $lang["city"] ?>" required>
-        </div>
-        <div class="action">
-            <input type="submit" name="submit" value="<?= $lang["submit"] ?>" required>
-        </div>
-    </form>
+        </form>
+    </div>
     </body>
 <?php
 showFooter();

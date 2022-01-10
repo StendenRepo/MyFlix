@@ -43,11 +43,17 @@ small {
     display: block;
 }
 
-small.link {
+.link {
     color: var(--text-white);
     font-weight: bold;
 }
 
 .error {
     color: var(--text-error);
+}
+.resetMsg{
+    max-width: 90vw;
+}
+.resetMsg a{
+    margin: 20px 0;
 }

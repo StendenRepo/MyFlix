@@ -39,7 +39,5 @@ showHead($lang["login"], ['assets/css/auth.css']);
                 <small class="link"><?= $lang["register"] ?></small>
             </a>
         </div>
-    </div>
-
     </body>
 <?php showFooter(); ?>

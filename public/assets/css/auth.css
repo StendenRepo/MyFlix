@@ -1,0 +1,53 @@
+body {
+    background: var(--black);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+form {
+    display: block;
+}
+
+input {
+    width: 400px;
+    max-width: 90vw;
+}
+
+input[type=submit] {
+    width: 50%;
+    margin: 25px auto;
+}
+
+img {
+    max-width: 80vw;
+    width: 400px;
+    margin: 100px 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-gray);
+}
+
+small {
+    display: block;
+}
+
+small.link {
+    color: var(--text-white);
+    font-weight: bold;
+}
+
+.error {
+    color: var(--text-error);
+}

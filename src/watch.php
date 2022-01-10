@@ -14,7 +14,8 @@ function getVideo($id): bool|array|null {
 
     $mysqli = dbConnect();
 
-    $query = "SELECT c.`studioName`, f.`path`, f.`name`, f.`length` 
+    // Use left join to get results even when there is no studioName
+    $query = "SELECT c.`studioName`, c.`id`, f.`path`, f.`name`, f.`length`,f.`thumbnail`
               FROM `film` as f 
               JOIN `account` as a on f.`accountId`=a.`id` 
               JOIN `company` as c on a.`companyId`=c.`id` 

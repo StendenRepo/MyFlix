@@ -2,9 +2,11 @@
 require_once __DIR__ . '/../src/config.php';
 require_once __DIR__ . '/../src/watch.php';
 
+global $lang;
+
 $videoData = false;
 // TODO CHANGE VALUE OF MODERATION BASED ON ROLE
-$moderation = false;
+$moderation = true;
 
 if (!empty($_GET['v'])) {
     $videoData = getVideo($_GET['v']);
@@ -61,7 +63,7 @@ if (!$videoData) {
                         </div>
                     </div>
                     <div class="video-player">
-                        <video controls class="video" id="video" preload="metadata">
+                        <video controls class="video" id="video" preload="metadata" poster="<?= $videoData['thumbnail'] ?>">
                             <source src="<?= htmlspecialchars($videoData['path']) ?>">
                         </video>
                         <svg id="start" class="hidden" xmlns="http://www.w3.org/2000/svg" width="100" height="100"

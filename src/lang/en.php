@@ -33,6 +33,7 @@ $lang["newUser"] = "New to MyFlix?";
 $lang["registerLink"] = "register";
 $lang["registerSuccess"] = "You have successfully made an account, please log in.";
 $lang["registerLink"] = "Register";
+$lang["loginPassReset"] = "Forgot your password? Click here";
 $lang["success"] = "You have successfully made an account, please log in.";
 
 // Registration

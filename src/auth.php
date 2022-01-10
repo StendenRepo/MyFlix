@@ -90,6 +90,10 @@ function getUserAccountLevel(int $userId): bool|int
     return mysqli_fetch_assoc($result)["accountLevel"];
 }
 
+/***
+ * @param int $userId
+ * @return bool|int
+ */
 function isUserVerified(int $userId): bool|int
 {
     $db = dbConnect();

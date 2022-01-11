@@ -1,0 +1,18 @@
+.background {
+    width: 250px;
+    height: 700px;
+    background-color:#222222;
+    }
+
+.menubar h1 {
+    margin-bottom: 20px;
+    margin-left: 45px;
+    padding-top: 30px;
+}
+
+.menubar a {
+    text-decoration: none;
+    padding-bottom: 5px;
+    padding-left: 45px;
+    line-height: 2.0;
+}

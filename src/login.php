@@ -1,6 +1,13 @@
 <?php
 global $lang;
 
+if (isset($_SESSION['userId'])){
+    header("location: profile.php");
+}
+else{
+    echo "er is geen sessie";
+}
+
 // Check if user pushed button with POST.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Check if email and password are filled in.

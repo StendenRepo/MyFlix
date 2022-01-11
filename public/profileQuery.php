@@ -35,5 +35,5 @@
         echo "No data found";
     }
 
-$conn->close();
+dbClose($conn);
 

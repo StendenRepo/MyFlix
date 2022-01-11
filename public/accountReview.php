@@ -45,11 +45,5 @@ showHead($lang["accountModeration"], ['assets/css/accountReview.css']);
                 </form>
             </div>
         </div>
-
-        <?php
-        echo "<pre>";
-        echo var_dump();
-        echo "</pre>";
-        ?>
     </body>
 <?php showFooter(); ?>

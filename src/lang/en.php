@@ -103,3 +103,4 @@ $lang["approved"] = "Account was succesfully approved";
 $lang["denied"] = "Account was succesfully denied";
 $lang["approve"] = "Approve";
 $lang["deny"] = "Deny";
+$lang["nonePedning"] = "There are no more pending film studio's";

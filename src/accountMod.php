@@ -68,3 +68,12 @@ if(isset($_POST["approve"])){
 if(isset($_POST["deny"])){
     denyAccount($id);
 }
+
+function nonePendingMsg(){
+    global $lang;
+    
+    if(empty(getNonApprovedCompany())){
+        $status = $lang["nonePedning"];
+        return $status;
+    }
+}

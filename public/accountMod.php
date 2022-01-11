@@ -12,6 +12,7 @@ showHead($lang["accountModeration"], ['assets/css/accountMod.css']);
             <div id="title">
                 <h1><?= $lang["filmStudio"] ?></h1>
                 <p><?= htmlspecialchars($_GET["approval"] ?? ""); ?></p>
+                <p><?= nonePendingMsg() ?></p>
             </div>
 
             <?php foreach (getNonApprovedCompany() as $company): ?>

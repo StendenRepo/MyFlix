@@ -30,7 +30,6 @@ if (isset($_POST['update'])) {
                    SET a.email=?, c.studioName=?, c.address=?, c.city=?, c.iban=? 
                    WHERE a.id =?";
 
-<<<<<<< Updated upstream
 			if ($stmtCompany = mysqli_prepare($conn, $sqlCompany)) {
 				if (mysqli_stmt_bind_param($stmtCompany, "sssssi", $eMail, $studioName, $address, $city,
 					$bankAccount, $accountId)) {
@@ -50,22 +49,3 @@ if (isset($_POST['update'])) {
 	}
 	dbClose($conn);
 }
-=======
-            if ($stmtCompany = mysqli_prepare($conn, $sqlCompany)) {
-                if (mysqli_stmt_bind_param($stmtCompany, "sssssi", $eMail, $studioName, $address, $city,
-                    $bankAccount, $accountId)) {
-                    if (!mysqli_stmt_execute($stmtCompany)) {
-                        echo "Query error in company table." . "<br>";
-                        die(mysqli_error($conn));
-                    }
-                }
-            } else {
-                echo "Prepare error in company table." . "<br>";
-                die(mysqli_error($conn));
-            }
-            echo $updateSuccess;
-        }
-    }
-    dbClose($conn);
-}
->>>>>>> Stashed changes

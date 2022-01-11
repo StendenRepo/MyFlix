@@ -116,5 +116,6 @@ $lang["profile"] = "Profile";
 $lang["editProfile"] = "Edit Profile";
 $lang["firstName"] = "First name";
 $lang["lastName"] = "Last name";
-$lang["cancel"] = "Cancel";
 $lang["update"] = "Update profile";
+$lang["updateSuccess"] ="Your profile has been updated";
+$lang["ibanError"] = "Invalid IBAN";

@@ -10,7 +10,7 @@ require_once "../src/login.php";
 global $lang;
 
 if (isUserLoggedIn()) {
-    header("Location: profile.php");
+    header("Location: index.php");
     exit;
 }
 

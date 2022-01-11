@@ -125,7 +125,6 @@ function checkEmail(string $eMail, $accountId)
 {
     $conn = dbConnect();
     $emailQuery = "SELECT * FROM account WHERE email = ? AND NOT id=?";
-    $updateSuccess = "Your profile has been updated.";
 
     if ($stmtEmail = mysqli_prepare($conn, $emailQuery)) {
         if (mysqli_stmt_bind_param($stmtEmail, "si", $eMail, $accountId)) {

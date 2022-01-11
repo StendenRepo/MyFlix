@@ -1,14 +1,20 @@
 <?php
 require_once "../src/config.php";
 showHead($lang["profile"], (['assets/css/profile.css']));
-?>
-<?php
+
+$error = "";
+$success = "";
+
 require_once './profileUpdate.php';
 require_once './profileQuery.php';
 require_once '../src/auth.php';
 ?>
-<?php showHeader(); ?>
     <body>
+
+    <?php
+        showHeader();
+    ?>
+
     <div id="profileContainer">
         <div id="titleContainer">
             <h2 id="profileTitle"><?= $lang["editProfile"] ?></h2>
@@ -19,7 +25,7 @@ require_once '../src/auth.php';
         </div>
 
         <div id="formContainer">
-            <form action="" method="post" id="myForm">
+            <form action="profile.php" method="post" id="myForm">
 
                 <div class="inputBox">
                     <label for="userName"><?= $lang["usernameLabel"] ?></label>
@@ -32,7 +38,7 @@ require_once '../src/auth.php';
                            value="<?= $firstName; ?>">
                 </div>
                 <div class="inputBox">
-                    <label for="lastName">Last name</label>
+                    <label for="lastName"><?= $lang["lastName"] ?></label>
                     <input type="text" class="input" id="lastName" name="lastName" disabled
                            value="<?= $lastName; ?>">
                 </div>
@@ -61,10 +67,6 @@ require_once '../src/auth.php';
                     <input type="text" class="input" id="bankAccount" name="bankAccount"
                            value="<?= $iban; ?>">
                 </div>
-                <div id="cancelButton">
-                    <input type="submit" id="cancel" name="cancel"
-                           value="<?= $lang["cancel"] ?>">
-                </div>
                 <div id="updateButton">
                     <input type="submit" name="update"
                            value="<?= $lang["update"] ?>">
@@ -73,12 +75,6 @@ require_once '../src/auth.php';
         </div>
     </div>
 
-	<?php
-	if (isset($_POST['cancel'])) {
-		header("Location: index.php");
-		exit();
-	}
-	?>
     </body>
 
 <?php showFooter(); ?>

@@ -2,7 +2,6 @@
     global $lang;
     $userLvl = getUserAccountLevel(getCurrentUserId());
 ?>
-<div class="background">
     <div class="menubar">
         <ul>
                 <H1><?=$lang["manage"]?></H1>
@@ -17,6 +16,6 @@
                 <li><a href="index.php"><?=$lang["allstudios"]?></a></li>
                 <?php } ?>
                 <li><a href="index.php"><?=$lang["changepassword"]?></a></li>
+                <li><a href="logout.php"><?=$lang["logout"]?></a></li>
         </ul>
     </div>
-</div>

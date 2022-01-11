@@ -133,13 +133,11 @@ function checkEmail(string $eMail, $accountId)
                 mysqli_stmt_store_result($stmtEmail);
 
                 if (mysqli_stmt_num_rows($stmtEmail) > 0) {
-                    echo "Email already exists.";
                     return false;
                 } else {
                     if (filter_var($eMail, FILTER_VALIDATE_EMAIL)) {
                         return true;
                     } else {
-                        echo "Not a real email";
                         return false;
                     }
 
@@ -152,8 +150,10 @@ function checkEmail(string $eMail, $accountId)
 function checkIban(string $bankAccount, $accountId)
 {
     $conn = dbConnect();
-    $ibanQuery = "SELECT * FROM company WHERE iban = ? AND NOT id=?";
-    $updateSuccess = "Your profile has been updated.";
+    $ibanQuery = "SELECT * 
+    FROM company 
+    LEFT JOIN account on account.companyId = company.id
+    WHERE company.iban = ? AND NOT account.id=?";
 
     if ($stmtIban = mysqli_prepare($conn, $ibanQuery)) {
         if (mysqli_stmt_bind_param($stmtIban, "si", $bankAccount, $accountId)) {
@@ -161,10 +161,13 @@ function checkIban(string $bankAccount, $accountId)
                 mysqli_stmt_store_result($stmtIban);
 
                 if (mysqli_stmt_num_rows($stmtIban) > 0) {
-                    echo "Enter a valid bank account number.";
                     return false;
                 } else {
-                    return true;
+                    if (isValidIban($bankAccount)) {
+                        return true;
+                    }else{
+                        return false;
+                    }
                 }
             }
         }

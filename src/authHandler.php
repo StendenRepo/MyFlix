@@ -10,7 +10,6 @@ $webRoutes = [
     "watch"         => 0,
     "passwordReset" => null,
     "search"        => null,
-    "test"          => null,
 
 ];
 

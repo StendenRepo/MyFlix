@@ -60,6 +60,8 @@ $lang["passwordReq"] = "Password must be at least 8 characters long and contain 
 $lang["exceedUserLength"] = "Username cannot exceed 20 characters";
 $lang["exceedEmailLength"] = "Email cannot exceed 64 characters";
 $lang["emailExists"] = "Email already exist";
+$lang["queryError"] = "Query error";
+$lang["prepareError"] = "Prepare error";
 
 
 // Upload page
@@ -110,4 +112,7 @@ $lang["searchNoResult"] = "This search has no results try different keywords";
 $lang["logoutSuccess"] = "You have been successfully logged out!";
 $lang["logoutRedirect"] = "You will be redirected in 2 seconds";
 
-
+//changePassword
+$lang["changePassword"] = "Change Password";
+$lang["invalidPassword"] = "Password is not valid or does not meet the requirements.";
+$lang["empty"] = "Both fields are empty";

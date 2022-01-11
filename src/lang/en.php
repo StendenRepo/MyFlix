@@ -89,3 +89,5 @@ $lang["return"] = "Return";
 $lang["videoNotFound"] = "Video not found";
 $lang["emailNotValid"] = "This email is not valid";
 
+//Change password
+$lang["changePassword"] = "Change Password";

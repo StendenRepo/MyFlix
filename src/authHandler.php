@@ -7,8 +7,9 @@ $webRoutes = [
     "register"    => null,
     "installdb"   => null,
     "uploadVideo" => 1,
-    "watch"       => 0
-    "passwordReset" => null
+    "watch"       => 0,
+    "passwordReset" => null,
+    "changePassword" => null
 ];
 
 
@@ -18,7 +19,7 @@ function authHandler() {
 
     // page cannot be found, or does not exist in the webRoutes array.
     if (!array_key_exists($route, $webRoutes))
-        exit("This page does not exists");
+        exit("This page does not exist");
 
     // User can view the page without being logged in.
     if ($webRoutes[$route] === null)

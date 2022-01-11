@@ -5,12 +5,17 @@ showHead($lang["profile"], (['assets/css/profile.css']));
 <?php
 require_once './profileUpdate.php';
 require_once './profileQuery.php';
+require_once '../src/auth.php';
 ?>
 <?php showHeader(); ?>
     <body>
     <div id="profileContainer">
         <div id="titleContainer">
             <h2 id="profileTitle"><?= $lang["editProfile"] ?></h2>
+            <?php
+              echo $error;
+              echo $success;
+            ?>
         </div>
 
         <div id="formContainer">

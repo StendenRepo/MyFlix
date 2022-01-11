@@ -1,6 +1,8 @@
 <?php
 
     require_once "../src/config.php";
+//    $error = "";
+//    $success = "";
 
     $conn = dbConnect();
     $accountId = isUserLoggedIn();
@@ -14,12 +16,12 @@
     if ($result = mysqli_prepare($conn, $sql)) {
         if (mysqli_stmt_bind_param($result, "i", $accountId)) {
             if (!mysqli_stmt_execute($result)) {
-                echo "Query error";
+                $error = "Query error";
                 die(mysqli_error($conn));
             }
         }
     } else {
-        echo "Prepare error";
+        $error = "Prepare error";
         die(mysqli_error($conn));
     }
 
@@ -32,8 +34,7 @@
             $alreadyExists = "";
         }
     } else {
-        echo "No data found";
+        $error = "No data found";
     }
 
 dbClose($conn);
-

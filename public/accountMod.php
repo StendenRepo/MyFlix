@@ -11,6 +11,7 @@ showHead($lang["accountModeration"], ['assets/css/accountMod.css']);
         <div id="mainContainer">
             <div id="title">
                 <h1><?= $lang["filmStudio"] ?></h1>
+                <p><?= htmlspecialchars($_GET["approval"] ?? ""); ?></p>
             </div>
 
             <?php foreach (getNonApprovedCompany() as $company): ?>
@@ -20,17 +21,5 @@ showHead($lang["accountModeration"], ['assets/css/accountMod.css']);
                 </div>
             <?php endforeach ?>
         </div>
-
-
-
-
-
-
-
-        <?php
-        echo "<pre>";
-        echo var_dump(getNonApprovedCompany());
-        echo "</pre>";
-        ?>
     </body>
 <?php showFooter(); ?>

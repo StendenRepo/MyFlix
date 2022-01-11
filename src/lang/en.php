@@ -98,3 +98,6 @@ $lang["studioName"] = "Studio Name";
 $lang["genre"] = "Genre";
 $lang["address"] = "Address";
 $lang["city"] = "City";
+$lang["iban"] = "IBAN";
+$lang["approved"] = "Account was succesfully approved";
+$lang["denied"] = "Account was succesfully denied";

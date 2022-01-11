@@ -12,15 +12,12 @@ if (isset($_POST['update'])) {
     $address = filter_var($_POST['address'], FILTER_SANITIZE_STRING);
     $city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
     $bankAccount = filter_var($_POST['bankAccount'], FILTER_SANITIZE_STRING);
-
-    $error = "";
-    $success = "";
-
+    
     require_once "../src/auth.php";
 
     if (empty($_POST['eMail']) || empty($_POST['studioName']) || empty($_POST['address']) || empty($_POST['city']) ||
         empty($_POST['bankAccount'])) {
-        $error = "One or more fields are empty";
+        $error = $lang["loginFillAllFields"];
     } else {
 
         if (checkEmail($eMail, $accountId)) {
@@ -43,14 +40,14 @@ if (isset($_POST['update'])) {
                     $error = "Prepare error in company table <br>";
                     die(mysqli_error($conn));
                 }
-                $success = "Your profile has been updated";
+                $success = $lang["updateSuccess"];
 
 
             } else {
-                $error = "Invalid IBAN";
+                $error = $lang["ibanError"];
             }
         } else {
-            $error = "Invalid email";
+            $error = $lang["emailNotValid"];
         }
 
 

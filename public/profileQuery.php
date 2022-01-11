@@ -1,8 +1,6 @@
 <?php
 
     require_once "../src/config.php";
-//    $error = "";
-//    $success = "";
 
     $conn = dbConnect();
     $accountId = isUserLoggedIn();

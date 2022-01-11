@@ -101,3 +101,5 @@ $lang["city"] = "City";
 $lang["iban"] = "IBAN";
 $lang["approved"] = "Account was succesfully approved";
 $lang["denied"] = "Account was succesfully denied";
+$lang["approve"] = "Approve";
+$lang["deny"] = "Deny";

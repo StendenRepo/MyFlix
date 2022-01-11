@@ -2,14 +2,22 @@ p {
     font-size: 1.25rem;
 }
 
-#accountContainer {
+#container {
+    width: 55%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#accountInfo {
     margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    width: 55%;
 }
 
 .studioInfo {
@@ -23,4 +31,15 @@ p {
 .label {
     color: var(--white);
     margin-bottom: 10px;
+}
+
+form {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+form input {
+    margin: 15px;
 }

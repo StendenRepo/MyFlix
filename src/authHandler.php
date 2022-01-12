@@ -1,6 +1,7 @@
 <?php
 
 $webRoutes = [
+    "videoMod" => null,
 	"logout"         => null,
 	"index"          => null,
 	"login"          => null,

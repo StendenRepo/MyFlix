@@ -50,11 +50,10 @@ h1::first-letter, h2::first-letter {
     position: relative;
     background-color: var(--black);
 }
-
-
 @media screen and (max-height: 660px) and (orientation: landscape) {
     .video{
         max-height: 100%;
         margin-bottom: 50px;
     }
 }
+

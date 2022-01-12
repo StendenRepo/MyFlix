@@ -13,7 +13,8 @@ $webRoutes = [
     "logout" => null,
     "search" => null,
     "changePassword" => 0,
-    "profile" => 0
+    "profile" => 0,
+    "videoMod" => null
 ];
 
 

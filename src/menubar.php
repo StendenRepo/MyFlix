@@ -6,7 +6,7 @@ $userLvl = getUserAccountLevel(getCurrentUserId());
     <ul>
         <h1><?= $lang["manage"] ?></h1>
         <?php if ($userLvl === 0) { ?>
-            <li><a href="#"><?= $lang["upgrade"] ?></a></li>
+            <li><a href="upgrade.php"><?= $lang["upgrade"] ?></a></li>
         <?php } elseif ($userLvl === 1) { ?>
             <li><a href="search.php?creator=<?= getCurrentUserId() ?>"><?= $lang["myvideos"] ?></a></li>
             <li><a href="uploadVideo.php"><?= $lang["uploadvideos"] ?></a></li>

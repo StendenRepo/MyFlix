@@ -117,8 +117,10 @@ $lang["lastName"] = "last name";
 $lang["city"] = "city";
 $lang["genreSellector"] = "Select existing genre";
 $lang["genre"] = "genre";
-$lang["genreDescription"] = "genre description";
-$lang["upgradeSubmit"] = "submit";
+$lang["genreDescription"] = "Genre description";
+$lang["upgradeSubmit"] = "Upgrade";
+$lang["createNewGenre"] = "Or create a new genre";
+$lang["companyData"] = "Add company data";
 
 // Account moderation
 $lang["accountModeration"] = "Account Moderation";

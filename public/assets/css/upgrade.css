@@ -1,24 +1,30 @@
-.genreSetter input {
-    display: inline;
-
-}
-
 .upgradeForm {
     display: block;
     text-align: center;
     width: 100%;
-    margin: auto;
-    align-self: center;
 }
 
-table {
-    align-items: center;
+form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: CALC(100vw - 250px);
+    max-width: 840px;
+    gap: 30px;
+    margin: 0 auto;
+    background-color: var(--background);
 }
 
+.upgradeForm input[type="text"], select, textarea {
+    width: 300px;
+    margin: 0 !important;
+    background-color: #0000004d;
+}
 
-#formContainer {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
+.action, .genreSetter, p {
+    width: 100%;
+}
+
+.action input, .genreSetter select {
+    margin: 0 auto !important;
 }

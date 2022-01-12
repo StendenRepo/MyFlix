@@ -12,6 +12,8 @@
     justify-content: center;
     flex-wrap: wrap;
     background-color: #2D2D2D;
+    max-width: 840px;
+    margin: 0 auto;
 }
 
 .inputBox {

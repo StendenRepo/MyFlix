@@ -104,6 +104,21 @@ $lang["videoNoStudio"] = "The studio that uploaded this video does not exist any
 $lang["videoNoStudioTitle"] = "Film studio not found";
 $lang["emailNotValid"] = "This email is not valid";
 
+// Account moderation
+$lang["accountModeration"] = "Account Moderation";
+$lang["filmStudio"] = "Film studio's";
+$lang["view"] = "View";
+$lang["accountId"] = "Account ID";
+$lang["studioName"] = "Studio Name";
+$lang["genre"] = "Genre";
+$lang["address"] = "Address";
+$lang["city"] = "City";
+$lang["iban"] = "IBAN";
+$lang["approved"] = "Account was succesfully approved";
+$lang["denied"] = "Account was succesfully denied";
+$lang["approve"] = "Approve";
+$lang["deny"] = "Deny";
+$lang["nonePedning"] = "There are no more pending film studio's";
 
 // Search
 $lang["searchNoResultTitle"] = "No results";

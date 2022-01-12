@@ -28,6 +28,7 @@ if (isset($_POST["submit"])) {
         $newGenreStmt = mysqli_prepare($conn, $newGenreQuery);
         mysqli_stmt_bind_param($newGenreStmt, "ss", $newGenre, $newGenreDesc);
         mysqli_stmt_execute($newGenreStmt);
+        mysqli_stmt_close($newGenreStmt);
 
 // getting the id of the new created genre record
         $getNewGenreIdStmt = mysqli_prepare($conn, $getNewGenreIdQuery);
@@ -43,11 +44,13 @@ if (isset($_POST["submit"])) {
     $companyStmt = mysqli_prepare($conn, $companyQuery);
     mysqli_stmt_bind_param($companyStmt, "sssss", $companyName, $genre, $iban, $address, $city);
     mysqli_stmt_execute($companyStmt);
+    mysqli_stmt_close($companyStmt);
 
 //   Updating the user record with the new company and new data
     $userStmt = mysqli_prepare($conn, $userQuery);
     mysqli_stmt_bind_param($userStmt, "ssss", $firstname, $lastName, $companyName, $_SESSION['userId']);
     mysqli_stmt_execute($userStmt);
+    mysqli_stmt_close($userStmt);
 
     dbClose($conn);
 

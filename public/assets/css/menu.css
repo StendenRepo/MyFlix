@@ -1,18 +1,20 @@
-.background {
+.menubar {
     width: 250px;
-    height: 700px;
-    background-color:#222222;
-    }
+    height: CALC(100vh - var(--header-height));
+    background-color: var(--header-black);
+    padding: 0 45px 5px;
+}
 
 .menubar h1 {
     margin-bottom: 20px;
-    margin-left: 45px;
     padding-top: 30px;
+}
+
+.menubar ul {
+    list-style-type: none;
 }
 
 .menubar a {
     text-decoration: none;
-    padding-bottom: 5px;
-    padding-left: 45px;
     line-height: 2.0;
 }

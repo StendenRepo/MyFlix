@@ -48,7 +48,7 @@ $lang["studioNameLabel"] = "Studio name";
 $lang["studioNamePlaceholder"] = "Enter your studio name";
 $lang["addressLabel"] = "Address";
 $lang["addressPlaceholder"] = "Enter your address";
-$lang["cityLabel"] = "city";
+$lang["cityLabel"] = "City";
 $lang["cityPlaceholder"] = "Enter your city";
 $lang["bankLabel"] = "Bank account (IBAN)";
 $lang["bankPlaceholder"] = "Enter your IBAN here";
@@ -128,5 +128,14 @@ $lang["changepassword"] = "Change password";
 //changePassword
 $lang["changePassword"] = "Change Password";
 
+
+//Profile
+$lang["profile"] = "Profile";
+$lang["editProfile"] = "Edit Profile";
+$lang["firstName"] = "First name";
+$lang["lastName"] = "Last name";
+$lang["update"] = "Update profile";
+$lang["updateSuccess"] ="Your profile has been updated";
+$lang["ibanError"] = "Invalid IBAN";
 $lang["empty"] = "Both fields are empty";
 

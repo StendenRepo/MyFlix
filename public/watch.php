@@ -19,6 +19,7 @@ if (!empty($_GET['v'])) {
         if($_GET["accepted"] === "true") {
             echo "Video has been accepted";
             acceptVideo($_GET["v"]);
+            $videoData["accepted"]= true;
         } else {
             echo "Video has been declined";
             declineVideo($_GET["v"]);
@@ -51,10 +52,8 @@ if (!$videoData) {
                             <!--check if video is not yet accepted-->
                             <?php if(!$videoData["accepted"]) { ?>
 
-                            <!-- Approve icon-->
-                            <form action="<?= $formMethod ?>" method="GET">
-                            <input type="hidden" name="v" value="<?= $_GET["v"] ?>">
-                            <button type="submit" name="accepted" value="true">
+                            <!-- Approve button-->
+                            <a href="watch.php?v=<?=$_GET['v']?>&accepted=true">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="54" height="40" viewBox="0 0 54 54">
                                     <g transform="translate(-1495 -159)">
                                         <rect rx="10" width="54" height="54" fill="var(--green)"
@@ -67,14 +66,12 @@ if (!$videoData) {
                                         </g>
                                     </g>
                                 </svg>
-                            </button>
-                            </form>
+                            </a>
                             <?php } ?>
                             
-                            <!-- Denied icon -->
-                            <form action="<?= $formMethod ?>" method="GET">
-                            <input type="hidden" name="v" value="<?= $_GET["v"] ?>">
-                            <button type="submit" name="accepted" value="false">
+                            <!-- Deny button -->
+                            
+                            <a href="watch.php?v=<?=$_GET['v']?>&accepted=false">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="54" height="40" viewBox="0 0 54 54">
                                     <g transform="translate(-1566 -159)">
                                         <rect rx="10" width="54" height="54" fill="var(--red)"
@@ -87,8 +84,8 @@ if (!$videoData) {
                                         </g>
                                     </g>
                                     </svg>
-                            </button>
-                            </form>
+                            </a>
+                            
                         <?php } ?>
                     </div>
                 </div>

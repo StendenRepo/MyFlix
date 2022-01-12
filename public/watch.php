@@ -13,6 +13,17 @@ else {
 
 if (!empty($_GET['v'])) {
     $videoData = getVideo($_GET['v'], $moderation);
+    $formMethod =  htmlentities($_SERVER["PHP_SELF"] . "?v=" . $_GET["v"]);
+
+    if(!empty($_GET["accepted"])) {
+        if($_GET["accepted"] === "true") {
+            echo "Video has been accepted";
+            acceptVideo($_GET["v"]);
+        } else {
+            echo "Video has been declined";
+            declineVideo($_GET["v"]);
+        }
+    }
 }
 if (!$videoData) {
     showHead($lang['videoNotFound'], ["assets/css/video.css"]);
@@ -20,6 +31,7 @@ if (!$videoData) {
     // Show header with the video title in it
     showHead(htmlspecialchars($videoData['name']), ["assets/css/video.css"]);
 }
+
 
 
 ?>
@@ -36,41 +48,47 @@ if (!$videoData) {
                     </div>
                     <div class="moderation">
                         <?php if ($moderation) { ?>
-                            <!-- Approve icon-->
-                            
                             <!--check if video is not yet accepted-->
                             <?php if(!$videoData["accepted"]) { ?>
-                           
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
-                                <g transform="translate(-1495 -159)">
-                                    <rect rx="10" width="54" height="54" fill="var(--green)"
-                                          transform="translate(1495 159)"/>
-                                    <g transform="translate(1511.542 178.44)">
-                                        <line x1="12" y2="22" fill="none" stroke-width="7" stroke-linecap="round"
-                                              stroke="var(--background)" transform="translate(9.458 -4.44)"/>
-                                        <line x1="9" y1="9" fill="none" stroke-width="7" stroke-linecap="round"
-                                              stroke="var(--background)" transform="translate(0.458 8.56)"/>
+
+                            <!-- Approve icon-->
+                            <form action="<?= $formMethod ?>" method="GET">
+                            <input type="hidden" name="v" value="<?= $_GET["v"] ?>">
+                            <button type="submit" name="accepted" value="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="40" viewBox="0 0 54 54">
+                                    <g transform="translate(-1495 -159)">
+                                        <rect rx="10" width="54" height="54" fill="var(--green)"
+                                            transform="translate(1495 159)"/>
+                                        <g transform="translate(1511.542 178.44)">
+                                            <line x1="12" y2="22" fill="none" stroke-width="7" stroke-linecap="round"
+                                                stroke="var(--background)" transform="translate(9.458 -4.44)"/>
+                                            <line x1="9" y1="9" fill="none" stroke-width="7" stroke-linecap="round"
+                                                stroke="var(--background)" transform="translate(0.458 8.56)"/>
+                                        </g>
                                     </g>
-                                </g>
-                            </svg>
-                            
+                                </svg>
+                            </button>
+                            </form>
                             <?php } ?>
                             
                             <!-- Denied icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
-                                <g transform="translate(-1566 -159)">
-                                    <rect rx="10" width="54" height="54" fill="var(--red)"
-                                          transform="translate(1566 159)"/>
-                                    <g transform="translate(1585.258 175.243)">
-                                        <line x1="15.293" y2="21.657" fill="none" stroke-width="7"
-                                              stroke-linecap="round" stroke="var(--background)"/>
-                                        <line x2="15.341" y2="21.657" fill="none" stroke-width="7"
-                                              stroke-linecap="round" stroke="var(--background)"/>
+                            <form action="<?= $formMethod ?>" method="GET">
+                            <input type="hidden" name="v" value="<?= $_GET["v"] ?>">
+                            <button type="submit" name="accepted" value="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="40" viewBox="0 0 54 54">
+                                    <g transform="translate(-1566 -159)">
+                                        <rect rx="10" width="54" height="54" fill="var(--red)"
+                                            transform="translate(1566 159)"/>
+                                        <g transform="translate(1585.258 175.243)">
+                                            <line x1="15.293" y2="21.657" fill="none" stroke-width="7"
+                                                stroke-linecap="round" stroke="var(--background)"/>
+                                            <line x2="15.341" y2="21.657" fill="none" stroke-width="7"
+                                                stroke-linecap="round" stroke="var(--background)"/>
+                                        </g>
                                     </g>
-                                </g>
-                            </svg>
-
+                                    </svg>
+                            </button>
+                            </form>
                         <?php } ?>
                     </div>
                 </div>

@@ -33,3 +33,19 @@ function getVideo($id, $isModerator = false): bool|array|null {
     $res = mysqli_stmt_get_result($stmt);
     return mysqli_fetch_array($res, MYSQLI_ASSOC);
 }
+
+function acceptVideo($id) {
+    $db = dbConnect();
+    $query = "UPDATE film SET accepted=1 WHERE id=$id";
+
+    $stmt = mysqli_prepare($db, $query );
+    mysqli_stmt_execute($stmt);
+}
+
+function declineVideo($id) {
+    $db = dbConnect();
+    $query = "DELETE FROM film WHERE id=$id";
+
+    $stmt = mysqli_prepare($db, $query );
+    mysqli_stmt_execute($stmt);
+}

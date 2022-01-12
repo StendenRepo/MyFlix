@@ -14,13 +14,14 @@ function getCompanyInfo($id){
 
     // DB connection and getting company info
     $conn = dbConnect();
-    $infoStmt = mysqli_query($conn, "SELECT * FROM `company` WHERE id = $id");
+    $infoStmt = mysqli_prepare($conn, "SELECT * FROM `company` WHERE id = ?");
+    mysqli_stmt_bind_param($infoStmt, "i", $id);
+    mysqli_stmt_execute($infoStmt);
+    $result = mysqli_stmt_get_result($infoStmt);
 
     // puts info into array
-    $companyInfo = [];
-    while($row = mysqli_fetch_assoc($infoStmt)){
-        array_push($companyInfo, $row);
-    }
+    $companyInfo = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    mysqli_free_result($result);
 
     dbClose($conn);
 

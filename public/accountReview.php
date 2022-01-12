@@ -14,11 +14,11 @@ showHead($lang["accountModeration"], ['assets/css/accountReview.css']);
             <div id="accountInfo">
                 <div class="studioInfo">
                     <p class="label"><?= $lang["accountId"] ?></p>
-                    <p><?= $companyInfo[0]["id"] ?></p>
+                    <p><?= $companyInfo["id"] ?></p>
                 </div>
                 <div class="studioInfo">
                     <p class="label"><?= $lang["studioName"]?></p>
-                    <p><?= $companyInfo[0]["studioName"] ?></p>
+                    <p><?= $companyInfo["studioName"] ?></p>
                 </div>
                 <div class="studioInfo">
                     <p class="label"><?= $lang["genre"] ?></p>
@@ -26,15 +26,15 @@ showHead($lang["accountModeration"], ['assets/css/accountReview.css']);
                 </div>
                 <div class="studioInfo">
                     <p class="label"><?= $lang["iban"] ?></p>
-                    <p><?= $companyInfo[0]["iban"] ?></p>
+                    <p><?= $companyInfo["iban"] ?></p>
                 </div>
                 <div class="studioInfo">
                     <p class="label"><?= $lang["address"] ?></p>
-                    <p><?= $companyInfo[0]["address"] ?></p>
+                    <p><?= $companyInfo["address"] ?></p>
                 </div>
                 <div class="studioInfo">
                     <p class="label"><?= $lang["city"] ?></p>
-                    <p><?= $companyInfo[0]["city"] ?></p>
+                    <p><?= $companyInfo["city"] ?></p>
                 </div>
             </div>
 

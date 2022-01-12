@@ -18,12 +18,8 @@ function getGenres(){
 
 function idToGenre($id, $companyInfo){
     $data = getGenres();
-    
-    foreach ($companyInfo as $key => $val) {
-        if ($val["id"] === $id) {
-            $key = $key;
-        }
-    }
+
+    $key = array_search($id, array_column($data, "id"));
 
     $genre = $data[$key]["name"];
 

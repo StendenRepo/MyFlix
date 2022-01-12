@@ -90,6 +90,30 @@ function getUserAccountLevel(int $userId): bool|int
     return mysqli_fetch_assoc($result)["accountLevel"];
 }
 
+/***
+ * @param int $userId
+ * @return bool|int
+ */
+function isUserVerified(int $userId): bool|int
+{
+    $db = dbConnect();
+    $stmt = mysqli_prepare($db, "SELECT verified FROM account where id = ?");
+
+    if (!mysqli_stmt_bind_param($stmt, "i", $userId) || !mysqli_stmt_execute($stmt)) {
+        die("Something went wrong with preparing the statements \n" . mysqli_error($db));
+    }
+
+    $result = mysqli_stmt_get_result($stmt);
+    mysqli_stmt_free_result($stmt);
+    mysqli_stmt_close($stmt);
+    dbClose($db);
+
+    if (mysqli_num_rows($result) === 0)
+        return false;
+
+    return mysqli_fetch_assoc($result)["verified"];
+}
+
 /**
  * @return bool returns user id if the user is logged in else returns false.
  */

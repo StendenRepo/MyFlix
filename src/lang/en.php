@@ -18,6 +18,7 @@ $lang["login"] = "Login";
 $lang["register"] = "Register";
 
 // Login
+$lang["loginRequired"] = "To access this page you need to log in";
 $lang["loginHeader"] = "Login to your Account";
 $lang["loginNewUser"] = "New to MyFlix?";
 $lang["loginFillAllFields"] = "Please fill in everything";
@@ -33,6 +34,7 @@ $lang["newUser"] = "New to MyFlix?";
 $lang["registerLink"] = "register";
 $lang["registerSuccess"] = "You have successfully made an account, please log in.";
 $lang["registerLink"] = "Register";
+$lang["loginPassReset"] = "Forgot your password? Click here";
 $lang["success"] = "You have successfully made an account, please log in.";
 
 // Registration
@@ -45,8 +47,8 @@ $lang["emailPlaceholder"] = "someone@example.com";
 $lang["studioNameLabel"] = "Studio name";
 $lang["studioNamePlaceholder"] = "Enter your studio name";
 $lang["addressLabel"] = "Address";
-$lang["addressPlaceholder"] = "Enter your adress";
-$lang["cityLabel"] = "City";
+$lang["addressPlaceholder"] = "Enter your address";
+$lang["cityLabel"] = "city";
 $lang["cityPlaceholder"] = "Enter your city";
 $lang["bankLabel"] = "Bank account (IBAN)";
 $lang["bankPlaceholder"] = "Enter your IBAN here";
@@ -60,6 +62,8 @@ $lang["passwordReq"] = "Password must be at least 8 characters long and contain 
 $lang["exceedUserLength"] = "Username cannot exceed 20 characters";
 $lang["exceedEmailLength"] = "Email cannot exceed 64 characters";
 $lang["emailExists"] = "Email already exist";
+$lang["queryError"] = "Query error";
+$lang["prepareError"] = "Prepare error";
 
 
 // Upload page
@@ -110,6 +114,9 @@ $lang["searchNoResult"] = "This search has no results try different keywords";
 $lang["logoutSuccess"] = "You have been successfully logged out!";
 $lang["logoutRedirect"] = "You will be redirected in 2 seconds";
 
+//changePassword
+$lang["changePassword"] = "Change Password";
+
 
 //Profile
 $lang["profile"] = "Profile";
@@ -119,3 +126,5 @@ $lang["lastName"] = "Last name";
 $lang["update"] = "Update profile";
 $lang["updateSuccess"] ="Your profile has been updated";
 $lang["ibanError"] = "Invalid IBAN";
+$lang["empty"] = "Both fields are empty";
+

@@ -6,14 +6,15 @@
  * @param $isModerator default false
  * @return bool|array|null
  */
-
 function getVideo($id, $isModerator = false): bool|array|null {
 
+    // Checks if the provided id is a number
     if (!is_numeric($id)) {
         return false;
     }
 
     $mysqli = dbConnect();
+
 
     $query = "SELECT c.`studioName`, f.`path`, f.`name`, f.`length`, f.`accepted` 
               FROM `film` as f 
@@ -25,12 +26,16 @@ function getVideo($id, $isModerator = false): bool|array|null {
         $query .= " AND f.`accepted`=1";
     }
 
-    $stmt = mysqli_prepare($mysqli, $query);
-    mysqli_stmt_bind_param($stmt, 's', $id);
 
+    // Prepare the statement and bind the params to it
+    $stmt = mysqli_prepare($mysqli, $query);
+    mysqli_stmt_bind_param($stmt, 'i', $id);
+
+    // Execute the mysql query
     mysqli_stmt_execute($stmt);
 
     $res = mysqli_stmt_get_result($stmt);
+    // Returns an array with the video information
     return mysqli_fetch_array($res, MYSQLI_ASSOC);
 }
 

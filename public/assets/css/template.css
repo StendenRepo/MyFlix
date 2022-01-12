@@ -5,10 +5,12 @@
     --black: #010001;
     --green: #00c75c;
     --background: #2d2d2d;
+    --header-black: #222222;
     --text-gray: #a19f9f;
     --text-white: white;
     --border-radius: 10px;
     --header-height: 100px;
+    --text-error: #ff6b6b;
 }
 
 /* Reset the CSS and set the font */
@@ -50,6 +52,25 @@ body {
     max-height: 45px;
 }
 
+@media screen and (max-width: 705px) {
+    .header {
+        display: block;
+        padding: 20px 0;
+        height: 100%;
+    }
+
+    .header a, .header input {
+        display: block;
+        width: 80vw;
+        margin: 0 auto 20px;
+    }
+
+    .header .logo img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 /* The styling of the form */
 input, textarea, select {
     border: 0;
@@ -87,6 +108,7 @@ input:not([type="button"]):focus, textarea:focus, select:focus {
 .red-btn, .red-btn-filled, input[type=submit], input[type=button], button {
     height: 45px;
     cursor: pointer;
+    text-align: center;
     text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
@@ -107,7 +129,7 @@ form {
 
 form input, form textarea, form select {
     display: block;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -135,10 +157,25 @@ a {
     color: var(--text-white);
 }
 
+a.noLink {
+    text-decoration: none;
+}
+
 .content {
+    padding-top: 1px;
     height: CALC(100vh - var(--header-height));
 }
 
 .hidden {
     display: none !important;
+}
+
+/* Makes error readable */
+.xdebug-error.xe-warning {
+    color: black;
+}
+
+/* Makes sure the h1 and h2 blocks always begins with a capital */
+h1::first-letter, h2::first-letter {
+    text-transform: uppercase;
 }

@@ -2,7 +2,12 @@
 require_once __DIR__ . '/../src/config.php';
 require_once __DIR__ . '/../src/watch.php';
 
+// Makes the translation global accessible
+global $lang;
+
+// Set the default value on false so when it is not overridden it can generate a error
 $videoData = false;
+
 // TODO CHANGE VALUE OF MODERATION BASED ON ROLE
 if (getUserAccountLevel(getCurrentUserId()) === 2) {
     $moderation = true;
@@ -11,20 +16,40 @@ else {
     $moderation = false;
 }
 
+
+// Get the user level and check if user is moderator or higher
+$userId = getCurrentUserId();
+if (!$userId) {
+    header("Location: login.php?error=loginRequired");
+    die();
+}
+$userLvl = getUserAccountLevel($userId);
+$moderation = ($userLvl > 1);
+
+// Check if a videoId is provided in the url
 if (!empty($_GET['v'])) {
     $videoData = getVideo($_GET['v'], $moderation);
     $formMethod =  htmlentities($_SERVER["PHP_SELF"] . "?v=" . $_GET["v"]);
 
     
 }
+
+$pageTitle = "";
+
 if (!$videoData) {
-    showHead($lang['videoNotFound'], ["assets/css/video.css"]);
+    // When there is no video data for the video tell the browser the page does not exist
+    http_response_code(404);
+    $pageTitle = $lang['videoNotFound'];
+} elseif (!$videoData["studioName"]) {
+    // When there is no studio tell the browser the page is not found
+    http_response_code(404);
+    $pageTitle = $lang['videoNoStudioTitle'];
 } else {
     // Show header with the video title in it
-    showHead(htmlspecialchars($videoData['name']), ["assets/css/video.css"]);
+    $pageTitle = htmlspecialchars($videoData['name']);
 }
 
-
+showHead($pageTitle, ["assets/css/video.css"]);
 
 ?>
     <body>
@@ -43,10 +68,13 @@ if (!$videoData) {
             <?php if (!$videoData) { ?>
                 <h1><?= $lang['videoNotFound'] ?></h1>
             <?php } else { ?>
+            <div class="video-wrapper">
                 <div class="video-header">
                     <div class="video-info">
                         <h1><?= htmlspecialchars($videoData['name']) ?></h1>
-                        <h2><?= htmlspecialchars($videoData['studioName']) ?></h2>
+                        <a href="search.php?creator=<?= $videoData['id'] ?>" class="noLink">
+                            <h2><?= htmlspecialchars($videoData['studioName']) ?></h2>
+                        </a>
                     </div>
                     <div class="moderation">
                         <?php if ($moderation) { ?>
@@ -90,9 +118,8 @@ if (!$videoData) {
                         <?php } ?>
                     </div>
                 </div>
-
                 <div class="video-player">
-                    <video controls class="video" id="video" preload="metadata">
+                    <video controls class="video" id="video" preload="metadata" poster="<?= $videoData['thumbnail'] ?>">
                         <source src="<?= htmlspecialchars($videoData['path']) ?>">
                     </video>
                     <svg id="start" class="hidden" xmlns="http://www.w3.org/2000/svg" width="100" height="100"
@@ -103,8 +130,9 @@ if (!$videoData) {
                               d="M378.7,243.2L203.8,135.7c-4.8-2.9-11.1-3.1-16-0.3c-5,2.8-8.1,8.1-8.1,13.8v214c0,5.7,3.1,11,8,13.8c2.4,1.3,5,2,7.7,2c2.9,0,5.7-0.8,8.2-2.3l174.9-106.6c4.7-2.8,7.6-8,7.6-13.4C386.3,251.2,383.4,246,378.7,243.2z"></path>
                     </svg>
                 </div>
-            <?php } ?>
+            </div>
         </div>
+    <?php } ?>
         <script src="assets/js/video.js"></script>
     </body>
 <?php

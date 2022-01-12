@@ -54,7 +54,7 @@ $lang["bankLabel"] = "Bank account (IBAN)";
 $lang["bankPlaceholder"] = "Enter your IBAN here";
 $lang["registerSubmit"] = "Make Account";
 $lang["existingUser"] = "Already have an account?";
-$lang["passwordMatch"] = "Password do not match, try again.";
+$lang["passwordMatch"] = "Passwords do not match, try again.";
 $lang["registerAlreadyAccount"] = "Do you already have an account?";
 
 // Error message
@@ -127,7 +127,7 @@ $lang["changepassword"] = "Change password";
 
 //changePassword
 $lang["changePassword"] = "Change Password";
-
+$lang["submit"] = "Submit";
 
 //Profile
 $lang["profile"] = "Profile";
@@ -135,7 +135,6 @@ $lang["editProfile"] = "Edit Profile";
 $lang["firstName"] = "First name";
 $lang["lastName"] = "Last name";
 $lang["update"] = "Update profile";
-$lang["updateSuccess"] ="Your profile has been updated";
+$lang["updateSuccess"] = "Your profile has been updated";
 $lang["ibanError"] = "Invalid IBAN";
 $lang["empty"] = "Both fields are empty";
-

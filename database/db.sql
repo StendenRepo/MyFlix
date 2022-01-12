@@ -134,7 +134,7 @@ ALTER TABLE `rating`
 -- ---------------------------
 ALTER TABLE `film`
     ADD
-        FOREIGN KEY (`accountId`) REFERENCES account (`id`);
+        FOREIGN KEY (`accountId`) REFERENCES account (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `film`
     ADD

@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
 	showHeader();
 	?>
     <div class="body">
-        <h2><?= $lang["changePassword"] ?></h2>
+        <h1><?= $lang["changePassword"] ?></h1>
         <div class="containerForm">
             <form method="post" action="changePassword.php" class="formContainer">
                 <input type="password" name="password" class="input" placeholder="<?= $lang["passwordPlaceholder"] ?>">
@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
                 <div class="error">
 					<?= $error ?>
                 </div>
-                <input type="submit" name="submit">
+                <input type="submit" name="submit" value= <?= $lang["submit"] ?>>
             </form>
         </div>
     </div>

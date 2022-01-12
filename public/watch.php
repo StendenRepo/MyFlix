@@ -15,16 +15,7 @@ if (!empty($_GET['v'])) {
     $videoData = getVideo($_GET['v'], $moderation);
     $formMethod =  htmlentities($_SERVER["PHP_SELF"] . "?v=" . $_GET["v"]);
 
-    if(!empty($_GET["accepted"])) {
-        if($_GET["accepted"] === "true") {
-            echo "Video has been accepted";
-            acceptVideo($_GET["v"]);
-            $videoData["accepted"]= true;
-        } else {
-            echo "Video has been declined";
-            declineVideo($_GET["v"]);
-        }
-    }
+    
 }
 if (!$videoData) {
     showHead($lang['videoNotFound'], ["assets/css/video.css"]);
@@ -37,7 +28,17 @@ if (!$videoData) {
 
 ?>
     <body>
-        <?php showHeader(); ?>
+        <?php showHeader();
+        if(!empty($_GET["accepted"])) {
+            if($_GET["accepted"] === "true") {
+                echo "Video has been accepted";
+                acceptVideo($_GET["v"]);
+                $videoData["accepted"]= true;
+            } else {
+                echo "Video has been declined";
+                declineVideo($_GET["v"]);
+            }
+        }; ?>
         <div class="content">
             <?php if (!$videoData) { ?>
                 <h1><?= $lang['videoNotFound'] ?></h1>

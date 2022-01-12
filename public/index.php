@@ -32,7 +32,7 @@ foreach ($data as $row) {
                 // Check if there are enough videos in the genre.
                 $amount = min(5, count($items)); ?>
                 <div class="genre">
-                    <a href="search.php?genre=<?= htmlspecialchars($items[0]['genreId']) ?>" class="noLink">
+                    <a class="noLink clickable" href="search.php?genre=<?= htmlspecialchars($items[0]['genreId']) ?>">
                         <h1><?= htmlspecialchars($genre) ?></h1>
                     </a>
                     <div class="images">

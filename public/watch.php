@@ -11,8 +11,7 @@ $videoData = false;
 // TODO CHANGE VALUE OF MODERATION BASED ON ROLE
 if (getUserAccountLevel(getCurrentUserId()) === 2) {
     $moderation = true;
-}
-else {
+} else {
     $moderation = false;
 }
 
@@ -29,9 +28,9 @@ $moderation = ($userLvl > 1);
 // Check if a videoId is provided in the url
 if (!empty($_GET['v'])) {
     $videoData = getVideo($_GET['v'], $moderation);
-    $formMethod =  htmlentities($_SERVER["PHP_SELF"] . "?v=" . $_GET["v"]);
+    $formMethod = htmlentities($_SERVER["PHP_SELF"] . "?v=" . $_GET["v"]);
 
-    
+
 }
 
 $pageTitle = "";
@@ -54,11 +53,11 @@ showHead($pageTitle, ["assets/css/video.css"]);
 ?>
     <body>
         <?php showHeader();
-        if(!empty($_GET["accepted"])) {
-            if($_GET["accepted"] === "true") {
+        if (!empty($_GET["accepted"])) {
+            if ($_GET["accepted"] === "true") {
                 echo "Video has been accepted";
                 acceptVideo($_GET["v"]);
-                $videoData["accepted"]= true;
+                $videoData["accepted"] = true;
             } else {
                 echo "Video has been declined";
                 declineVideo($_GET["v"]);
@@ -72,49 +71,50 @@ showHead($pageTitle, ["assets/css/video.css"]);
                 <div class="video-header">
                     <div class="video-info">
                         <h1><?= htmlspecialchars($videoData['name']) ?></h1>
-                        <a href="search.php?creator=<?= $videoData['id'] ?>" class="noLink">
+                        <a href="search.php?creator=<?= $videoData['id'] ?>" class="noLink clickable">
                             <h2><?= htmlspecialchars($videoData['studioName']) ?></h2>
                         </a>
                     </div>
                     <div class="moderation">
                         <?php if ($moderation) { ?>
                             <!--check if video is not yet accepted-->
-                            <?php if(!$videoData["accepted"]) { ?>
+                            <?php if (!$videoData["accepted"]) { ?>
 
-                            <!-- Approve button-->
-                            <a href="watch.php?v=<?=$_GET['v']?>&accepted=true">
+                                <!-- Approve button-->
+                                <a href="watch.php?v=<?= $_GET['v'] ?>&accepted=true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="40" viewBox="0 0 54 54">
+                                        <g transform="translate(-1495 -159)">
+                                            <rect rx="10" width="54" height="54" fill="var(--green)"
+                                                  transform="translate(1495 159)"/>
+                                            <g transform="translate(1511.542 178.44)">
+                                                <line x1="12" y2="22" fill="none" stroke-width="7"
+                                                      stroke-linecap="round"
+                                                      stroke="var(--background)" transform="translate(9.458 -4.44)"/>
+                                                <line x1="9" y1="9" fill="none" stroke-width="7" stroke-linecap="round"
+                                                      stroke="var(--background)" transform="translate(0.458 8.56)"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                            <?php } ?>
+
+                            <!-- Deny button -->
+
+                            <a href="watch.php?v=<?= $_GET['v'] ?>&accepted=false">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="54" height="40" viewBox="0 0 54 54">
-                                    <g transform="translate(-1495 -159)">
-                                        <rect rx="10" width="54" height="54" fill="var(--green)"
-                                            transform="translate(1495 159)"/>
-                                        <g transform="translate(1511.542 178.44)">
-                                            <line x1="12" y2="22" fill="none" stroke-width="7" stroke-linecap="round"
-                                                stroke="var(--background)" transform="translate(9.458 -4.44)"/>
-                                            <line x1="9" y1="9" fill="none" stroke-width="7" stroke-linecap="round"
-                                                stroke="var(--background)" transform="translate(0.458 8.56)"/>
+                                    <g transform="translate(-1566 -159)">
+                                        <rect rx="10" width="54" height="54" fill="var(--red)"
+                                              transform="translate(1566 159)"/>
+                                        <g transform="translate(1585.258 175.243)">
+                                            <line x1="15.293" y2="21.657" fill="none" stroke-width="7"
+                                                  stroke-linecap="round" stroke="var(--background)"/>
+                                            <line x2="15.341" y2="21.657" fill="none" stroke-width="7"
+                                                  stroke-linecap="round" stroke="var(--background)"/>
                                         </g>
                                     </g>
                                 </svg>
                             </a>
-                            <?php } ?>
-                            
-                            <!-- Deny button -->
-                            
-                            <a href="watch.php?v=<?=$_GET['v']?>&accepted=false">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="40" viewBox="0 0 54 54">
-                                    <g transform="translate(-1566 -159)">
-                                        <rect rx="10" width="54" height="54" fill="var(--red)"
-                                            transform="translate(1566 159)"/>
-                                        <g transform="translate(1585.258 175.243)">
-                                            <line x1="15.293" y2="21.657" fill="none" stroke-width="7"
-                                                stroke-linecap="round" stroke="var(--background)"/>
-                                            <line x2="15.341" y2="21.657" fill="none" stroke-width="7"
-                                                stroke-linecap="round" stroke="var(--background)"/>
-                                        </g>
-                                    </g>
-                                    </svg>
-                            </a>
-                            
+
                         <?php } ?>
                     </div>
                 </div>

@@ -152,7 +152,7 @@ $lang["logoutRedirect"] = "You will be redirected in 2 seconds";
 // Menu
 $lang["manage"] = "Manage";
 $lang["users"] = "Users";
-$lang["upgrade"] = "Upgrade to content creator";
+$lang["upgrade"] = "Upgrade account";
 $lang["myvideos"] = "My videos";
 $lang["uploadvideos"] = "Upload videos";
 $lang["allvideos"] = "Videos";

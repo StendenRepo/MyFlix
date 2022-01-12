@@ -142,6 +142,7 @@ $lang["changepassword"] = "Change password";
 //changePassword
 $lang["changePassword"] = "Change Password";
 $lang["empty"] = "Both fields are empty";
+$lang["submit"] = "Submit";
 
 //Profile
 $lang["profile"] = "Profile";
@@ -151,6 +152,3 @@ $lang["lastName"] = "Last name";
 $lang["update"] = "Update profile";
 $lang["updateSuccess"] = "Your profile has been updated";
 $lang["ibanError"] = "Invalid IBAN";
-$lang["empty"] = "Both fields are empty";
-
-

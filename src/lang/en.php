@@ -34,6 +34,7 @@ $lang["newUser"] = "New to MyFlix?";
 $lang["registerLink"] = "register";
 $lang["registerSuccess"] = "You have successfully made an account, please log in.";
 $lang["registerLink"] = "Register";
+$lang["loginPassReset"] = "Forgot your password? Click here";
 $lang["success"] = "You have successfully made an account, please log in.";
 
 // Registration
@@ -45,8 +46,8 @@ $lang["emailLabel"] = "Email";
 $lang["emailPlaceholder"] = "someone@example.com";
 $lang["studioNameLabel"] = "Studio name";
 $lang["studioNamePlaceholder"] = "Enter your studio name";
-$lang["adressLabel"] = "Adress";
-$lang["adressPlaceholder"] = "Enter your adress";
+$lang["addressLabel"] = "Address";
+$lang["addressPlaceholder"] = "Enter your address";
 $lang["cityLabel"] = "city";
 $lang["cityPlaceholder"] = "Enter your city";
 $lang["bankLabel"] = "Bank account (IBAN)";
@@ -62,6 +63,8 @@ $lang["passwordReq"] = "Password must be at least 8 characters long and contain 
 $lang["exceedUserLength"] = "Username cannot exceed 20 characters";
 $lang["exceedEmailLength"] = "Email cannot exceed 64 characters";
 $lang["emailExists"] = "Email already exist";
+$lang["queryError"] = "Query error";
+$lang["prepareError"] = "Prepare error";
 
 
 // Upload page
@@ -120,6 +123,6 @@ $lang["searchNoResult"] = "This search has no results try different keywords";
 $lang["logoutSuccess"] = "You have been successfully logged out!";
 $lang["logoutRedirect"] = "You will be redirected in 2 seconds";
 
-
-
-
+//changePassword
+$lang["changePassword"] = "Change Password";
+$lang["empty"] = "Both fields are empty";

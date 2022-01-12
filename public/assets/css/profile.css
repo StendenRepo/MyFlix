@@ -1,7 +1,3 @@
-.content {
-    padding: 0 !important;
-}
-
 #profileContainer {
     width: CALC(100vw - 250px);
     background-color: #2D2D2D;

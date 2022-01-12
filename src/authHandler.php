@@ -1,18 +1,18 @@
 <?php
 
 $webRoutes = [
-    "videoMod" => null,
-	"logout"         => null,
-	"index"          => null,
-	"login"          => null,
-	"register"       => null,
-	"installdb"      => null,
-	"uploadVideo"    => 1,
-	"watch"          => 0,
-	"passwordReset"  => null,
-	"search"         => null,
-	"profile"        => 0,
-	"changePassword" => 0
+    "videoMod"       => 2,
+    "logout"         => null,
+    "index"          => null,
+    "login"          => null,
+    "register"       => null,
+    "installdb"      => null,
+    "uploadVideo"    => 1,
+    "watch"          => 0,
+    "passwordReset"  => null,
+    "search"         => null,
+    "profile"        => 0,
+    "changePassword" => 0
 ];
 
 

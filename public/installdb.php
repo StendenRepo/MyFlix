@@ -1,41 +1,63 @@
 <?php
 require_once "../src/config.php";
 
+// Connect to the database
 $connection = dbConnect(true);
 
-if (mysqli_connect_errno() > 0) {
-    die("Failed to connect to MySQL: " . mysqli_connect_error());
-}
+// Escape the database name
+$dbName = mysqli_real_escape_string($connection, DB_DATABASE);
 
-$createDatabase = mysqli_prepare($connection, "CREATE DATABASE IF NOT EXISTS `" . DB_DATABASE . "` DEFAULT CHARACTER SET UTF8mb4 COLLATE utf8mb4_general_ci");
-mysqli_stmt_execute($createDatabase);
-mysqli_select_db($connection, DB_DATABASE);
+// Remove the database
+mysqli_query($connection, "DROP DATABASE `" . $dbName . "`");
+// Create a new database
+mysqli_query($connection, "CREATE DATABASE `" . $dbName . "` DEFAULT CHARACTER SET UTF8mb4 COLLATE utf8mb4_general_ci");
+// Switch to the new database
+mysqli_select_db($connection, $dbName);
 
-$sqlPath = "../database/db.sql";
-$sql = file_get_contents($sqlPath);
-$sqlArray = explode(";", $sql);
+/**
+ * Parses a SQL file and run the sql commands
+ * @param $fileName
+ * @return void
+ */
+function loopTroughSQL($fileName) {
+    global $connection;
+    $sql = file_get_contents($fileName);
+    $sqlArray = explode(";", $sql);
 
-foreach ($sqlArray as $query) {
-    if (!empty($query)) {
+    foreach ($sqlArray as $query) {
+        if (empty($query)) break;
         $stmt = mysqli_prepare($connection, $query . ";");
         mysqli_stmt_execute($stmt);
-    } else {
-        break;
     }
 }
 
-$sqlPath = "../database/data.sql";
-$sql = file_get_contents($sqlPath);
-$sqlArray = explode(";", $sql);
+// Install the database tables
+loopTroughSQL(__DIR__ . "/../database/db.sql");
+// Add some dummy data
+loopTroughSQL(__DIR__ . "/../database/dummy_data.sql");
 
-foreach ($sqlArray as $query) {
-	if (!empty($query)) {
-		$stmt = mysqli_prepare($connection, $query . ";");
-		mysqli_stmt_execute($stmt);
-	} else {
-		break;
-	}
-}
+// Close the database connection
 dbClose($connection);
+// Redirect user to the home page
 header("refresh:2;url=index.php");
-echo "You will be redirected to the home page";
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Database Install</title>
+    <style>
+        /* Change the background to dark-mode */
+        body {
+            background-color: #2d2d2d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>You will be redirected to the home page</h1>
+</body>
+</html>

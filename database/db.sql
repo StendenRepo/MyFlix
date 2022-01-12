@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `company`
     `iban`       VARCHAR(35)  NOT NULL UNIQUE,
     `address`    VARCHAR(100) NOT NULL,
     `city`       VARCHAR(35)  NOT NULL,
+    `approved`   TINYINT(1)   NOT NULL DEFAULT 0,
     primary key (`id`)
 
 ) ENGINE = INNODB;

@@ -8,7 +8,7 @@ VALUES ("Horror", "Scary movies "),
 -- ---------------------------
 -- data company
 -- ---------------------------
-INSERT INTO company(studioName, genre, iban, address, city)
+INSERT INTO company(studioName, genre, iban, address, city, approved)
 values ("dishey", 1, "IL749164487136422355815", "addres voor dishey", "orlando", 0),
        ("netjes", 2, "GR9101724648682144251836162", "addres voor netjes", "toronto", 0);
 

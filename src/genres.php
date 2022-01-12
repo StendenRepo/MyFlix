@@ -15,3 +15,13 @@ function getGenres(){
 
     return $data;
 }
+
+function idToGenre($id, $companyInfo){
+    $data = getGenres();
+
+    $key = array_search($id, array_column($data, "id"));
+
+    $genre = $data[$key]["name"];
+
+    return $genre;
+}

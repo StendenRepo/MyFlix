@@ -106,6 +106,7 @@ $lang["emailNotValid"] = "This email is not valid";
 $lang["videoNoStudio"] = "The studio that uploaded this video does not exist anymore";
 $lang["videoNoStudioTitle"] = "Film studio not found";
 
+
 // upgrade
 $lang["titleUpgrade"] = "upgrade";
 $lang["companyName"] = "Company name";
@@ -118,6 +119,23 @@ $lang["genreSellector"] = "Select existing genre";
 $lang["genre"] = "genre";
 $lang["genreDescription"] = "genre description";
 $lang["upgradeSubmit"] = "submit";
+
+// Account moderation
+$lang["accountModeration"] = "Account Moderation";
+$lang["filmStudio"] = "Film studio's";
+$lang["view"] = "View";
+$lang["accountId"] = "Account ID";
+$lang["studioName"] = "Studio Name";
+$lang["genre"] = "Genre";
+$lang["address"] = "Address";
+$lang["city"] = "City";
+$lang["iban"] = "IBAN";
+$lang["approved"] = "Account was succesfully approved";
+$lang["denied"] = "Account was succesfully denied";
+$lang["approve"] = "Approve";
+$lang["deny"] = "Deny";
+$lang["nonePedning"] = "There are no more pending film studio's";
+
 
 // Search
 $lang["searchNoResultTitle"] = "No results";

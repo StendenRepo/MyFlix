@@ -1,0 +1,38 @@
+#studioName {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    color: var(--white);
+}
+
+#mainContainer {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 55%;
+}
+
+#title {
+    width: 100%;
+    margin: 100px;
+}
+
+#title p {
+    margin-top: 15px;
+}
+
+.studio {
+    background-color: #3b3b3b;
+    border-radius: var(--border-radius);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.studio a {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    color: var(--text-gray);
+}

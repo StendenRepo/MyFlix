@@ -109,7 +109,7 @@ ALTER TABLE `account`
 
 ALTER TABLE `account`
     ADD
-        FOREIGN KEY (`companyId`) REFERENCES company (`id`);
+        FOREIGN KEY (`companyId`) REFERENCES company (`id`) ON DELETE CASCADE;
 
 -- ---------------------------
 -- add foreign keys account table
@@ -134,7 +134,7 @@ ALTER TABLE `rating`
 -- ---------------------------
 ALTER TABLE `film`
     ADD
-        FOREIGN KEY (`accountId`) REFERENCES account (`id`);
+        FOREIGN KEY (`accountId`) REFERENCES account (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `film`
     ADD

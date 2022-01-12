@@ -14,7 +14,9 @@ $webRoutes = [
     "search" => null,
     "changePassword" => 0,
     "profile" => 0,
-    "videoMod" => null
+    "videoMod" => 2,
+    "accountMod" => 2,
+    "accountReview" => 2
 ];
 
 

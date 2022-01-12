@@ -17,7 +17,7 @@ function getVideo($id, $isModerator = false): bool|array|null
     $mysqli = dbConnect();
 
 
-    $query = "SELECT c.`studioName`, c.`id`, f.`path`, f.`name`, f.`length`, f.`thumbnail`
+    $query = "SELECT c.`studioName`, c.`id`, f.`path`, f.`name`, f.`length`, f.`thumbnail`, f.`accepted`
               FROM `film` as f 
               JOIN `account` as a on f.`accountId`=a.`id` 
               JOIN `company` as c on a.`companyId`=c.`id` 

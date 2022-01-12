@@ -29,8 +29,6 @@ $moderation = ($userLvl > 1);
 if (!empty($_GET['v'])) {
     $videoData = getVideo($_GET['v'], $moderation);
     $formMethod = htmlentities($_SERVER["PHP_SELF"] . "?v=" . $_GET["v"]);
-
-
 }
 
 $pageTitle = "";

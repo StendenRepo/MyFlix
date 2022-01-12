@@ -12,7 +12,8 @@ $webRoutes = [
     "passwordReset" => null,
     "logout" => null,
     "search" => null,
-    "changePassword" => 0
+    "changePassword" => 0,
+    "profile" => 0
 ];
 
 

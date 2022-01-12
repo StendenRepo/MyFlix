@@ -18,6 +18,7 @@ $lang["login"] = "Login";
 $lang["register"] = "Register";
 
 // Login
+$lang["loginRequired"] = "To access this page you need to log in";
 $lang["loginHeader"] = "Login to your Account";
 $lang["loginNewUser"] = "New to MyFlix?";
 $lang["loginFillAllFields"] = "Please fill in everything";
@@ -48,7 +49,7 @@ $lang["studioNameLabel"] = "Studio name";
 $lang["studioNamePlaceholder"] = "Enter your studio name";
 $lang["addressLabel"] = "Address";
 $lang["addressPlaceholder"] = "Enter your address";
-$lang["cityLabel"] = "city";
+$lang["cityLabel"] = "City";
 $lang["cityPlaceholder"] = "Enter your city";
 $lang["bankLabel"] = "Bank account (IBAN)";
 $lang["bankPlaceholder"] = "Enter your IBAN here";
@@ -123,6 +124,29 @@ $lang["searchNoResult"] = "This search has no results try different keywords";
 $lang["logoutSuccess"] = "You have been successfully logged out!";
 $lang["logoutRedirect"] = "You will be redirected in 2 seconds";
 
+
+// Menu
+$lang["manage"] = "Manage";
+$lang["users"] = "Users";
+$lang["upgrade"] = "Upgrade to content creator";
+$lang["myvideos"] = "My videos";
+$lang["uploadvideos"] = "Upload videos";
+$lang["allvideos"] = "Videos";
+$lang["allstudios"] = "Studios";
+$lang["changepassword"] = "Change password";
+
 //changePassword
 $lang["changePassword"] = "Change Password";
 $lang["empty"] = "Both fields are empty";
+
+//Profile
+$lang["profile"] = "Profile";
+$lang["editProfile"] = "Edit Profile";
+$lang["firstName"] = "First name";
+$lang["lastName"] = "Last name";
+$lang["update"] = "Update profile";
+$lang["updateSuccess"] = "Your profile has been updated";
+$lang["ibanError"] = "Invalid IBAN";
+$lang["empty"] = "Both fields are empty";
+
+

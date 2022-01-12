@@ -103,17 +103,21 @@ $lang["return"] = "Return";
 // watch.php
 $lang["videoNotFound"] = "Video not found";
 $lang["emailNotValid"] = "This email is not valid";
-
+$lang["videoNoStudio"] = "The studio that uploaded this video does not exist anymore";
+$lang["videoNoStudioTitle"] = "Film studio not found";
 
 // upgrade
+$lang["titleUpgrade"] = "upgrade";
 $lang["companyName"] = "Company name";
 $lang["iban"] = "IBAN";
 $lang["address"] = "address";
 $lang["firstName"] = "first name";
 $lang["lastName"] = "last name";
 $lang["city"] = "city";
+$lang["genreSellector"] = "Select existing genre";
 $lang["genre"] = "genre";
 $lang["genreDescription"] = "genre description";
+$lang["upgradeSubmit"] = "submit";
 
 // Search
 $lang["searchNoResultTitle"] = "No results";

@@ -1,11 +1,11 @@
 <?php
 require_once "../src/config.php";
-include "../src/upgrade.php";
+require_once "../src/upgrade.php";
 require_once "../src/genres.php";
-
-showHead("Upgrade", ['assets/css/upgrade.css']);
-
 global $lang;
+
+showHead($lang["titleUpgrade"], ['assets/css/upgrade.css']);
+
 
 ?>
     <body>
@@ -52,7 +52,7 @@ global $lang;
                                     <?php
 
                                     foreach (getGenres() as $genre) {
-                                        print "<option value ='" . $genre['id'] . "'>" . $genre['name'] . "</option>";
+                                        echo "<option value ='" . $genre['id'] . "'>" . $genre['name'] . "</option>";
                                     }
                                     ?>
                                 </select>

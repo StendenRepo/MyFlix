@@ -18,3 +18,8 @@
     text-decoration: none;
     line-height: 2.0;
 }
+
+.content{
+    display: flex;
+    padding: 0 !important;
+}

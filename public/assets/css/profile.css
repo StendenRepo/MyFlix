@@ -1,38 +1,35 @@
-body {
-    background-color: #2D2D2D;
-}
-
 #profileContainer {
-    padding-top: 125px;
-    max-width: 890px;
-    width: 100%;
-    margin: auto;
+    width: CALC(100vw - 250px);
     background-color: #2D2D2D;
 }
 
 #formContainer {
-    width: 1000px;
-    height: 500px;
     background-color: #2D2D2D;
 }
 
 #myForm {
-    display: grid;
-    grid-template-columns: 30% 30%;
-    grid-column-gap: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     background-color: #2D2D2D;
-    margin-left: 100px;
 }
 
 .inputBox {
-    vertical-align: top;
-    margin: 0 auto;
+    margin: 0 30px;
+    width: 300px;
 }
 
 #titleContainer {
-    width: 1000px;
-    height: 50px;
-    padding-left: 370px;
+    text-align: center;
+    margin: 50px 0;
+}
+
+#updateButton {
+    width: 100%;
+}
+
+#updateButton input {
+    margin: 0 auto;
 }
 
 .input {
@@ -48,6 +45,6 @@ label {
     font-weight: bold;
 }
 
-#userName, #firstName, #lastName {
+input[disabled] {
     background-color: #5F5F5F;
 }

@@ -1,22 +1,27 @@
 <?php
 
 $webRoutes = [
-    "videoMod"       => 2,
-    "logout"         => null,
-    "index"          => null,
-    "login"          => null,
-    "register"       => null,
-    "installdb"      => null,
-    "uploadVideo"    => 1,
-    "watch"          => 0,
-    "passwordReset"  => null,
-    "search"         => null,
-    "profile"        => 0,
-    "changePassword" => 0
+    "index" => null,
+    "login" => null,
+    "register" => null,
+    "installdb" => null,
+    "upgrade" => 0,
+    "template" => null,
+    "watch" => 0,
+    "uploadVideo" => 1,
+    "passwordReset" => null,
+    "logout" => null,
+    "search" => null,
+    "changePassword" => 0,
+    "profile" => 0,
+    "videoMod" => 2,
+    "accountMod" => 2,
+    "accountReview" => 2
 ];
 
 
-function authHandler() {
+function authHandler()
+{
     global $webRoutes;
     $route = getRoute();
 
@@ -54,7 +59,8 @@ function authHandler() {
  *
  * @return string returns the current page
  */
-function getRoute(): string {
+function getRoute(): string
+{
     return explode(".", basename($_SERVER["PHP_SELF"]))[0];
 }
 

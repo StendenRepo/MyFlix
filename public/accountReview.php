@@ -41,7 +41,6 @@ showHead($lang["accountModeration"], ['assets/css/accountReview.css']);
         <div>
             <form action="<?= htmlentities("accountReview.php?userId=$id") ?>" method="post">
                 <input type="submit" name="approve" value="<?= $lang["approve"] ?>">
-                <!--                <input type="submit" name="deny" value="--><? //= $lang["deny"] ?><!--" hidden>-->
             </form>
         </div>
     </div>

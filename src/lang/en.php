@@ -27,6 +27,7 @@ $lang["usernameLabel"] = "Username";
 $lang["passwordLabel"] = "Password";
 $lang["placeholderEmail"] = "Enter your email";
 $lang["passwordPlaceholder"] = "Enter your password";
+$lang["login"] = "Log in";
 $lang["resetPassword"] = "Forgot your password?";
 $lang["wrongPassword"] = "Username and password do not match, please try again.";
 $lang["forgotInformation"] = "Please fill in both fields";
@@ -54,7 +55,8 @@ $lang["bankLabel"] = "Bank account (IBAN)";
 $lang["bankPlaceholder"] = "Enter your IBAN here";
 $lang["registerSubmit"] = "Make Account";
 $lang["existingUser"] = "Already have an account?";
-$lang["passwordMatch"] = "Passwords do not match, try again.";
+$lang["loginLink"] = "Log in";
+$lang["passwordMatch"] = "Password do not match, try again.";
 $lang["registerAlreadyAccount"] = "Do you already have an account?";
 
 // Error message
@@ -69,14 +71,14 @@ $lang["prepareError"] = "Prepare error";
 // Upload page
 $lang["uploadVideo"] = "Upload Video";
 $lang["fileError"] = [
-	'There is no error, the file uploaded with success',
-	'The uploaded file exceeds the upload_max_filesize directive in php.ini',
-	'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
-	'The uploaded file was only partially uploaded',
-	'No file was uploaded',
-	'Missing a temporary folder',
-	'Failed to write file to disk.',
-	'A PHP extension stopped the file upload.',
+    'There is no error, the file uploaded with success',
+    'The uploaded file exceeds the upload_max_filesize directive in php.ini',
+    'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
+    'The uploaded file was only partially uploaded',
+    'No file was uploaded',
+    'Missing a temporary folder',
+    'Failed to write file to disk.',
+    'A PHP extension stopped the file upload.',
 ];
 $lang["incType"] = "Make sure that you upload a .mp4, .webm, .avi or .flv video file.";
 $lang["noTitle"] = "Make sure to give your video a title.";
@@ -100,9 +102,25 @@ $lang["return"] = "Return";
 
 // watch.php
 $lang["videoNotFound"] = "Video not found";
+$lang["emailNotValid"] = "This email is not valid";
 $lang["videoNoStudio"] = "The studio that uploaded this video does not exist anymore";
 $lang["videoNoStudioTitle"] = "Film studio not found";
-$lang["emailNotValid"] = "This email is not valid";
+
+
+// upgrade
+$lang["titleUpgrade"] = "upgrade";
+$lang["companyName"] = "Company name";
+$lang["iban"] = "IBAN";
+$lang["address"] = "address";
+$lang["firstName"] = "first name";
+$lang["lastName"] = "last name";
+$lang["city"] = "city";
+$lang["genreSellector"] = "Select existing genre";
+$lang["genre"] = "genre";
+$lang["genreDescription"] = "Genre description";
+$lang["upgradeSubmit"] = "Upgrade";
+$lang["createNewGenre"] = "Or create a new genre";
+$lang["companyData"] = "Add company data";
 
 // Account moderation
 $lang["accountModeration"] = "Account Moderation";
@@ -119,6 +137,7 @@ $lang["denied"] = "Account was succesfully denied";
 $lang["approve"] = "Approve";
 $lang["deny"] = "Deny";
 $lang["nonePedning"] = "There are no more pending film studio's";
+
 
 // Search
 $lang["searchNoResultTitle"] = "No results";
@@ -142,6 +161,7 @@ $lang["changepassword"] = "Change password";
 
 //changePassword
 $lang["changePassword"] = "Change Password";
+$lang["empty"] = "Both fields are empty";
 $lang["submit"] = "Submit";
 
 //Profile
@@ -152,4 +172,3 @@ $lang["lastName"] = "Last name";
 $lang["update"] = "Update profile";
 $lang["updateSuccess"] = "Your profile has been updated";
 $lang["ibanError"] = "Invalid IBAN";
-$lang["empty"] = "Both fields are empty";

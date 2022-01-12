@@ -30,22 +30,21 @@ foreach ($data as $row) {
             // Loop through array and get the data.
             foreach ($genres as $genre => $items) {
                 // Check if there are enough videos in the genre.
-                $amount = min(5, count($items));
-                echo "<div class='genre'>";?>
-                <a href="search.php?genre=<?= htmlspecialchars($items[0]['genreId']) ?>" class="noLink">
-                    <h1><?= htmlspecialchars($genre) ?></h1>
-                </a>
-                <?php
-                echo "<div class='images'>";
-                // Takes 5 videos from the genre
-                for ($id = 0; $id < $amount; $id++) {
-                    echo "<a href='watch.php?v=" . $items[$id]['id'] . "'>
+                $amount = min(5, count($items)); ?>
+                <div class="genre">
+                    <a href="search.php?genre=<?= htmlspecialchars($items[0]['genreId']) ?>" class="noLink">
+                        <h1><?= htmlspecialchars($genre) ?></h1>
+                    </a>
+                    <div class="images">
+                        <?php
+                        // Takes 5 videos from the genre
+                        for ($id = 0; $id < $amount; $id++) {
+                            echo "<a href='watch.php?v=" . $items[$id]['id'] . "'>
 					<img src='" . $items[$id]['thumbnail'] . "' alt='" . $items[$id]['name'] . "'></a>";
-                }
-                echo "</div>";
-                echo "</div>";
-            }
-            ?>
+                        } ?>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
     </body>
 <?php

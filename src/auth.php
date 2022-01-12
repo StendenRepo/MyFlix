@@ -117,7 +117,7 @@ function isUserVerified(int $userId): bool|int
 /**
  * @return bool returns user id if the user is logged in else returns false.
  */
-function isUserLoggedIn(): bool
+function isUserLoggedIn(): int
 {
     if (!isset($_SESSION["userId"]))
         return false;
@@ -134,4 +134,65 @@ function isUserLoggedIn(): bool
 function hashPassword(string $password): string
 {
     return password_hash($password, PASSWORD_BCRYPT);
+}
+
+function isValidIban(string $bankAccount): bool
+{
+    if (preg_match("/^[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}$/i", $bankAccount)) {
+        return true;
+    }
+    return false;
+}
+
+
+function checkEmail(string $eMail, $accountId)
+{
+    $conn = dbConnect();
+    $emailQuery = "SELECT * FROM account WHERE email = ? AND NOT id=?";
+
+    if ($stmtEmail = mysqli_prepare($conn, $emailQuery)) {
+        if (mysqli_stmt_bind_param($stmtEmail, "si", $eMail, $accountId)) {
+            if (mysqli_stmt_execute($stmtEmail)) {
+                mysqli_stmt_store_result($stmtEmail);
+
+                if (mysqli_stmt_num_rows($stmtEmail) > 0) {
+                    return false;
+                } else {
+                    if (filter_var($eMail, FILTER_VALIDATE_EMAIL)) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+function checkIban(string $bankAccount, $accountId)
+{
+    $conn = dbConnect();
+    $ibanQuery = "SELECT * 
+    FROM company 
+    LEFT JOIN account on account.companyId = company.id
+    WHERE company.iban = ? AND NOT account.id=?";
+
+    if ($stmtIban = mysqli_prepare($conn, $ibanQuery)) {
+        if (mysqli_stmt_bind_param($stmtIban, "si", $bankAccount, $accountId)) {
+            if (mysqli_stmt_execute($stmtIban)) {
+                mysqli_stmt_store_result($stmtIban);
+
+                if (mysqli_stmt_num_rows($stmtIban) > 0) {
+                    return false;
+                } else {
+                    if (isValidIban($bankAccount)) {
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }
+            }
+        }
+    }
 }

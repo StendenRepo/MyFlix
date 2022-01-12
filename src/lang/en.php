@@ -114,6 +114,17 @@ $lang["searchNoResult"] = "This search has no results try different keywords";
 $lang["logoutSuccess"] = "You have been successfully logged out!";
 $lang["logoutRedirect"] = "You will be redirected in 2 seconds";
 
+
+// Menu
+$lang["manage"] = "Manage";
+$lang["users"] = "Users";
+$lang["upgrade"] = "Upgrade to content creator";
+$lang["myvideos"] = "My videos";
+$lang["uploadvideos"] = "Upload videos";
+$lang["allvideos"] = "Videos";
+$lang["allstudios"] = "Studios";
+$lang["changepassword"] = "Change password";
+
 //changePassword
 $lang["changePassword"] = "Change Password";
 

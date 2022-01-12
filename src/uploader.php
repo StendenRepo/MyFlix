@@ -52,8 +52,8 @@ if (isset($_POST["submitVideo"])) {
     $videoDb = "assets/video/{$videoData['newFilename']}";
     $videoTarget = __DIR__ . "/../public/$videoDb";
 
-    $imageDb = "assets/thumbnail/{$videoData['newFilename']}";
-    $imageTarget = __DIR__ . "/../public/$videoDb";
+    $imageDb = "assets/thumbnail/{$imageData['newFilename']}";
+    $imageTarget = __DIR__ . "/../public/$imageDb";
 
     $genre = $_POST["genre"];
 
@@ -86,13 +86,17 @@ function uploadVideo($title, $genre, $videoData, $imageData, $videoDb, $videoTar
         if (move_uploaded_file($imageData['tmpPath'], $imageTarget)) {
 
             // Prepare the SQL statement
-            $query = "INSERT INTO film (accountId, path, thumbnail, genreId, length, name) VALUES(?, ?, ?, ?, NULL, ?)";
+            $query = "INSERT INTO film (accountId, path, thumbnail, genreId, length, name, accepted) VALUES(?, ?, ?, ?, NULL, ?, ?)";
+
             if (!$stmt = mysqli_prepare($conn, $query)) {
                 echo "DB error : " . mysqli_error($conn);
                 die();
             }
+
+            $verified = isUserVerified($accountId);
+
             // Bind the parameters and execute the statement
-            if (!mysqli_stmt_bind_param($stmt, "issis", $accountId, $videoDb, $imageDb, $genre, $title) ||
+            if (!mysqli_stmt_bind_param($stmt, "issisi", $accountId, $videoDb, $imageDb, $genre, $title, $verified) ||
                 !mysqli_stmt_execute($stmt)) {
                 echo "DB error : " . mysqli_error($conn);
                 die();

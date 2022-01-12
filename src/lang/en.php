@@ -18,6 +18,7 @@ $lang["login"] = "Login";
 $lang["register"] = "Register";
 
 // Login
+$lang["loginRequired"] = "To access this page you need to log in";
 $lang["loginHeader"] = "Login to your Account";
 $lang["loginNewUser"] = "New to MyFlix?";
 $lang["loginFillAllFields"] = "Please fill in everything";
@@ -33,6 +34,7 @@ $lang["newUser"] = "New to MyFlix?";
 $lang["registerLink"] = "register";
 $lang["registerSuccess"] = "You have successfully made an account, please log in.";
 $lang["registerLink"] = "Register";
+$lang["loginPassReset"] = "Forgot your password? Click here";
 $lang["success"] = "You have successfully made an account, please log in.";
 
 // Registration
@@ -44,9 +46,9 @@ $lang["emailLabel"] = "Email";
 $lang["emailPlaceholder"] = "someone@example.com";
 $lang["studioNameLabel"] = "Studio name";
 $lang["studioNamePlaceholder"] = "Enter your studio name";
-$lang["adressLabel"] = "Adress";
-$lang["adressPlaceholder"] = "Enter your adress";
-$lang["cityLabel"] = "city";
+$lang["addressLabel"] = "Address";
+$lang["addressPlaceholder"] = "Enter your address";
+$lang["cityLabel"] = "City";
 $lang["cityPlaceholder"] = "Enter your city";
 $lang["bankLabel"] = "Bank account (IBAN)";
 $lang["bankPlaceholder"] = "Enter your IBAN here";
@@ -60,19 +62,21 @@ $lang["passwordReq"] = "Password must be at least 8 characters long and contain 
 $lang["exceedUserLength"] = "Username cannot exceed 20 characters";
 $lang["exceedEmailLength"] = "Email cannot exceed 64 characters";
 $lang["emailExists"] = "Email already exist";
+$lang["queryError"] = "Query error";
+$lang["prepareError"] = "Prepare error";
 
 
 // Upload page
 $lang["uploadVideo"] = "Upload Video";
 $lang["fileError"] = [
-    'There is no error, the file uploaded with success',
-    'The uploaded file exceeds the upload_max_filesize directive in php.ini',
-    'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
-    'The uploaded file was only partially uploaded',
-    'No file was uploaded',
-    'Missing a temporary folder',
-    'Failed to write file to disk.',
-    'A PHP extension stopped the file upload.',
+	'There is no error, the file uploaded with success',
+	'The uploaded file exceeds the upload_max_filesize directive in php.ini',
+	'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
+	'The uploaded file was only partially uploaded',
+	'No file was uploaded',
+	'Missing a temporary folder',
+	'Failed to write file to disk.',
+	'A PHP extension stopped the file upload.',
 ];
 $lang["incType"] = "Make sure that you upload a .mp4, .webm, .avi or .flv video file.";
 $lang["noTitle"] = "Make sure to give your video a title.";
@@ -110,4 +114,28 @@ $lang["searchNoResult"] = "This search has no results try different keywords";
 $lang["logoutSuccess"] = "You have been successfully logged out!";
 $lang["logoutRedirect"] = "You will be redirected in 2 seconds";
 
+
+// Menu
+$lang["manage"] = "Manage";
+$lang["users"] = "Users";
+$lang["upgrade"] = "Upgrade to content creator";
+$lang["myvideos"] = "My videos";
+$lang["uploadvideos"] = "Upload videos";
+$lang["allvideos"] = "Videos";
+$lang["allstudios"] = "Studios";
+$lang["changepassword"] = "Change password";
+
+//changePassword
+$lang["changePassword"] = "Change Password";
+
+
+//Profile
+$lang["profile"] = "Profile";
+$lang["editProfile"] = "Edit Profile";
+$lang["firstName"] = "First name";
+$lang["lastName"] = "Last name";
+$lang["update"] = "Update profile";
+$lang["updateSuccess"] ="Your profile has been updated";
+$lang["ibanError"] = "Invalid IBAN";
+$lang["empty"] = "Both fields are empty";
 

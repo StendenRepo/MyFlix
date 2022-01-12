@@ -1,0 +1,53 @@
+body {
+    background-color: #2D2D2D;
+}
+
+#profileContainer {
+    padding-top: 125px;
+    max-width: 890px;
+    width: 100%;
+    margin: auto;
+    background-color: #2D2D2D;
+}
+
+#formContainer {
+    width: 1000px;
+    height: 500px;
+    background-color: #2D2D2D;
+}
+
+#myForm {
+    display: grid;
+    grid-template-columns: 30% 30%;
+    grid-column-gap: 100px;
+    background-color: #2D2D2D;
+    margin-left: 100px;
+}
+
+.inputBox {
+    vertical-align: top;
+    margin: 0 auto;
+}
+
+#titleContainer {
+    width: 1000px;
+    height: 50px;
+    padding-left: 370px;
+}
+
+.input {
+    background-color: #0000004d;
+    width: 300px;
+    height: 50px;
+    color: #8e8e8e;
+    font-weight: bold;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+}
+
+#userName, #firstName, #lastName {
+    background-color: #5F5F5F;
+}

@@ -11,11 +11,11 @@ VALUES ("Horror", "Scary movies"),
 -- companyAccounts for testing only
 -- Note: all this information is fictional
 -- ---------------------------
-INSERT INTO company(studioName, genre, iban, address, city)
-values ("MyActie", 3, "DE21228324723857459880", "1633 Prospect Street", "Woodbury, New Jersey"),
-       ("Comedy4U", 2, "NL14TYNI1222534303", "Bergkwartier 9", "Venray, Limburg"),
-       ("123Horror", 1, "NL64INGB8247360527", "Bergstaat 9", "Emmen, Drenthe"),
-       ("Pro Animations", 4, "NL79RABO5373380466", "Hoofdplein 14", "Groningen, Groningen");
+INSERT INTO company(studioName, genre, iban, address, city, approved)
+values ("MyActie", 3, "DE21228324723857459880", "1633 Prospect Street", "Woodbury, New Jersey",0),
+       ("Comedy4U", 2, "NL14TYNI1222534303", "Bergkwartier 9", "Venray, Limburg", 1),
+       ("123Horror", 1, "NL64INGB8247360527", "Bergstaat 9", "Emmen, Drenthe", 0),
+       ("Pro Animations", 4, "NL79RABO5373380466", "Hoofdplein 14", "Groningen, Groningen", 1);
 
 -- ---------------------------
 -- userAccounts for testing only
@@ -31,9 +31,7 @@ VALUES (0, "Art", "Harren", "SuperViewer2000",
        (1, "Edwina", "Reilly", "123Horror",
         "$2y$10$Gg3f3SgZf3xlthDiMB3hp.j8VYkcrL.67Ndu/5Q2CoCx11rcZGE0O", "uploader3@myflix.nl", 3, 0),
        (1, "Prona", "Verbeek", "Pro-Animations",
-        "$2y$10$Gg3f3SgZf3xlthDiMB3hp.j8VYkcrL.67Ndu/5Q2CoCx11rcZGE0O", "uploader4@myflix.nl", 4, 0),
-       (1, "Super", "Uploader", "HappyUploader",
-        "$2y$10$Gg3f3SgZf3xlthDiMB3hp.j8VYkcrL.67Ndu/5Q2CoCx11rcZGE0O", "superuploader@myflix.nl", 3, 1),
+        "$2y$10$Gg3f3SgZf3xlthDiMB3hp.j8VYkcrL.67Ndu/5Q2CoCx11rcZGE0O", "superuploader@myflix.nl", 4, 1),
        (2, "Super", "Moderator", "moderator",
         "$2y$10$Gg3f3SgZf3xlthDiMB3hp.j8VYkcrL.67Ndu/5Q2CoCx11rcZGE0O", "moderator@myflix.nl", null, 0);
 

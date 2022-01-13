@@ -35,7 +35,8 @@ showHead(htmlspecialchars($title), ["assets/css/search.css"]);
                 <div class="info">
                     <?php if ($searchType === "creator") { ?>
                         <h1><?= htmlspecialchars($videos[0]["studioName"]) ?></h1>
-                        <a href="search.php?genre=<?= htmlspecialchars($videos[0]["genreId"]) ?>" class="noLink">
+                        <a href="search.php?genre=<?= htmlspecialchars($videos[0]["genreId"]) ?>"
+                           class="noLink clickable">
                             <h2><?= htmlspecialchars($videos[0]["genre"]) ?></h2>
                         </a>
                     <?php } elseif ($searchType === "genre") { ?>

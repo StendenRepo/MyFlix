@@ -5,7 +5,9 @@ MyFlix is an application for Content Creators, so they can upload video content 
 ## Installation for production
 
 ### Ubuntu 20.04 (Docker)
+
 Tested on Docker 20.10.11 and docker-compose 1.29.2
+
 #### 1. Install docker
 
 Install docker using the documentation
@@ -41,10 +43,25 @@ cd MyFlix
 
 Copy the `.env.example` file to `.env` and change the settings if needed
 
+#### 5. Change rights of video and thumbnail folder
+
+Navigate to assets folder
+
+```bash
+cd /public/assets
+```
+
+add read and write rights to video and thumbnail folder
+
+```bash
+sudo chmod o+wr video
+sudo chmod o+wr thumbnail
+```
+
 #### 5. Start the container
 
 ```bash
-docker-compose up
+sudo docker-compose up
 ```
 
 #### 6. Import the database

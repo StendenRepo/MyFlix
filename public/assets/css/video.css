@@ -1,0 +1,59 @@
+video {
+    display: block;
+    margin: 0 auto;
+    max-height: 75vh;
+    max-width: 80vw;
+}
+
+.content {
+    display: flex;
+}
+
+#start {
+    height: 100px;
+    cursor: pointer;
+    position: absolute;
+    top: CALC((100% - 100px) / 2);
+    left: CALC((100% - 100px) / 2);
+}
+
+h2 {
+    font-size: medium;
+    margin-bottom: 15px;
+    color: var(--text-gray);
+}
+
+h1::first-letter, h2::first-letter {
+    text-transform: uppercase;
+}
+.video-wrapper{
+    margin: 30px auto 0;
+    max-width: 80vw;
+}
+.video-header {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.moderation svg {
+    width: 40px;
+    cursor: pointer;
+}
+
+.moderation svg:hover {
+    --background: white;
+}
+
+.video-player {
+    position: relative;
+    background-color: var(--black);
+}
+@media screen and (max-height: 660px) and (orientation: landscape) {
+    .video{
+        max-height: 100%;
+        margin-bottom: 50px;
+    }
+}
+

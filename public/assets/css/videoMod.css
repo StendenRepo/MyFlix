@@ -1,0 +1,33 @@
+.thumbnails {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    padding-left: 100px;
+    padding-bottom: 30px;
+}
+
+.videos .header-text {
+    padding: 50px 0 50px 100px;
+}
+
+.content a {
+    display: block;
+    width: 150px;
+
+}
+
+.info {
+    padding: 0 30px;
+}
+
+.thumbnail img {
+    max-width: 150px;
+    border-radius: var(--border-radius);
+}
+
+.videos {
+    width: CALC(100vw - 250px);
+}

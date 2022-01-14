@@ -235,3 +235,15 @@ _Pvt_Extensions
 .fake/
 /NDependOut
 /CleanArchitecture.ndproj
+
+.vscode
+
+# MacOS Junk
+.DS_Store
+
+# Test php files
+*test.php
+
+# Prefent the upload of videos and thumbnails
+public/assets/video/*
+public/assets/thumbnail/*

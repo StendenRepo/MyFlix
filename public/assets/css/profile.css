@@ -1,0 +1,52 @@
+#profileContainer {
+    width: CALC(100vw - 250px);
+    background-color: #2D2D2D;
+}
+
+#formContainer {
+    background-color: #2D2D2D;
+}
+
+#myForm {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #2D2D2D;
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.inputBox {
+    margin: 0 30px;
+    width: 300px;
+}
+
+#titleContainer {
+    text-align: center;
+    margin: 50px 0;
+}
+
+#updateButton {
+    width: 100%;
+}
+
+#updateButton input {
+    margin: 0 auto;
+}
+
+.input {
+    background-color: #0000004d;
+    width: 300px;
+    height: 50px;
+    color: #8e8e8e;
+    font-weight: bold;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+}
+
+input[disabled] {
+    background-color: #5F5F5F;
+}

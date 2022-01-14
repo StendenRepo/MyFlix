@@ -43,28 +43,20 @@ cd MyFlix
 
 Copy the `.env.example` file to `.env` and change the settings if needed
 
-#### 5. Change rights of video and thumbnail folder
-
-Navigate to assets folder
+#### 6. Change rights of video and thumbnail folder
 
 ```bash
-cd /public/assets
+sudo chmod o+wr public/assets/video
+sudo chmod o+wr public/assets/thumbnail
 ```
 
-add read and write rights to video and thumbnail folder
-
-```bash
-sudo chmod o+wr video
-sudo chmod o+wr thumbnail
-```
-
-#### 5. Start the container
+#### 7. Start the container
 
 ```bash
 sudo docker-compose up
 ```
 
-#### 6. Import the database
+#### 8. Import the database
 
 Go in your web browser to the following url by going to [http://localhost/installdb.php]()
 

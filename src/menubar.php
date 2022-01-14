@@ -11,8 +11,9 @@ $userLvl = getUserAccountLevel(getCurrentUserId());
             <li><a class="clickable" href="search.php?creator=<?= getCurrentUserId() ?>"><?= $lang["myvideos"] ?></a></li>
             <li><a class="clickable" href="uploadVideo.php"><?= $lang["uploadvideos"] ?></a></li>
         <?php } elseif ($userLvl === 2) { ?>
-            <li><a class="clickable" href="userMod.php"><?= $lang["users"] ?></a></li>
+            <li><a class="clickable" href="accountMod.php"><?= $lang["users"] ?></a></li>
             <li><a class="clickable" href="videoMod.php"><?= $lang["allvideos"] ?></a></li>
+
         <?php } ?>
         <li><a class="clickable" href="changePassword.php"><?= $lang["changepassword"] ?></a></li>
     </ul>

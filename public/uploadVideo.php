@@ -6,7 +6,7 @@ global $lang;
 showHead($lang['uploadVideo'], ['assets/css/uploadvideo.css']);
 ?>
     <body>
-	<?php showHeader() ?>
+    <?php showHeader() ?>
     <div class="body">
         <h1>Upload Video</h1>
         <p class="error"><?= htmlspecialchars($_GET["error"] ?? ""); ?></p>
@@ -23,10 +23,10 @@ showHead($lang['uploadVideo'], ['assets/css/uploadvideo.css']);
 
             <div class="genreSetter">
                 <select name="genre">
-                    <option value="" disabled selected><?= $lang["genreSellector"] ?></option>
-					<?php foreach (getGenres() as $genre) {
-						echo "<option id='" . $genre["id"] . "' value ='" . $genre['id'] . "'>" . $genre['name'] . "</option>";
-					} ?>
+                    <option value="" disabled selected><?= $lang["genreSellectorUpload"] ?></option>
+                    <?php foreach (getGenres() as $genre) {
+                        echo "<option id='" . $genre["id"] . "' value ='" . $genre['id'] . "'>" . $genre['name'] . "</option>";
+                    } ?>
                 </select>
             </div>
 

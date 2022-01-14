@@ -92,6 +92,7 @@ $lang["uploadPlaceholderError"] = "Could not upload placeholder";
 $lang["uploadVideoError"] = "Could not upload video";
 $lang["uploadVideoLength"] = "Video name is to big or small";
 $lang["genreDoesNotExist"] = "Genre does not exist";
+$lang["genreSellectorUpload"] = "Select Genre";
 
 // Password Reset
 $lang["passwordReset"] = "Reset Password";

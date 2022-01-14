@@ -5,7 +5,8 @@
  * @param $errorMsg
  * @return void
  */
-function redirectError($errorMsg) {
+function redirectError($errorMsg)
+{
     header("Location: uploadVideo.php?error=" . $errorMsg);
     die();
 }
@@ -15,7 +16,8 @@ function redirectError($errorMsg) {
  * @param $id
  * @return bool|void
  */
-function genreExists($id) {
+function genreExists($id)
+{
     $conn = dbConnect();
     $query = "SELECT * FROM genre WHERE id=?";
     if (!$stmt = mysqli_prepare($conn, $query)) {
@@ -55,8 +57,11 @@ if (isset($_POST["submitVideo"])) {
     $imageDb = "assets/thumbnail/{$imageData['newFilename']}";
     $imageTarget = __DIR__ . "/../public/$imageDb";
 
-    $genre = $_POST["genre"];
-
+    if (isset($_POST["genre"])) {
+        $genre = $_POST["genre"];
+    } else {
+        $genre = "";
+    }
     if (validateUpload($title, $genre, $videoData, $imageData)) {
         uploadVideo($title, $genre, $videoData, $imageData, $videoDb, $videoTarget, $imageDb, $imageTarget, $accountId);
     }
@@ -77,7 +82,8 @@ if (isset($_POST["submitVideo"])) {
  * @param $accountId
  * @return void
  */
-function uploadVideo($title, $genre, $videoData, $imageData, $videoDb, $videoTarget, $imageDb, $imageTarget, $accountId) {
+function uploadVideo($title, $genre, $videoData, $imageData, $videoDb, $videoTarget, $imageDb, $imageTarget, $accountId)
+{
     global $lang;
     $conn = dbConnect();
 
@@ -125,7 +131,8 @@ function uploadVideo($title, $genre, $videoData, $imageData, $videoDb, $videoTar
  * @param $imgData
  * @return bool
  */
-function validateUpload($title, $genre, $videoData, $imgData) {
+function validateUpload($title, $genre, $videoData, $imgData)
+{
     global $lang;
 
     // Checks if the php file upload trows errors
@@ -160,7 +167,7 @@ function validateUpload($title, $genre, $videoData, $imgData) {
     }
 
     // Checks if a genre was selected
-    if (empty($genre)) {
+    if (empty($genre) || $genre === "") {
         redirectError($lang['noGenre']);
     }
 
@@ -177,13 +184,14 @@ function validateUpload($title, $genre, $videoData, $imgData) {
  * @param $data
  * @return array
  */
-function getFileData($data) {
+function getFileData($data)
+{
     $seperatedArray = explode(".", $data["name"]);
     return array(
-        "name"        => $data["name"],
-        "type"        => $data["type"],
-        "tmpPath"     => $data["tmp_name"],
-        "error"       => $data["error"],
+        "name" => $data["name"],
+        "type" => $data["type"],
+        "tmpPath" => $data["tmp_name"],
+        "error" => $data["error"],
         "newFilename" => uniqid() . "." . $seperatedArray[sizeof(explode(".", $data["name"])) - 1]
     );
 }
